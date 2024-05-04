@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-<div>StarWars Archive 2.0</div>
+      <div>StarWars Archive 2.0</div>
     </>
   )
 }
