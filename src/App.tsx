@@ -1,10 +1,11 @@
 import './App.css'
+import { Home } from './components/common'
 
 function App() {
 
   return (
     <>
-      <div>StarWars Archive 2.0</div>
+      <Home />
     </>
   )
 }
