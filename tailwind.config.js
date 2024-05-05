@@ -1,8 +1,8 @@
-import module from 'module';
+/* global module */
 
 module.exports = {
   purge: {
-    content: [],
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   },
   darkMode: false,
   theme: {
@@ -11,7 +11,11 @@ module.exports = {
       'md': '768px',
       'lg': '1025px',
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'star-background': "url('src/assets/images/Star-Background.jpg')",
+      }
+    }
   },
   variants: {
     extend: {},

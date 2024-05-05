@@ -1,9 +1,11 @@
-import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
+/* eslint-env node */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
 
-export default {
-  plugins: {
+module.exports = {
+  plugins: [
     tailwindcss,
     autoprefixer,
-  },
+  ],
 }
