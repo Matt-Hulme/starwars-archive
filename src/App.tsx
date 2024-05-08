@@ -9,9 +9,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
       </Router>
     </ThemeProvider>
   )
