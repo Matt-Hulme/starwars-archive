@@ -1,0 +1,1 @@
+export const Navbar = () => <nav className="fixed bg-white h-16 w-full">Nav</nav>
