@@ -13,6 +13,9 @@ module.exports = {
       'lg': '1025px',
     },
     extend: {
+      colors: {
+        primary: '#FFBE00B3'
+      },
       backgroundImage: {
         'star-background': "url('src/assets/images/Star-Background.jpg')",
       }
