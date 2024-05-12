@@ -1,12 +1,11 @@
-import { IconButton, Menu, MenuItem } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import { Menu, MenuItem } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const NavbarMobileMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnchorEl(event.currentTarget)
   }
   const handleClose = () => {
@@ -14,22 +13,12 @@ export const NavbarMobileMenu = () => {
   }
 
   return (
-    <div className="flex flex-row h-16 items-center justify-between px-4 pt-4 w-full md:hidden">
-      <Link to="/">
-        <img
-          src="src/assets/images/SW_Logo.png"
-          className="h-12 object-cover"
-        />
-      </Link>
-      <IconButton
-        component="button"
-        size="large"
-        edge="start"
-        style={{ color: '#ffbe00' }}
+    <div className="flex flex-row h-16 items-center justify-center px-4 pt-1 w-full md:hidden">
+      <img
+        src="src/assets/images/SW_Logo.png"
+        className="h-14 object-cover cursor-pointer"
         onClick={handleClick} // Add the handleClick function here
-      >
-        <MenuIcon />
-      </IconButton>
+      />
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <Link to="/">
           <MenuItem onClick={handleClose}>Home</MenuItem>
