@@ -11,7 +11,7 @@ export const FilmsList = () => {
 
   return (
     <div className="bg-fit bg-star-background flex flex-col pt-16">
-      <div className="h-[calc(100vh-64px)] bg-black-100 w-full px-10 pt-5">
+      <div className="h-[calc(100vh-64px)] bg-black-100 w-full px-[58px] pt-5">
         <Button
           className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
           onClick={onClick}
