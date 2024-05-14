@@ -29,15 +29,15 @@ export const CharactersList = () => {
             Back
           </Button>
         </div>
-        <div className="grow bg-blue-400 rounded-lg">
-          <ImageList
-            sx={{ width: '100%', height: '100%' }}
-            cols={6}
-            rowHeight={300}
-          >
+        <div className="grow rounded-lg">
+          <ImageList sx={{ width: '100%', height: '100%' }} cols={5}>
             {imagePaths.map((item, index) => (
               <ImageListItem key={index}>
-                <img src={item} alt={`character${index + 1}`} />
+                <img
+                  src={item}
+                  alt={`character${index + 1}`}
+                  className="rounded-lg"
+                />
               </ImageListItem>
             ))}
           </ImageList>
