@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const planetsImgs = Array.from(
   { length: 60 },
-  (_, i) => `public/assets/images/planets/${i + 1}.jpg`,
+  (_, i) => `/public/assets/images/planets/${i + 1}.jpg`,
 )
 
 export const PlanetsList = () => {
