@@ -1,6 +1,11 @@
 import { ArrowBack } from '@mui/icons-material'
-import { Button } from '@mui/material'
+import { Button, ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+
+const filmsImgs = Array.from(
+  { length: 6 },
+  (_, i) => `public/assets/images/films/${i + 1}.jpg`,
+)
 
 export const FilmsList = () => {
   const navigate = useNavigate()
@@ -10,18 +15,59 @@ export const FilmsList = () => {
   }
 
   return (
-    <div className="bg-fit bg-star-background flex flex-col pt-16">
-      <div className="h-[calc(100vh-64px)] bg-black-100 w-full px-[58px] pt-5">
-        <Button
-          className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
-          onClick={onClick}
-          size="large"
-          startIcon={<ArrowBack />}
-          sx={{ color: '#FFBE00B3' }}
-          variant="text"
-        >
-          Back
-        </Button>
+    <div className="bg-fit bg-star-background pt-16">
+      <div className="h-[calc(100vh-64px)] flex flex-row bg-black-100 pr-[84px] w-full p-5">
+        <div>
+          <Button
+            className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
+            onClick={onClick}
+            size="large"
+            startIcon={<ArrowBack />}
+            sx={{ color: '#FFBE00B3' }}
+            variant="text"
+          >
+            Back
+          </Button>
+        </div>
+        <div className="block md:hidden grow rounded-lg">
+          <ImageList sx={{ width: '100%', height: '100%' }} cols={1}>
+            {filmsImgs.map((item, index) => (
+              <ImageListItem key={index}>
+                <img
+                  src={item}
+                  alt={`film${index + 1}`}
+                  className="rounded-lg"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
+        <div className="hidden md:block lg:hidden grow rounded-lg">
+          <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
+            {filmsImgs.map((item, index) => (
+              <ImageListItem key={index}>
+                <img
+                  src={item}
+                  alt={`film${index + 1}`}
+                  className="rounded-lg"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
+        <div className="hidden lg:block grow rounded-lg">
+          <ImageList sx={{ width: '100%', height: '100%' }} cols={6}>
+            {filmsImgs.map((item, index) => (
+              <ImageListItem key={index}>
+                <img
+                  src={item}
+                  alt={`film${index + 1}`}
+                  className="rounded-lg"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
       </div>
     </div>
   )

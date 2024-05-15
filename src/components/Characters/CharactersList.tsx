@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const imagePaths = Array.from(
   { length: 83 },
-  (_, i) => `src/assets/images/characters/${i + 1}.jpg`,
+  (_, i) => `public/assets/images/characters/${i + 1}.jpg`,
 )
 
 export const CharactersList = () => {
@@ -29,13 +29,39 @@ export const CharactersList = () => {
             Back
           </Button>
         </div>
-        <div className="grow rounded-lg">
+        <div className="block md:hidden grow rounded-lg">
+          <ImageList sx={{ width: '100%', height: '100%' }} cols={1}>
+            {imagePaths.map((item, index) => (
+              <ImageListItem key={index}>
+                <img
+                  src={item}
+                  alt={`vehicle${index + 1}`}
+                  className="rounded-lg"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
+        <div className="hidden md:block lg:hidden grow rounded-lg">
+          <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
+            {imagePaths.map((item, index) => (
+              <ImageListItem key={index}>
+                <img
+                  src={item}
+                  alt={`vehicle${index + 1}`}
+                  className="rounded-lg"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </div>
+        <div className="hidden lg:block grow rounded-lg">
           <ImageList sx={{ width: '100%', height: '100%' }} cols={5}>
             {imagePaths.map((item, index) => (
               <ImageListItem key={index}>
                 <img
                   src={item}
-                  alt={`character${index + 1}`}
+                  alt={`vehicle${index + 1}`}
                   className="rounded-lg"
                 />
               </ImageListItem>
