@@ -2,7 +2,7 @@ import { ArrowBack } from '@mui/icons-material'
 import { Button, ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
-const imagePaths = Array.from(
+const charactersImgs = Array.from(
   { length: 83 },
   (_, i) => `public/assets/images/characters/${i + 1}.jpg`,
 )
@@ -31,7 +31,7 @@ export const CharactersList = () => {
         </div>
         <div className="block md:hidden grow rounded-lg">
           <ImageList sx={{ width: '100%', height: '100%' }} cols={1}>
-            {imagePaths.map((item, index) => (
+            {charactersImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
                   src={item}
@@ -44,7 +44,7 @@ export const CharactersList = () => {
         </div>
         <div className="hidden md:block lg:hidden grow rounded-lg">
           <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
-            {imagePaths.map((item, index) => (
+            {charactersImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
                   src={item}
@@ -57,7 +57,7 @@ export const CharactersList = () => {
         </div>
         <div className="hidden lg:block grow rounded-lg">
           <ImageList sx={{ width: '100%', height: '100%' }} cols={5}>
-            {imagePaths.map((item, index) => (
+            {charactersImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
                   src={item}
