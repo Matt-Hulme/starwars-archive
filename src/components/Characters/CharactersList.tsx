@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const charactersImgs = Array.from(
   { length: 83 },
-  (_, i) => `//assets/images/characters/${i + 1}.jpg`,
+  (_, i) => `/assets/images/characters/${i + 1}.jpg`,
 )
 
 export const CharactersList = () => {
