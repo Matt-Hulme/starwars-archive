@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const starshipsImgs = Array.from(
   { length: 36 },
-  (_, i) => `/public/assets/images/starships/${i + 1}.jpg`,
+  (_, i) => `//assets/images/starships/${i + 1}.jpg`,
 )
 
 export const StarshipsList = () => {

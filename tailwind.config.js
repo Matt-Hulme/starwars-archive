@@ -2,7 +2,7 @@
 
 module.exports = {
   purge: {
-    content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+    content: ['./src/**/*.{js,jsx,ts,tsx}', './/index.html'],
   },
   darkMode: false,
   mode: 'jit',
@@ -17,8 +17,8 @@ module.exports = {
         primary: '#FFBE00B3',
       },
       backgroundImage: {
-        'star-background': "url('/public/assets/images/Star-Background.jpg')",
-        'star-wars-logo': "url('/public/assets/images/SW_Logo.png')",
+        'star-background': "url('//assets/images/Star-Background.jpg')",
+        'star-wars-logo': "url('//assets/images/SW_Logo.png')",
       },
       backgroundSize: {
         110: '110%',
