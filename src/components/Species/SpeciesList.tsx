@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const speciesImgs = Array.from(
   { length: 37 },
-  (_, i) => `/public/assets/images/species/${i + 1}.jpg`,
+  (_, i) => `/assets/images/species/${i + 1}.jpg`,
 )
 
 export const SpeciesList = () => {

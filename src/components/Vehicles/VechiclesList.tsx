@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const vehiclesImgs = Array.from(
   { length: 39 },
-  (_, i) => `/public/assets/images/vehicles/${i + 1}.jpg`,
+  (_, i) => `/assets/images/vehicles/${i + 1}.jpg`,
 )
 
 export const VehiclesList = () => {

@@ -36,10 +36,7 @@ export const Navbar = () => (
         to="/"
         className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 transition-all hover:opacity-100"
       >
-        <img
-          src="public/assets/images/SW_Logo.png"
-          className="h-14 object-contain"
-        />
+        <img src="/assets/images/SW_Logo.png" className="h-14 object-contain" />
       </Link>
       <Link
         to="/species"
