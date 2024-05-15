@@ -17,8 +17,8 @@ module.exports = {
         primary: '#FFBE00B3',
       },
       backgroundImage: {
-        'star-background': "url('src/assets/images/Star-Background.jpg')",
-        'star-wars-logo': "url('src/assets/images/SW_Logo.png')",
+        'star-background': "url('public/assets/images/Star-Background.jpg')",
+        'star-wars-logo': "url('public/assets/images/SW_Logo.png')",
       },
       backgroundSize: {
         110: '110%',
