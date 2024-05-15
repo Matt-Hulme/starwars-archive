@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const filmsImgs = Array.from(
   { length: 6 },
-  (_, i) => `public/assets/images/films/${i + 1}.jpg`,
+  (_, i) => `/public/assets/images/films/${i + 1}.jpg`,
 )
 
 export const FilmsList = () => {
