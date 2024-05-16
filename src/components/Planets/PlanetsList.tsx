@@ -1,6 +1,6 @@
-import { ArrowBack } from '@mui/icons-material'
-import { Button, ImageList, ImageListItem } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+// import { ArrowBack } from '@mui/icons-material'
+import { ImageList, ImageListItem } from '@mui/material'
+// import { useNavigate } from 'react-router-dom'
 
 const planetsImgs = Array.from(
   { length: 60 },
@@ -8,29 +8,18 @@ const planetsImgs = Array.from(
 )
 
 export const PlanetsList = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const onClick = () => {
-    navigate('/')
-  }
+  // const onClick = () => {
+  //   navigate('/')
+  // }
 
   return (
-    <div className="bg-fit bg-star-background pt-16">
-      <div className="h-[calc(100vh-64px)] flex flex-row bg-black-100 pr-[84px] w-full p-5">
-        <div>
-          <Button
-            className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
-            onClick={onClick}
-            size="large"
-            startIcon={<ArrowBack />}
-            sx={{ color: '#FFBE00B3' }}
-            variant="text"
-          >
-            Back
-          </Button>
-        </div>
+    <div className="bg-fit bg-star-background h-screen relative overflow-y-scroll">
+      <div className="h-16 fixed bg-white w-full"></div>
+      <div className="h-[calc(100vh-64px)] flex flex-row top-16 absolute bg-black-100 w-full">
         <div className="block md:hidden grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={1}>
+          <ImageList sx={{ width: '100%' }} cols={1}>
             {planetsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
@@ -43,7 +32,7 @@ export const PlanetsList = () => {
           </ImageList>
         </div>
         <div className="hidden md:block lg:hidden grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
+          <ImageList sx={{ width: '100%' }} cols={3}>
             {planetsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
@@ -56,7 +45,7 @@ export const PlanetsList = () => {
           </ImageList>
         </div>
         <div className="hidden lg:block grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={5}>
+          <ImageList sx={{ width: '100%' }} cols={5}>
             {planetsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img

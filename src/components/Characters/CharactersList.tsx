@@ -1,5 +1,5 @@
-import { Button, ImageList, ImageListItem } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { ImageList, ImageListItem } from '@mui/material'
+// import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../common'
 
 const charactersImgs = Array.from(
@@ -8,15 +8,15 @@ const charactersImgs = Array.from(
 )
 
 export const CharactersList = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const onClick = () => {
-    navigate('/')
-  }
+  // const onClick = () => {
+  //   navigate('/')
+  // }
 
   return (
     <div className="bg-fit bg-star-background flex flex-col h-screen pt-16 relative">
-      <Navbar showBackButton={true} />
+      <Navbar />
       <div className="grow overflow-y-auto">
         <div className="block px-10 rounded-lg md:hidden">
           <ImageList sx={{ width: '100%' }} cols={1}>
