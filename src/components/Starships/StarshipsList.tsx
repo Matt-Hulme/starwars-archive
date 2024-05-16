@@ -1,5 +1,5 @@
-import { Button, ImageList, ImageListItem } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { ImageList, ImageListItem } from '@mui/material'
+// import { useNavigate } from 'react-router-dom'
 import { Navbar } from '../common'
 
 const starshipsImgs = Array.from(
@@ -8,15 +8,16 @@ const starshipsImgs = Array.from(
 )
 
 export const StarshipsList = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const onClick = () => {
-    navigate('/')
-  }
+  // const onClick = () => {
+  //   navigate('/')
+  // }
 
   return (
-    <div className="bg-fit bg-star-background flex flex-col h-screen overflow-y-scroll w-full pt-16">
-      <div className="grow">
+    <div className="bg-fit bg-star-background flex flex-col h-screen items-center overflow-y-scroll relative w-full">
+      <Navbar />
+      <div className="grow pt-16">
         <div className="block px-10 rounded-lg md:hidden">
           <ImageList sx={{ width: '100%' }} cols={1}>
             {starshipsImgs.map((item, index) => (

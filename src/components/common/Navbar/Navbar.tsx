@@ -1,11 +1,10 @@
-import { ArrowBack } from '@mui/icons-material'
 import { Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { NavbarMobileMenu } from './NavbarMobileMenu'
 
-export const Navbar = ({ showBackButton }: { showBackButton?: boolean }) => (
-  <nav className="fixed top-0 h-16 w-95% m-a z-1">
-    <div className="grid-cols-7 hidden w-full md:grid">
+export const Navbar = () => (
+  <nav className="fixed top-0 h-16 w-full z-1">
+    <div className="grid-cols-7 hidden m-a w-80% md:grid">
       <Link
         to="/characters"
         className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
