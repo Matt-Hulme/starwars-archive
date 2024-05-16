@@ -1,4 +1,3 @@
-// import { ArrowBack } from '@mui/icons-material'
 import { ImageList, ImageListItem } from '@mui/material'
 // import { useNavigate } from 'react-router-dom'
 
@@ -15,48 +14,45 @@ export const PlanetsList = () => {
   // }
 
   return (
-    <div className="bg-fit bg-star-background h-screen relative overflow-y-scroll">
-      <div className="h-16 fixed bg-white w-full"></div>
-      <div className="h-[calc(100vh-64px)] flex flex-row top-16 absolute bg-black-100 w-full">
-        <div className="block md:hidden grow rounded-lg">
-          <ImageList sx={{ width: '100%' }} cols={1}>
-            {planetsImgs.map((item, index) => (
-              <ImageListItem key={index}>
-                <img
-                  src={item}
-                  alt={`vehicle${index + 1}`}
-                  className="rounded-lg"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </div>
-        <div className="hidden md:block lg:hidden grow rounded-lg">
-          <ImageList sx={{ width: '100%' }} cols={3}>
-            {planetsImgs.map((item, index) => (
-              <ImageListItem key={index}>
-                <img
-                  src={item}
-                  alt={`vehicle${index + 1}`}
-                  className="rounded-lg"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </div>
-        <div className="hidden lg:block grow rounded-lg">
-          <ImageList sx={{ width: '100%' }} cols={5}>
-            {planetsImgs.map((item, index) => (
-              <ImageListItem key={index}>
-                <img
-                  src={item}
-                  alt={`vehicle${index + 1}`}
-                  className="rounded-lg"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </div>
+    <div className="bg-fit bg-star-background flex flex-col h-full pt-16">
+      <div className="block px-10 rounded-lg md:hidden">
+        <ImageList sx={{ width: '100%' }} cols={1}>
+          {planetsImgs.map((item, index) => (
+            <ImageListItem key={index}>
+              <img
+                src={item}
+                alt={`planets${index + 1}`}
+                className="rounded-lg"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
+      <div className="hidden px-10 rounded-lg md:block lg:hidden">
+        <ImageList sx={{ width: '100%' }} cols={3}>
+          {planetsImgs.map((item, index) => (
+            <ImageListItem key={index}>
+              <img
+                src={item}
+                alt={`planets${index + 1}`}
+                className="rounded-lg"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
+      <div className="hidden px-10 rounded-lg lg:block">
+        <ImageList sx={{ width: '100%' }} cols={5}>
+          {planetsImgs.map((item, index) => (
+            <ImageListItem key={index}>
+              <img
+                src={item}
+                alt={`planets${index + 1}`}
+                className="rounded-lg"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
       </div>
     </div>
   )
