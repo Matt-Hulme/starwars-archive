@@ -15,10 +15,10 @@ export const VehiclesList = () => {
   }
 
   return (
-    <div className="bg-fit bg-star-background flex flex-col h-screen overflow-y-scroll pt-16 relative">
+    <div className="bg-fit bg-star-background flex flex-col h-screen overflow-y-scroll items-center pt-16 w-full relative">
       <Navbar showBackButton={true} />
-      <div className="grow">
-        <div className="absolute block px-10 rounded-lg top-16 md:hidden">
+      <div className="grow h-[calc(100%-16px)]">
+        <div className="block px-10 rounded-lg top-16 md:hidden">
           <ImageList sx={{ width: '100%' }} cols={1}>
             {vehiclesImgs.map((item, index) => (
               <ImageListItem key={index}>

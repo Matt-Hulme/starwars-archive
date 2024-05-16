@@ -15,22 +15,10 @@ export const PlanetsList = () => {
   }
 
   return (
-    <div className="bg-fit bg-star-background pt-16">
-      <div className="h-[calc(100vh-64px)] flex flex-row bg-black-100 pr-[84px] w-full p-5">
-        <div>
-          <Button
-            className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
-            onClick={onClick}
-            size="large"
-            startIcon={<ArrowBack />}
-            sx={{ color: '#FFBE00B3' }}
-            variant="text"
-          >
-            Back
-          </Button>
-        </div>
-        <div className="block md:hidden grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={1}>
+    <div className="bg-fit bg-star-background h-screen overflow-y-scroll relative">
+      <div className="absolute bg-black-100 flex flex-row max-h-[calc(100vh-64px)] top-16 w-full">
+        <div className="block grow rounded-lg md:hidden">
+          <ImageList sx={{ width: '100%' }} cols={1}>
             {planetsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
@@ -42,8 +30,8 @@ export const PlanetsList = () => {
             ))}
           </ImageList>
         </div>
-        <div className="hidden md:block lg:hidden grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
+        <div className="grow hidden rounded-lg md:block lg:hidden">
+          <ImageList sx={{ width: '100%' }} cols={3}>
             {planetsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
@@ -55,8 +43,8 @@ export const PlanetsList = () => {
             ))}
           </ImageList>
         </div>
-        <div className="hidden lg:block grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={5}>
+        <div className="grow hidden rounded-lg lg:block">
+          <ImageList sx={{ width: '100%' }} cols={5}>
             {planetsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img

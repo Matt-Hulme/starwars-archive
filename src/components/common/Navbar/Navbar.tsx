@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { NavbarMobileMenu } from './NavbarMobileMenu'
 
 export const Navbar = ({ showBackButton }: { showBackButton?: boolean }) => (
-  <nav className="fixed top-0 flex flex-row h-16 items-center justify-center w-full">
+  <nav className="fixed top-0 h-16 w-95% m-a z-1">
     <div className="grid-cols-7 hidden w-full md:grid">
       <Link
         to="/characters"

@@ -15,8 +15,7 @@ export const StarshipsList = () => {
   }
 
   return (
-    <div className="bg-fit bg-star-background flex flex-col h-screen overflow-y-scroll pt-16">
-      <Navbar showBackButton={true} />
+    <div className="bg-fit bg-star-background flex flex-col h-screen overflow-y-scroll w-full pt-16">
       <div className="grow">
         <div className="block px-10 rounded-lg md:hidden">
           <ImageList sx={{ width: '100%' }} cols={1}>
