@@ -9,7 +9,7 @@ export const Navbar = () => {
   const navigate = useNavigate()
 
   const onClick = () => {
-    navigate('/')
+    navigate(-1)
   }
 
   return (

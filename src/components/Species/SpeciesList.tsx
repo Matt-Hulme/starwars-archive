@@ -1,5 +1,4 @@
 import { ImageList, ImageListItem } from '@mui/material'
-// import { useNavigate } from 'react-router-dom'
 
 const speciesImgs = Array.from(
   { length: 37 },
@@ -7,16 +6,10 @@ const speciesImgs = Array.from(
 )
 
 export const SpeciesList = () => {
-  // const navigate = useNavigate()
-
-  // const onClick = () => {
-  //   navigate('/')
-  // }
-
   return (
-    <div className="bg-fit bg-star-background flex flex-col h-full pt-16">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-16">
       <div className="block px-10 rounded-lg md:hidden">
-        <ImageList sx={{ width: '100%' }} cols={1}>
+        <ImageList cols={1}>
           {speciesImgs.map((item, index) => (
             <ImageListItem key={index}>
               <img
@@ -29,7 +22,7 @@ export const SpeciesList = () => {
         </ImageList>
       </div>
       <div className="hidden px-10 rounded-lg md:block lg:hidden">
-        <ImageList sx={{ width: '100%' }} cols={3}>
+        <ImageList cols={3}>
           {speciesImgs.map((item, index) => (
             <ImageListItem key={index}>
               <img
@@ -42,7 +35,7 @@ export const SpeciesList = () => {
         </ImageList>
       </div>
       <div className="hidden px-10 rounded-lg lg:block">
-        <ImageList sx={{ width: '100%' }} cols={5}>
+        <ImageList cols={5}>
           {speciesImgs.map((item, index) => (
             <ImageListItem key={index}>
               <img
