@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 export const NavbarMobileMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
+
   const handleClick = (event: React.MouseEvent<HTMLImageElement>) => {
     setAnchorEl(event.currentTarget)
   }
@@ -15,9 +16,9 @@ export const NavbarMobileMenu = () => {
   return (
     <div className="flex flex-row h-16 items-center justify-center px-4 pt-1 w-full md:hidden">
       <img
-        src="src/assets/images/SW_Logo.png"
+        src="/assets/images/SW_Logo.png"
         className="h-14 object-cover cursor-pointer"
-        onClick={handleClick} // Add the handleClick function here
+        onClick={handleClick}
       />
       <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
         <Link to="/">

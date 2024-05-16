@@ -42,21 +42,8 @@ export const FilmsList = () => {
             ))}
           </ImageList>
         </div>
-        <div className="hidden md:block lg:hidden grow rounded-lg">
+        <div className="hidden md:block grow rounded-lg">
           <ImageList sx={{ width: '100%', height: '100%' }} cols={3}>
-            {filmsImgs.map((item, index) => (
-              <ImageListItem key={index}>
-                <img
-                  src={item}
-                  alt={`film${index + 1}`}
-                  className="rounded-lg"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        </div>
-        <div className="hidden lg:block grow rounded-lg">
-          <ImageList sx={{ width: '100%', height: '100%' }} cols={6}>
             {filmsImgs.map((item, index) => (
               <ImageListItem key={index}>
                 <img
