@@ -13,9 +13,9 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed h-16 px-20 w-full z-10">
+    <nav className="bg-black fixed px-20 w-full z-10">
       {location.pathname !== '/' && (
-        <div className=" absolute left-2 top-[12px]">
+        <div className=" absolute left-2 top-[18px]">
           <Button
             className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
             onClick={onClick}
@@ -53,7 +53,7 @@ export const Navbar = () => {
           </Typography>
           <Typography className="block lg:hidden">Planets</Typography>
         </Link>
-        <div className="pt-1">
+        <div className="py-2">
           <Link
             to="/"
             className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 transition-all hover:opacity-100"

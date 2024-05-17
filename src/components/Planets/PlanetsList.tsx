@@ -7,8 +7,8 @@ const planetsImgs = Array.from(
 
 export const PlanetsList = () => {
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-16">
-      <div className="block px-10 rounded-lg md:hidden">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
+      <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1}>
           {planetsImgs.map((item, index) => (
             <ImageListItem key={index}>
@@ -21,7 +21,7 @@ export const PlanetsList = () => {
           ))}
         </ImageList>
       </div>
-      <div className="hidden px-10 rounded-lg md:block lg:hidden">
+      <div className="hidden pt-[104px] px-10 rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
           {planetsImgs.map((item, index) => (
             <ImageListItem key={index}>
@@ -34,7 +34,7 @@ export const PlanetsList = () => {
           ))}
         </ImageList>
       </div>
-      <div className="hidden px-10 rounded-lg lg:block">
+      <div className="hidden pt-[104px] px-10 rounded-lg lg:block">
         <ImageList cols={5}>
           {planetsImgs.map((item, index) => (
             <ImageListItem key={index}>
