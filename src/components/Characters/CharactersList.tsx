@@ -7,9 +7,9 @@ const charactersImgs = Array.from(
 
 export const CharactersList = () => {
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-16">
-      <div className="block px-10 rounded-lg md:hidden">
-        <ImageList cols={1}>
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
+      <div className="block rounded-lg md:hidden pt-[104px]">
+        <ImageList cols={1} sx={{ maxWidth: '78%', margin: 'auto' }}>
           {charactersImgs.map((item, index) => (
             <ImageListItem key={index}>
               <img
@@ -21,7 +21,7 @@ export const CharactersList = () => {
           ))}
         </ImageList>
       </div>
-      <div className="hidden px-10 rounded-lg md:block lg:hidden">
+      <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={3}>
           {charactersImgs.map((item, index) => (
             <ImageListItem key={index}>
@@ -34,7 +34,7 @@ export const CharactersList = () => {
           ))}
         </ImageList>
       </div>
-      <div className="hidden px-10 rounded-lg lg:block">
+      <div className="hidden rounded-lg lg:block pt-[104px]">
         <ImageList cols={5}>
           {charactersImgs.map((item, index) => (
             <ImageListItem key={index}>
