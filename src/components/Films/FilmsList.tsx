@@ -1,4 +1,5 @@
 import { ImageList, ImageListItem } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 
 const filmsImgs = Array.from(
   { length: 6 },
@@ -6,12 +7,22 @@ const filmsImgs = Array.from(
 )
 
 export const FilmsList = () => {
+  const navigate = useNavigate()
+
+  const onClick = (id: number) => {
+    navigate(`/films/${id}`)
+  }
+
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
       <div className="block rounded-lg md:hidden pt-[104px]">
         <ImageList cols={1} sx={{ maxWidth: '74%', margin: 'auto' }}>
           {filmsImgs.map((item, index) => (
-            <ImageListItem key={index}>
+            <ImageListItem
+              className="hover:cursor-pointer"
+              key={index}
+              onClick={() => onClick(index + 1)}
+            >
               <img
                 src={item}
                 alt={`films${index + 1}`}
@@ -24,7 +35,11 @@ export const FilmsList = () => {
       <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={2} sx={{ margin: 'auto' }}>
           {filmsImgs.map((item, index) => (
-            <ImageListItem key={index}>
+            <ImageListItem
+              className="hover:cursor-pointer"
+              key={index}
+              onClick={() => onClick(index + 1)}
+            >
               <img
                 src={item}
                 alt={`films${index + 1}`}
@@ -41,7 +56,11 @@ export const FilmsList = () => {
           variant="standard"
         >
           {filmsImgs.map((item, index) => (
-            <ImageListItem key={index}>
+            <ImageListItem
+              className="hover:cursor-pointer"
+              onClick={() => onClick(index + 1)}
+              key={index}
+            >
               <img
                 src={item}
                 alt={`films${index + 1}`}
