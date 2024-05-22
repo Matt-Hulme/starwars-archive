@@ -4,23 +4,21 @@ import { GetAllCharactersQuery } from '../../../generated/graphql'
 const GET_ALL_CHARACTERS = gql`
   query GetAllCharacters {
     allPeople {
-      edges {
-        node {
-          name
-          id
-        }
+      people {
+        id
+        name
       }
     }
   }
 `
 
-interface useCharactersTypes {
+interface useGetCharactersTypes {
   loading: boolean
   error: ApolloError | undefined
   charactersData: GetAllCharactersQuery['allPeople']
 }
 
-export const useCharacters = (): useCharactersTypes => {
+export const useGetAllCharacters = (): useGetCharactersTypes => {
   const { loading, error, data } =
     useQuery<GetAllCharactersQuery>(GET_ALL_CHARACTERS)
 

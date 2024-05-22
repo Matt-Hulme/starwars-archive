@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useGetAllPlanets } from './hooks'
 
 const planetsImgs = Array.from(
   { length: 60 },
@@ -7,11 +8,14 @@ const planetsImgs = Array.from(
 )
 
 export const PlanetsList = () => {
+  const { planetsData } = useGetAllPlanets()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
     navigate(`/planets/${id}`)
   }
+
+  console.log('planetsData:', planetsData)
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

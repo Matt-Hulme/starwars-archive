@@ -1,0 +1,1 @@
+export { useGetAllStarships } from './useGetAllStarships'

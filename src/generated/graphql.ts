@@ -1305,4 +1305,29 @@ export type VehiclesEdge = {
 export type GetAllCharactersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllCharactersQuery = { __typename?: 'Root', allPeople?: { __typename?: 'PeopleConnection', edges?: Array<{ __typename?: 'PeopleEdge', node?: { __typename?: 'Person', name?: string | null, id: string } | null } | null> | null } | null };
+export type GetAllCharactersQuery = { __typename?: 'Root', allPeople?: { __typename?: 'PeopleConnection', people?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null };
+
+export type GetAllFilmsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllFilmsQuery = { __typename?: 'Root', allFilms?: { __typename?: 'FilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null };
+
+export type GetAllPlanetsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllPlanetsQuery = { __typename?: 'Root', allPlanets?: { __typename?: 'PlanetsConnection', planets?: Array<{ __typename?: 'Planet', id: string, name?: string | null } | null> | null } | null };
+
+export type GetAllSpeciesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllSpeciesQuery = { __typename?: 'Root', allSpecies?: { __typename?: 'SpeciesConnection', species?: Array<{ __typename?: 'Species', id: string, name?: string | null } | null> | null } | null };
+
+export type GetAllStarshipsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllStarshipsQuery = { __typename?: 'Root', allStarships?: { __typename?: 'StarshipsConnection', starships?: Array<{ __typename?: 'Starship', name?: string | null, id: string } | null> | null } | null };
+
+export type GetAllVehiclesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllVehiclesQuery = { __typename?: 'Root', allVehicles?: { __typename?: 'VehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', name?: string | null, id: string } | null> | null } | null };

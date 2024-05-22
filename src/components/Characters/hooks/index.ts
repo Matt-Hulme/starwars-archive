@@ -1,0 +1,1 @@
+export { useGetAllCharacters } from './useGetAllCharacters'
