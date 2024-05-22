@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useGetAllCharacters } from './hooks'
 
 const charactersImgs = Array.from(
   { length: 83 },
@@ -7,11 +8,14 @@ const charactersImgs = Array.from(
 )
 
 export const CharactersList = () => {
+  const { charactersData } = useGetAllCharacters()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
     navigate(`/characters/${id}`)
   }
+
+  console.log('charactersData:', charactersData)
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

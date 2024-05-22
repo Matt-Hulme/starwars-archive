@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useGetAllVehicles } from './hooks'
 
 const vehiclesImgs = Array.from(
   { length: 39 },
@@ -7,11 +8,14 @@ const vehiclesImgs = Array.from(
 )
 
 export const VehiclesList = () => {
+  const { vehiclesData } = useGetAllVehicles()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
     navigate(`/vehicles/${id}`)
   }
+
+  console.log('vehiclesData:', vehiclesData)
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

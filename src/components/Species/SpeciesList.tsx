@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useGetAllSpecies } from './hooks'
 
 const speciesImgs = Array.from(
   { length: 37 },
@@ -7,11 +8,14 @@ const speciesImgs = Array.from(
 )
 
 export const SpeciesList = () => {
+  const { speciesData } = useGetAllSpecies()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
     navigate(`/species/${id}`)
   }
+
+  console.log('speciesData:', speciesData)
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

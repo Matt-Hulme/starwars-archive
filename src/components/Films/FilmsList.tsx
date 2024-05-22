@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useGetAllFilms } from './hooks'
 
 const filmsImgs = Array.from(
   { length: 6 },
@@ -7,11 +8,14 @@ const filmsImgs = Array.from(
 )
 
 export const FilmsList = () => {
+  const { filmsData } = useGetAllFilms()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
     navigate(`/films/${id}`)
   }
+
+  console.log('filmsData:', filmsData)
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

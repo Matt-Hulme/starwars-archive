@@ -1,5 +1,6 @@
 import { ImageList, ImageListItem } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { useGetAllStarships } from './hooks'
 
 const starshipsImgs = Array.from(
   { length: 36 },
@@ -7,11 +8,14 @@ const starshipsImgs = Array.from(
 )
 
 export const StarshipsList = () => {
+  const { starshipsData } = useGetAllStarships()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
     navigate(`/starships/${id}`)
   }
+
+  console.log('starshipsData:', starshipsData)
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
