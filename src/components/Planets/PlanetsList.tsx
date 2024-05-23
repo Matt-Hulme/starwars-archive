@@ -1,6 +1,7 @@
-import { ImageList, ImageListItem } from '@mui/material'
+import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useGetAllPlanets } from './hooks'
+import { ListCard } from '../common/ListCard'
 
 const planetsImgs = Array.from(
   { length: 60 },
@@ -8,7 +9,11 @@ const planetsImgs = Array.from(
 )
 
 export const PlanetsList = () => {
-  const { planetsData } = useGetAllPlanets()
+  const {
+    planetsData,
+    loading: isLoading,
+    error: hasError,
+  } = useGetAllPlanets()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
@@ -21,52 +26,43 @@ export const PlanetsList = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
       <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1}>
-          {planetsImgs.map((item, index) => (
-            <ImageListItem
-              key={index}
-              className="hover:cursor-pointer"
-              onClick={() => onClick(index + 1)}
-            >
-              <img
-                src={item}
-                alt={`planets${index + 1}`}
-                className="rounded-lg"
-              />
-            </ImageListItem>
+          {planetsImgs.map((image, index) => (
+            <ListCard
+              className="rounded-lg"
+              containerClassName="relative"
+              index={index}
+              image={image}
+              onClick={onClick}
+              title={planetsData?.planets?.[index]?.name ?? ''}
+            />
           ))}
         </ImageList>
       </div>
       <div className="hidden pt-[104px] px-10 rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
-          {planetsImgs.map((item, index) => (
-            <ImageListItem
-              key={index}
-              className="hover:cursor-pointer"
-              onClick={() => onClick(index + 1)}
-            >
-              <img
-                src={item}
-                alt={`planets${index + 1}`}
-                className="rounded-lg"
-              />
-            </ImageListItem>
+          {planetsImgs.map((image, index) => (
+            <ListCard
+              className="rounded-lg"
+              containerClassName="relative"
+              index={index}
+              image={image}
+              onClick={onClick}
+              title={planetsData?.planets?.[index]?.name ?? ''}
+            />
           ))}
         </ImageList>
       </div>
       <div className="hidden pt-[104px] px-10 rounded-lg lg:block">
         <ImageList cols={5}>
-          {planetsImgs.map((item, index) => (
-            <ImageListItem
-              key={index}
-              className="hover:cursor-pointer"
-              onClick={() => onClick(index + 1)}
-            >
-              <img
-                src={item}
-                alt={`planets${index + 1}`}
-                className="rounded-lg"
-              />
-            </ImageListItem>
+          {planetsImgs.map((image, index) => (
+            <ListCard
+              className="rounded-lg"
+              containerClassName="relative"
+              index={index}
+              image={image}
+              onClick={onClick}
+              title={planetsData?.planets?.[index]?.name ?? ''}
+            />
           ))}
         </ImageList>
       </div>
