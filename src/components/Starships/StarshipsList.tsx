@@ -9,11 +9,7 @@ const starshipsImgs = Array.from(
 )
 
 export const StarshipsList = () => {
-  const {
-    starshipsData,
-    loading: isLoading,
-    error: hasError,
-  } = useGetAllStarships()
+  const { starshipsData } = useGetAllStarships()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {

@@ -9,11 +9,7 @@ const speciesImgs = Array.from(
 )
 
 export const SpeciesList = () => {
-  const {
-    speciesData,
-    loading: isLoading,
-    error: hasError,
-  } = useGetAllSpecies()
+  const { speciesData } = useGetAllSpecies()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {

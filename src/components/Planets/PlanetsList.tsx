@@ -9,11 +9,7 @@ const planetsImgs = Array.from(
 )
 
 export const PlanetsList = () => {
-  const {
-    planetsData,
-    loading: isLoading,
-    error: hasError,
-  } = useGetAllPlanets()
+  const { planetsData } = useGetAllPlanets()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {

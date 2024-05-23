@@ -9,7 +9,7 @@ const filmsImgs = Array.from(
 )
 
 export const FilmsList = () => {
-  const { filmsData, loading: isLoading, error: hasError } = useGetAllFilms()
+  const { filmsData } = useGetAllFilms()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {

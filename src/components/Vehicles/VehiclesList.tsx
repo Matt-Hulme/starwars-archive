@@ -9,11 +9,7 @@ const vehiclesImgs = Array.from(
 )
 
 export const VehiclesList = () => {
-  const {
-    vehiclesData,
-    loading: isLoading,
-    error: hasError,
-  } = useGetAllVehicles()
+  const { vehiclesData } = useGetAllVehicles()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {

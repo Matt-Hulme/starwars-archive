@@ -9,11 +9,7 @@ const charactersImgs = Array.from(
 )
 
 export const CharactersList = () => {
-  const {
-    charactersData,
-    loading: isLoading,
-    error: hasError,
-  } = useGetAllCharacters()
+  const { charactersData } = useGetAllCharacters()
   const navigate = useNavigate()
 
   const onClick = (id: number) => {
