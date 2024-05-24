@@ -22,7 +22,7 @@ export const ListCard = ({
     key={index}
     onClick={() => onClick(index + 1)}
   >
-    <div className="absolute bg-black bg-opacity-50 left-5 text-white top-5">
+    <div className="absolute bg-black bg-opacity-50 rounded-sm left-5 text-white top-5">
       {title}
     </div>
     <img src={image} alt={title} className={className} />
