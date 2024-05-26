@@ -12,8 +12,9 @@ export const FilmsList = () => {
   const { filmsData } = useGetAllFilms()
   const navigate = useNavigate()
 
-  const onClick = (id: number) => {
-    navigate(`/films/${id}`)
+  const onClick = (name: string) => {
+    const formattedName = name.replace(/ /g, '-').toLowerCase()
+    navigate(`/films/${formattedName}`)
   }
 
   console.log('filmsData:', filmsData)
@@ -22,30 +23,36 @@ export const FilmsList = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
       <div className="block rounded-lg md:hidden pt-[104px]">
         <ImageList cols={1} sx={{ maxWidth: '74%', margin: 'auto' }}>
-          {filmsImgs.map((image, index) => (
-            <ListCard
-              className="rounded-lg"
-              containerClassName="relative"
-              index={index}
-              image={image}
-              onClick={onClick}
-              title={filmsData?.films?.[index]?.title ?? ''}
-            />
-          ))}
+          {filmsImgs.map((image, index) => {
+            const filmName = filmsData?.films?.[index]?.title ?? ''
+            return (
+              <ListCard
+                className="rounded-lg"
+                containerClassName="relative"
+                index={index}
+                image={image}
+                onClick={() => onClick(filmName)}
+                title={filmName}
+              />
+            )
+          })}
         </ImageList>
       </div>
       <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={2} sx={{ margin: 'auto' }}>
-          {filmsImgs.map((image, index) => (
-            <ListCard
-              className="rounded-lg"
-              containerClassName="relative"
-              index={index}
-              image={image}
-              onClick={onClick}
-              title={filmsData?.films?.[index]?.title ?? ''}
-            />
-          ))}
+          {filmsImgs.map((image, index) => {
+            const filmName = filmsData?.films?.[index]?.title ?? ''
+            return (
+              <ListCard
+                className="rounded-lg"
+                containerClassName="relative"
+                index={index}
+                image={image}
+                onClick={() => onClick(filmName)}
+                title={filmName}
+              />
+            )
+          })}
         </ImageList>
       </div>
       <div className="hidden rounded-lg lg:block pt-[104px]">
@@ -54,16 +61,19 @@ export const FilmsList = () => {
           cols={3}
           variant="standard"
         >
-          {filmsImgs.map((image, index) => (
-            <ListCard
-              className="rounded-lg"
-              containerClassName="relative"
-              index={index}
-              image={image}
-              onClick={onClick}
-              title={filmsData?.films?.[index]?.title ?? ''}
-            />
-          ))}
+          {filmsImgs.map((image, index) => {
+            const filmName = filmsData?.films?.[index]?.title ?? ''
+            return (
+              <ListCard
+                className="rounded-lg"
+                containerClassName="relative"
+                index={index}
+                image={image}
+                onClick={() => onClick(filmName)}
+                title={filmName}
+              />
+            )
+          })}
         </ImageList>
       </div>
     </div>

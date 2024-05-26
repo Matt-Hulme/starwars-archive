@@ -12,8 +12,9 @@ export const VehiclesList = () => {
   const { vehiclesData } = useGetAllVehicles()
   const navigate = useNavigate()
 
-  const onClick = (id: number) => {
-    navigate(`/vehicles/${id}`)
+  const onClick = (name: string) => {
+    const formattedName = name.replace(/ /g, '-').toLowerCase()
+    navigate(`/vehicles/${formattedName}`)
   }
 
   console.log('vehiclesData:', vehiclesData)
@@ -22,44 +23,53 @@ export const VehiclesList = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
       <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1}>
-          {vehiclesImgs.map((image, index) => (
-            <ListCard
-              className="rounded-lg"
-              containerClassName="relative"
-              index={index}
-              image={image}
-              onClick={onClick}
-              title={vehiclesData?.vehicles?.[index]?.name ?? ''}
-            />
-          ))}
+          {vehiclesImgs.map((image, index) => {
+            const vehicleName = vehiclesData?.vehicles?.[index]?.name ?? ''
+            return (
+              <ListCard
+                className="rounded-lg"
+                containerClassName="relative"
+                index={index}
+                image={image}
+                onClick={() => onClick(vehicleName)}
+                title={vehicleName}
+              />
+            )
+          })}
         </ImageList>
       </div>
       <div className="hidden pt-[104px] rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
-          {vehiclesImgs.map((image, index) => (
-            <ListCard
-              className="rounded-lg"
-              containerClassName="relative"
-              index={index}
-              image={image}
-              onClick={onClick}
-              title={vehiclesData?.vehicles?.[index]?.name ?? ''}
-            />
-          ))}
+          {vehiclesImgs.map((image, index) => {
+            const vehicleName = vehiclesData?.vehicles?.[index]?.name ?? ''
+            return (
+              <ListCard
+                className="rounded-lg"
+                containerClassName="relative"
+                index={index}
+                image={image}
+                onClick={() => onClick(vehicleName)}
+                title={vehicleName}
+              />
+            )
+          })}
         </ImageList>
       </div>
       <div className="hidden pt-[104px] rounded-lg lg:block">
         <ImageList cols={5}>
-          {vehiclesImgs.map((image, index) => (
-            <ListCard
-              className="rounded-lg"
-              containerClassName="relative"
-              index={index}
-              image={image}
-              onClick={onClick}
-              title={vehiclesData?.vehicles?.[index]?.name ?? ''}
-            />
-          ))}
+          {vehiclesImgs.map((image, index) => {
+            const vehicleName = vehiclesData?.vehicles?.[index]?.name ?? ''
+            return (
+              <ListCard
+                className="rounded-lg"
+                containerClassName="relative"
+                index={index}
+                image={image}
+                onClick={() => onClick(vehicleName)}
+                title={vehicleName}
+              />
+            )
+          })}
         </ImageList>
       </div>
     </div>
