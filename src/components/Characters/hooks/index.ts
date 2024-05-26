@@ -1,1 +1,2 @@
-export { useGetAllCharacters } from './useGetAllCharacters'
+export { useGetAllCharactersQuery } from './useGetAllCharactersQuery'
+export { useGetCharacterDetailsQuery } from './useGetCharacterDetailsQuery'

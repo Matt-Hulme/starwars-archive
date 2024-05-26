@@ -18,7 +18,7 @@ interface useGetCharactersTypes {
   charactersData: GetAllCharactersQuery['allPeople']
 }
 
-export const useGetAllCharacters = (): useGetCharactersTypes => {
+export const useGetAllCharactersQuery = (): useGetCharactersTypes => {
   const { loading, error, data } =
     useQuery<GetAllCharactersQuery>(GET_ALL_CHARACTERS)
 
