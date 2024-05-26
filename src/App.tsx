@@ -21,17 +21,17 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/characters" element={<CharactersList />} />
-            <Route path="/characters/:id" element={<CharacterDetails />} />
+            <Route path="/characters/:name" element={<CharacterDetails />} />
             <Route path="/films" element={<FilmsList />} />
-            <Route path="/films/:id" element={<FilmDetails />} />
+            <Route path="/films/:name" element={<FilmDetails />} />
             <Route path="/planets" element={<PlanetsList />} />
-            <Route path="/planets/:id" element={<PlanetDetails />} />
+            <Route path="/planets/:name" element={<PlanetDetails />} />
             <Route path="/species" element={<SpeciesList />} />
-            <Route path="/species/:id" element={<SpeciesDetails />} />
+            <Route path="/species/:name" element={<SpeciesDetails />} />
             <Route path="/starships" element={<StarshipsList />} />
-            <Route path="/starships/:id" element={<StarshipDetails />} />
+            <Route path="/starships/:name" element={<StarshipDetails />} />
             <Route path="/vehicles" element={<VehiclesList />} />a
-            <Route path="/vehicles/:id" element={<VehicleDetails />} />
+            <Route path="/vehicles/:name" element={<VehicleDetails />} />
           </Routes>
         </Router>
       </ThemeProvider>
