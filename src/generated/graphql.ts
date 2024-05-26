@@ -1307,6 +1307,13 @@ export type GetAllCharactersQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllCharactersQuery = { __typename?: 'Root', allPeople?: { __typename?: 'PeopleConnection', people?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null };
 
+export type PersonQueryVariables = Exact<{
+  personId?: InputMaybe<Scalars['ID']['input']>;
+}>;
+
+
+export type PersonQuery = { __typename?: 'Root', person?: { __typename?: 'Person', birthYear?: string | null, eyeColor?: string | null, gender?: string | null, hairColor?: string | null, height?: number | null, skinColor?: string | null, filmConnection?: { __typename?: 'PersonFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, homeworld?: { __typename?: 'Planet', id: string, name?: string | null } | null, species?: { __typename?: 'Species', id: string, name?: string | null } | null, starshipConnection?: { __typename?: 'PersonStarshipsConnection', starships?: Array<{ __typename?: 'Starship', id: string, name?: string | null } | null> | null } | null, vehicleConnection?: { __typename?: 'PersonVehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', id: string, name?: string | null } | null> | null } | null } | null };
+
 export type GetAllFilmsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1325,9 +1332,9 @@ export type GetAllSpeciesQuery = { __typename?: 'Root', allSpecies?: { __typenam
 export type GetAllStarshipsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllStarshipsQuery = { __typename?: 'Root', allStarships?: { __typename?: 'StarshipsConnection', starships?: Array<{ __typename?: 'Starship', name?: string | null, id: string } | null> | null } | null };
+export type GetAllStarshipsQuery = { __typename?: 'Root', allStarships?: { __typename?: 'StarshipsConnection', starships?: Array<{ __typename?: 'Starship', id: string, name?: string | null } | null> | null } | null };
 
 export type GetAllVehiclesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllVehiclesQuery = { __typename?: 'Root', allVehicles?: { __typename?: 'VehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', name?: string | null, id: string } | null> | null } | null };
+export type GetAllVehiclesQuery = { __typename?: 'Root', allVehicles?: { __typename?: 'VehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', id: string, name?: string | null } | null> | null } | null };

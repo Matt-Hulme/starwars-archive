@@ -1,7 +1,7 @@
 import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { useGetAllCharacters } from './hooks'
 import { ListCard } from '../common/ListCard'
+import { useGetAllCharactersQuery } from './hooks'
 
 const charactersImgs = Array.from(
   { length: 83 },
@@ -9,12 +9,13 @@ const charactersImgs = Array.from(
 )
 
 export const CharactersList = () => {
-  const { charactersData } = useGetAllCharacters()
+  const { charactersData } = useGetAllCharactersQuery()
   const navigate = useNavigate()
 
-  const onClick = (name: string) => {
+  const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/characters/${formattedName}`)
+    const decodedId = atob(id).split(':')[1]
+    navigate(`/characters/${formattedName}/?id=${decodedId}`)
   }
 
   console.log('charactersData:', charactersData)
@@ -25,13 +26,14 @@ export const CharactersList = () => {
         <ImageList cols={1} sx={{ maxWidth: '78%', margin: 'auto' }}>
           {charactersImgs.map((image, index) => {
             const characterName = charactersData?.people?.[index]?.name ?? ''
+            const id = charactersData?.people?.[index]?.id ?? ''
             return (
               <ListCard
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(characterName)}
+                onClick={() => onClick(characterName, id)}
                 title={characterName}
               />
             )
@@ -42,13 +44,14 @@ export const CharactersList = () => {
         <ImageList cols={3}>
           {charactersImgs.map((image, index) => {
             const characterName = charactersData?.people?.[index]?.name ?? ''
+            const id = charactersData?.people?.[index]?.id ?? ''
             return (
               <ListCard
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(characterName)}
+                onClick={() => onClick(characterName, id)}
                 title={characterName}
               />
             )
@@ -59,13 +62,14 @@ export const CharactersList = () => {
         <ImageList cols={5}>
           {charactersImgs.map((image, index) => {
             const characterName = charactersData?.people?.[index]?.name ?? ''
+            const id = charactersData?.people?.[index]?.id ?? ''
             return (
               <ListCard
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(characterName)}
+                onClick={() => onClick(characterName, id)}
                 title={characterName}
               />
             )

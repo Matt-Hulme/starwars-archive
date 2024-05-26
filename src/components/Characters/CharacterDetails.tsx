@@ -1,4 +1,13 @@
+import { useSearchParams } from 'react-router-dom'
+import { useGetCharacterDetailsQuery } from './hooks'
+
 export const CharacterDetails = () => {
+  const [searchParams] = useSearchParams()
+  const characterId = searchParams.get('id') ?? ''
+  const { characterDetailsData } = useGetCharacterDetailsQuery(characterId)
+
+  console.log('characterDetailsData:', characterDetailsData)
+
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10 pt-[104px]">
       <div className="w-full space-y-5">
