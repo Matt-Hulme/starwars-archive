@@ -1307,17 +1307,24 @@ export type GetAllCharactersQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllCharactersQuery = { __typename?: 'Root', allPeople?: { __typename?: 'PeopleConnection', people?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null };
 
-export type PersonQueryVariables = Exact<{
+export type GetCharacterDetailsQueryVariables = Exact<{
   personId?: InputMaybe<Scalars['ID']['input']>;
 }>;
 
 
-export type PersonQuery = { __typename?: 'Root', person?: { __typename?: 'Person', birthYear?: string | null, eyeColor?: string | null, gender?: string | null, hairColor?: string | null, height?: number | null, skinColor?: string | null, filmConnection?: { __typename?: 'PersonFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, homeworld?: { __typename?: 'Planet', id: string, name?: string | null } | null, species?: { __typename?: 'Species', id: string, name?: string | null } | null, starshipConnection?: { __typename?: 'PersonStarshipsConnection', starships?: Array<{ __typename?: 'Starship', id: string, name?: string | null } | null> | null } | null, vehicleConnection?: { __typename?: 'PersonVehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', id: string, name?: string | null } | null> | null } | null } | null };
+export type GetCharacterDetailsQuery = { __typename?: 'Root', person?: { __typename?: 'Person', birthYear?: string | null, eyeColor?: string | null, gender?: string | null, hairColor?: string | null, height?: number | null, skinColor?: string | null, filmConnection?: { __typename?: 'PersonFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, homeworld?: { __typename?: 'Planet', id: string, name?: string | null } | null, species?: { __typename?: 'Species', id: string, name?: string | null } | null, starshipConnection?: { __typename?: 'PersonStarshipsConnection', starships?: Array<{ __typename?: 'Starship', id: string, name?: string | null } | null> | null } | null, vehicleConnection?: { __typename?: 'PersonVehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', id: string, name?: string | null } | null> | null } | null } | null };
 
 export type GetAllFilmsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllFilmsQuery = { __typename?: 'Root', allFilms?: { __typename?: 'FilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null };
+
+export type GetFilmDetailsQueryVariables = Exact<{
+  filmId?: InputMaybe<Scalars['ID']['input']>;
+}>;
+
+
+export type GetFilmDetailsQuery = { __typename?: 'Root', film?: { __typename?: 'Film', id: string, title?: string | null, director?: string | null, openingCrawl?: string | null, producers?: Array<string | null> | null, releaseDate?: string | null, characterConnection?: { __typename?: 'FilmCharactersConnection', characters?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null, planetConnection?: { __typename?: 'FilmPlanetsConnection', planets?: Array<{ __typename?: 'Planet', id: string, name?: string | null } | null> | null } | null, speciesConnection?: { __typename?: 'FilmSpeciesConnection', species?: Array<{ __typename?: 'Species', id: string, name?: string | null } | null> | null } | null, starshipConnection?: { __typename?: 'FilmStarshipsConnection', starships?: Array<{ __typename?: 'Starship', id: string, name?: string | null } | null> | null } | null, vehicleConnection?: { __typename?: 'FilmVehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', id: string, name?: string | null } | null> | null } | null } | null };
 
 export type GetAllPlanetsQueryVariables = Exact<{ [key: string]: never; }>;
 

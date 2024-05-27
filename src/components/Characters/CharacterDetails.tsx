@@ -3,8 +3,8 @@ import { useGetCharacterDetailsQuery } from './hooks'
 
 export const CharacterDetails = () => {
   const [searchParams] = useSearchParams()
-  const characterId = searchParams.get('id') ?? ''
-  const { characterDetailsData } = useGetCharacterDetailsQuery(characterId)
+  const id = searchParams.get('id') ?? ''
+  const { characterDetailsData } = useGetCharacterDetailsQuery(id)
 
   console.log('characterDetailsData:', characterDetailsData)
 

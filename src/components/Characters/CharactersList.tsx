@@ -25,7 +25,7 @@ export const CharactersList = () => {
       <div className="block rounded-lg md:hidden pt-[104px]">
         <ImageList cols={1} sx={{ maxWidth: '78%', margin: 'auto' }}>
           {charactersImgs.map((image, index) => {
-            const characterName = charactersData?.people?.[index]?.name ?? ''
+            const name = charactersData?.people?.[index]?.name ?? ''
             const id = charactersData?.people?.[index]?.id ?? ''
             return (
               <ListCard
@@ -33,8 +33,8 @@ export const CharactersList = () => {
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(characterName, id)}
-                title={characterName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -43,7 +43,7 @@ export const CharactersList = () => {
       <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={3}>
           {charactersImgs.map((image, index) => {
-            const characterName = charactersData?.people?.[index]?.name ?? ''
+            const name = charactersData?.people?.[index]?.name ?? ''
             const id = charactersData?.people?.[index]?.id ?? ''
             return (
               <ListCard
@@ -51,8 +51,8 @@ export const CharactersList = () => {
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(characterName, id)}
-                title={characterName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -61,7 +61,7 @@ export const CharactersList = () => {
       <div className="hidden rounded-lg lg:block pt-[104px]">
         <ImageList cols={5}>
           {charactersImgs.map((image, index) => {
-            const characterName = charactersData?.people?.[index]?.name ?? ''
+            const name = charactersData?.people?.[index]?.name ?? ''
             const id = charactersData?.people?.[index]?.id ?? ''
             return (
               <ListCard
@@ -69,8 +69,8 @@ export const CharactersList = () => {
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(characterName, id)}
-                title={characterName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}

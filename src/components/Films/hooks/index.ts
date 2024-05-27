@@ -1,1 +1,2 @@
-export { useGetAllFilms } from './useGetAllFilms'
+export { useGetAllFilmsQuery } from './useGetAllFilmsQuery'
+export { useGetFilmDetailsQuery } from './useGetFilmDetailsQuery'

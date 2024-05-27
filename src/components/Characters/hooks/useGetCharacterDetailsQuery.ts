@@ -1,8 +1,11 @@
 import { ApolloError, gql, useQuery } from '@apollo/client'
-import { PersonQuery } from '../../../generated/graphql'
+import {
+  GetCharacterDetailsQuery,
+  GetCharacterDetailsQueryVariables,
+} from '../../../generated/graphql'
 
 const GET_CHARACTER_DETAILS = gql`
-  query Person($personId: ID) {
+  query GetCharacterDetails($personId: ID) {
     person(personID: $personId) {
       birthYear
       eyeColor
@@ -43,15 +46,17 @@ const GET_CHARACTER_DETAILS = gql`
 interface useGetCharacterDetailsTypes {
   loading: boolean
   error: ApolloError | undefined
-  characterDetailsData: PersonQuery['person']
+  characterDetailsData: GetCharacterDetailsQuery['person']
 }
 
 export const useGetCharacterDetailsQuery = (
-  characterId: string,
+  id: GetCharacterDetailsQueryVariables['personId'],
 ): useGetCharacterDetailsTypes => {
-  const { loading, error, data } = useQuery<PersonQuery>(
+  const { loading, error, data } = useQuery<GetCharacterDetailsQuery>(
     GET_CHARACTER_DETAILS,
-    { variables: { personId: characterId } },
+    {
+      variables: { personId: id },
+    },
   )
 
   return {

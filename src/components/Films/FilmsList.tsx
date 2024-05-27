@@ -1,6 +1,6 @@
 import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { useGetAllFilms } from './hooks'
+import { useGetAllFilmsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 
 const filmsImgs = Array.from(
@@ -9,12 +9,13 @@ const filmsImgs = Array.from(
 )
 
 export const FilmsList = () => {
-  const { filmsData } = useGetAllFilms()
+  const { filmsData } = useGetAllFilmsQuery()
   const navigate = useNavigate()
 
-  const onClick = (name: string) => {
+  const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/films/${formattedName}`)
+    const decodedId = atob(id).split(':')[1]
+    navigate(`/films/${formattedName}/?id=${decodedId}`)
   }
 
   console.log('filmsData:', filmsData)
@@ -24,15 +25,16 @@ export const FilmsList = () => {
       <div className="block rounded-lg md:hidden pt-[104px]">
         <ImageList cols={1} sx={{ maxWidth: '74%', margin: 'auto' }}>
           {filmsImgs.map((image, index) => {
-            const filmName = filmsData?.films?.[index]?.title ?? ''
+            const name = filmsData?.films?.[index]?.title ?? ''
+            const id = filmsData?.films?.[index]?.id ?? ''
             return (
               <ListCard
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(filmName)}
-                title={filmName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -41,15 +43,16 @@ export const FilmsList = () => {
       <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={2} sx={{ margin: 'auto' }}>
           {filmsImgs.map((image, index) => {
-            const filmName = filmsData?.films?.[index]?.title ?? ''
+            const name = filmsData?.films?.[index]?.title ?? ''
+            const id = filmsData?.films?.[index]?.id ?? ''
             return (
               <ListCard
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(filmName)}
-                title={filmName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -62,15 +65,16 @@ export const FilmsList = () => {
           variant="standard"
         >
           {filmsImgs.map((image, index) => {
-            const filmName = filmsData?.films?.[index]?.title ?? ''
+            const name = filmsData?.films?.[index]?.title ?? ''
+            const id = filmsData?.films?.[index]?.id ?? ''
             return (
               <ListCard
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(filmName)}
-                title={filmName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
