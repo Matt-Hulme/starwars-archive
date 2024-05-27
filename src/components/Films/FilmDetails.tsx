@@ -1,4 +1,13 @@
+import { useSearchParams } from 'react-router-dom'
+import { useGetFilmDetailsQuery } from './hooks'
+
 export const FilmDetails = () => {
+  const [searchParams] = useSearchParams()
+  const id = searchParams.get('id') ?? ''
+  const { filmDetailsData } = useGetFilmDetailsQuery(id)
+
+  console.log('filmDetailsData::', filmDetailsData)
+
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10 pt-[104px]">
       <div className="w-full space-y-5">
