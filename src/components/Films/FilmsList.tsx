@@ -27,8 +27,10 @@ export const FilmsList = () => {
           {filmsImgs.map((image, index) => {
             const name = filmsData?.films?.[index]?.title ?? ''
             const id = filmsData?.films?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
@@ -45,8 +47,10 @@ export const FilmsList = () => {
           {filmsImgs.map((image, index) => {
             const name = filmsData?.films?.[index]?.title ?? ''
             const id = filmsData?.films?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
@@ -67,8 +71,10 @@ export const FilmsList = () => {
           {filmsImgs.map((image, index) => {
             const name = filmsData?.films?.[index]?.title ?? ''
             const id = filmsData?.films?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}

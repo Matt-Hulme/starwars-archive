@@ -12,13 +12,13 @@ const GET_ALL_FILMS = gql`
   }
 `
 
-interface useGetFilmsTypes {
+interface useGetAllFilmsTypes {
   loading: boolean
   error: ApolloError | undefined
   filmsData: GetAllFilmsQuery['allFilms']
 }
 
-export const useGetAllFilmsQuery = (): useGetFilmsTypes => {
+export const useGetAllFilmsQuery = (): useGetAllFilmsTypes => {
   const { loading, error, data } = useQuery<GetAllFilmsQuery>(GET_ALL_FILMS)
 
   return {

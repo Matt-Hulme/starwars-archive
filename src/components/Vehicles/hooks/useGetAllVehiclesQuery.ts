@@ -12,13 +12,13 @@ const GET_ALL_VEHICLES = gql`
   }
 `
 
-interface useGetCharactersTypes {
+interface useGetAllVehiclesTypes {
   loading: boolean
   error: ApolloError | undefined
   vehiclesData: GetAllVehiclesQuery['allVehicles']
 }
 
-export const useGetAllVehicles = (): useGetCharactersTypes => {
+export const useGetAllVehiclesQuery = (): useGetAllVehiclesTypes => {
   const { loading, error, data } =
     useQuery<GetAllVehiclesQuery>(GET_ALL_VEHICLES)
 

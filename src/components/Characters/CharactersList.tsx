@@ -27,8 +27,10 @@ export const CharactersList = () => {
           {charactersImgs.map((image, index) => {
             const name = charactersData?.people?.[index]?.name ?? ''
             const id = charactersData?.people?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
@@ -45,8 +47,10 @@ export const CharactersList = () => {
           {charactersImgs.map((image, index) => {
             const name = charactersData?.people?.[index]?.name ?? ''
             const id = charactersData?.people?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
@@ -63,8 +67,10 @@ export const CharactersList = () => {
           {charactersImgs.map((image, index) => {
             const name = charactersData?.people?.[index]?.name ?? ''
             const id = charactersData?.people?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}

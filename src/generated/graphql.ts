@@ -1331,17 +1331,45 @@ export type GetAllPlanetsQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllPlanetsQuery = { __typename?: 'Root', allPlanets?: { __typename?: 'PlanetsConnection', planets?: Array<{ __typename?: 'Planet', id: string, name?: string | null } | null> | null } | null };
 
+export type GetPlanetDetailsQueryVariables = Exact<{
+  planetId?: InputMaybe<Scalars['ID']['input']>;
+}>;
+
+
+export type GetPlanetDetailsQuery = { __typename?: 'Root', planet?: { __typename?: 'Planet', id: string, name?: string | null, climates?: Array<string | null> | null, diameter?: number | null, orbitalPeriod?: number | null, population?: number | null, rotationPeriod?: number | null, surfaceWater?: number | null, terrains?: Array<string | null> | null, filmConnection?: { __typename?: 'PlanetFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, residentConnection?: { __typename?: 'PlanetResidentsConnection', residents?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
+
 export type GetAllSpeciesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllSpeciesQuery = { __typename?: 'Root', allSpecies?: { __typename?: 'SpeciesConnection', species?: Array<{ __typename?: 'Species', id: string, name?: string | null } | null> | null } | null };
+
+export type GetSpeciesDetailsQueryVariables = Exact<{
+  speciesId?: InputMaybe<Scalars['ID']['input']>;
+}>;
+
+
+export type GetSpeciesDetailsQuery = { __typename?: 'Root', species?: { __typename?: 'Species', id: string, name?: string | null, averageHeight?: number | null, averageLifespan?: number | null, classification?: string | null, designation?: string | null, eyeColors?: Array<string | null> | null, hairColors?: Array<string | null> | null, language?: string | null, skinColors?: Array<string | null> | null, filmConnection?: { __typename?: 'SpeciesFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, homeworld?: { __typename?: 'Planet', id: string, name?: string | null } | null, personConnection?: { __typename?: 'SpeciesPeopleConnection', people?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
 
 export type GetAllStarshipsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllStarshipsQuery = { __typename?: 'Root', allStarships?: { __typename?: 'StarshipsConnection', starships?: Array<{ __typename?: 'Starship', id: string, name?: string | null } | null> | null } | null };
 
+export type GetStarshipDetailsQueryVariables = Exact<{
+  starshipId?: InputMaybe<Scalars['ID']['input']>;
+}>;
+
+
+export type GetStarshipDetailsQuery = { __typename?: 'Root', starship?: { __typename?: 'Starship', id: string, name?: string | null, MGLT?: number | null, cargoCapacity?: number | null, consumables?: string | null, costInCredits?: number | null, crew?: string | null, length?: number | null, manufacturers?: Array<string | null> | null, maxAtmospheringSpeed?: number | null, model?: string | null, passengers?: string | null, starshipClass?: string | null, filmConnection?: { __typename?: 'StarshipFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, pilotConnection?: { __typename?: 'StarshipPilotsConnection', pilots?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
+
 export type GetAllVehiclesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllVehiclesQuery = { __typename?: 'Root', allVehicles?: { __typename?: 'VehiclesConnection', vehicles?: Array<{ __typename?: 'Vehicle', id: string, name?: string | null } | null> | null } | null };
+
+export type GetVehicleDetailsQueryVariables = Exact<{
+  vehicleId?: InputMaybe<Scalars['ID']['input']>;
+}>;
+
+
+export type GetVehicleDetailsQuery = { __typename?: 'Root', vehicle?: { __typename?: 'Vehicle', id: string, name?: string | null, cargoCapacity?: number | null, consumables?: string | null, costInCredits?: number | null, crew?: string | null, length?: number | null, manufacturers?: Array<string | null> | null, maxAtmospheringSpeed?: number | null, model?: string | null, passengers?: string | null, vehicleClass?: string | null, filmConnection?: { __typename?: 'VehicleFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, pilotConnection?: { __typename?: 'VehiclePilotsConnection', pilots?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };

@@ -1,6 +1,6 @@
 import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { useGetAllStarships } from './hooks'
+import { useGetAllStarshipsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 
 const starshipsImgs = Array.from(
@@ -9,12 +9,13 @@ const starshipsImgs = Array.from(
 )
 
 export const StarshipsList = () => {
-  const { starshipsData } = useGetAllStarships()
+  const { starshipsData } = useGetAllStarshipsQuery()
   const navigate = useNavigate()
 
-  const onClick = (name: string) => {
+  const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/starships/${formattedName}`)
+    const decodedId = atob(id).split(':')[1]
+    navigate(`/starships/${formattedName}/?id=${decodedId}`)
   }
 
   console.log('starshipsData:', starshipsData)
@@ -24,15 +25,18 @@ export const StarshipsList = () => {
       <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1}>
           {starshipsImgs.map((image, index) => {
-            const starshipName = starshipsData?.starships?.[index]?.name ?? ''
+            const name = starshipsData?.starships?.[index]?.name ?? ''
+            const id = starshipsData?.starships?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(starshipName)}
-                title={starshipName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -41,15 +45,18 @@ export const StarshipsList = () => {
       <div className="hidden pt-[104px] rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
           {starshipsImgs.map((image, index) => {
-            const starshipName = starshipsData?.starships?.[index]?.name ?? ''
+            const name = starshipsData?.starships?.[index]?.name ?? ''
+            const id = starshipsData?.starships?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(starshipName)}
-                title={starshipName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -58,15 +65,18 @@ export const StarshipsList = () => {
       <div className="hidden pt-[104px] rounded-lg lg:block">
         <ImageList cols={5}>
           {starshipsImgs.map((image, index) => {
-            const starshipName = starshipsData?.starships?.[index]?.name ?? ''
+            const name = starshipsData?.starships?.[index]?.name ?? ''
+            const id = starshipsData?.starships?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(starshipName)}
-                title={starshipName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
