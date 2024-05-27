@@ -1,6 +1,6 @@
 import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { useGetAllVehicles } from './hooks'
+import { useGetAllVehiclesQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 
 const vehiclesImgs = Array.from(
@@ -9,12 +9,16 @@ const vehiclesImgs = Array.from(
 )
 
 export const VehiclesList = () => {
-  const { vehiclesData } = useGetAllVehicles()
+  const { vehiclesData } = useGetAllVehiclesQuery()
   const navigate = useNavigate()
 
-  const onClick = (name: string) => {
-    const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/vehicles/${formattedName}`)
+  const onClick = (name: string, id: string) => {
+    const formattedName = name
+      .replace(/ /g, '-')
+      .replace(/\//g, '-')
+      .toLowerCase()
+    const decodedId = atob(id).split(':')[1]
+    navigate(`/vehicles/${formattedName}/?id=${decodedId}`)
   }
 
   console.log('vehiclesData:', vehiclesData)
@@ -24,15 +28,18 @@ export const VehiclesList = () => {
       <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1}>
           {vehiclesImgs.map((image, index) => {
-            const vehicleName = vehiclesData?.vehicles?.[index]?.name ?? ''
+            const name = vehiclesData?.vehicles?.[index]?.name ?? ''
+            const id = vehiclesData?.vehicles?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(vehicleName)}
-                title={vehicleName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -41,15 +48,18 @@ export const VehiclesList = () => {
       <div className="hidden pt-[104px] rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
           {vehiclesImgs.map((image, index) => {
-            const vehicleName = vehiclesData?.vehicles?.[index]?.name ?? ''
+            const name = vehiclesData?.vehicles?.[index]?.name ?? ''
+            const id = vehiclesData?.vehicles?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(vehicleName)}
-                title={vehicleName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}
@@ -58,15 +68,18 @@ export const VehiclesList = () => {
       <div className="hidden pt-[104px] rounded-lg lg:block">
         <ImageList cols={5}>
           {vehiclesImgs.map((image, index) => {
-            const vehicleName = vehiclesData?.vehicles?.[index]?.name ?? ''
+            const name = vehiclesData?.vehicles?.[index]?.name ?? ''
+            const id = vehiclesData?.vehicles?.[index]?.id ?? ''
+
             return (
               <ListCard
+                key={index}
                 className="rounded-lg"
                 containerClassName="relative"
                 index={index}
                 image={image}
-                onClick={() => onClick(vehicleName)}
-                title={vehicleName}
+                onClick={() => onClick(name, id)}
+                title={name}
               />
             )
           })}

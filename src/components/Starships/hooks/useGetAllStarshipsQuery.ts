@@ -12,13 +12,13 @@ const GET_ALL_STARSHIPS = gql`
   }
 `
 
-interface useGetCharactersTypes {
+interface useGetAllStarshipsTypes {
   loading: boolean
   error: ApolloError | undefined
   starshipsData: GetAllStarshipsQuery['allStarships']
 }
 
-export const useGetAllStarships = (): useGetCharactersTypes => {
+export const useGetAllStarshipsQuery = (): useGetAllStarshipsTypes => {
   const { loading, error, data } =
     useQuery<GetAllStarshipsQuery>(GET_ALL_STARSHIPS)
 

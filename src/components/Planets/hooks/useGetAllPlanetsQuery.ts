@@ -12,13 +12,13 @@ const GET_ALL_PLANETS = gql`
   }
 `
 
-interface useGetCharactersTypes {
+interface useGetAllPlanetsTypes {
   loading: boolean
   error: ApolloError | undefined
   planetsData: GetAllPlanetsQuery['allPlanets']
 }
 
-export const useGetAllPlanets = (): useGetCharactersTypes => {
+export const useGetAllPlanetsQuery = (): useGetAllPlanetsTypes => {
   const { loading, error, data } = useQuery<GetAllPlanetsQuery>(GET_ALL_PLANETS)
 
   return {

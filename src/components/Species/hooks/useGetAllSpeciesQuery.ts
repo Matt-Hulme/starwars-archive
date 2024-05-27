@@ -12,13 +12,13 @@ const GET_ALL_SPECIES = gql`
   }
 `
 
-interface useGetCharactersTypes {
+interface useGetAllSpeciesTypes {
   loading: boolean
   error: ApolloError | undefined
   speciesData: GetAllSpeciesQuery['allSpecies']
 }
 
-export const useGetAllSpecies = (): useGetCharactersTypes => {
+export const useGetAllSpeciesQuery = (): useGetAllSpeciesTypes => {
   const { loading, error, data } = useQuery<GetAllSpeciesQuery>(GET_ALL_SPECIES)
 
   return {
