@@ -1,1 +1,1 @@
-export const ListCardLoading = () => <div>ListCardLoading</div>
+export const ListCardLoading = () => <div>ListCardLoading...</div>
