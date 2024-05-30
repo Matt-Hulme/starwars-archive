@@ -18,7 +18,7 @@ export const VehiclesList = () => {
       .replace(/\//g, '-')
       .toLowerCase()
     const decodedId = atob(id).split(':')[1]
-    navigate(`/vehicles/${formattedName}/?id=${decodedId}`)
+    navigate(`/vehicles/${formattedName}?id=${decodedId}`)
   }
 
   console.log('vehiclesData:', vehiclesData)

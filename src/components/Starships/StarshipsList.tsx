@@ -15,7 +15,7 @@ export const StarshipsList = () => {
   const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
     const decodedId = atob(id).split(':')[1]
-    navigate(`/starships/${formattedName}/?id=${decodedId}`)
+    navigate(`/starships/${formattedName}?id=${decodedId}`)
   }
 
   console.log('starshipsData:', starshipsData)

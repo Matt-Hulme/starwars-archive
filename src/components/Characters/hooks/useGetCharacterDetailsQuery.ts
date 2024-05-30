@@ -22,6 +22,7 @@ const GET_CHARACTER_DETAILS = gql`
         id
         name
       }
+      name
       skinColor
       species {
         id

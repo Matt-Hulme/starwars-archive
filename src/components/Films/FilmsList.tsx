@@ -15,7 +15,7 @@ export const FilmsList = () => {
   const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
     const decodedId = atob(id).split(':')[1]
-    navigate(`/films/${formattedName}/?id=${decodedId}`)
+    navigate(`/films/${formattedName}?id=${decodedId}`)
   }
 
   console.log('filmsData:', filmsData)
