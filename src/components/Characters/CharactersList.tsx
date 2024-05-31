@@ -21,7 +21,7 @@ export const CharactersList = () => {
           {(charactersData?.people ?? []).map((character, index) => {
             const name = character?.name ?? ''
             const id = atob(character?.id ?? '').split(':')[1]
-            const image = `public/assets/images/characters/${id}.jpg`
+            const image = `assets/images/characters/${id}.jpg`
 
             return (
               <ListCard
@@ -42,7 +42,7 @@ export const CharactersList = () => {
           {(charactersData?.people ?? []).map((character, index) => {
             const name = character?.name ?? ''
             const id = atob(character?.id ?? '').split(':')[1]
-            const image = `public/assets/images/characters/${id}.jpg`
+            const image = `assets/images/characters/${id}.jpg`
 
             return (
               <ListCard
@@ -63,7 +63,7 @@ export const CharactersList = () => {
           {(charactersData?.people ?? []).map((character, index) => {
             const name = character?.name ?? ''
             const id = atob(character?.id ?? '').split(':')[1]
-            const image = `public/assets/images/characters/${id}.jpg`
+            const image = `assets/images/characters/${id}.jpg`
 
             return (
               <ListCard
