@@ -21,7 +21,7 @@ export const SpeciesList = () => {
           {(speciesData?.species ?? []).map((species, index) => {
             const name = species?.name ?? ''
             const id = atob(species?.id ?? '').split(':')[1]
-            const image = `public/assets/images/species/${id}.jpg`
+            const image = `assets/images/species/${id}.jpg`
 
             return (
               <ListCard
@@ -42,7 +42,7 @@ export const SpeciesList = () => {
           {(speciesData?.species ?? []).map((species, index) => {
             const name = species?.name ?? ''
             const id = atob(species?.id ?? '').split(':')[1]
-            const image = `public/assets/images/species/${id}.jpg`
+            const image = `assets/images/species/${id}.jpg`
 
             return (
               <ListCard
@@ -63,7 +63,7 @@ export const SpeciesList = () => {
           {(speciesData?.species ?? []).map((species, index) => {
             const name = species?.name ?? ''
             const id = atob(species?.id ?? '').split(':')[1]
-            const image = `public/assets/images/species/${id}.jpg`
+            const image = `assets/images/species/${id}.jpg`
 
             return (
               <ListCard

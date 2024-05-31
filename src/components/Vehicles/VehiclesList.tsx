@@ -24,7 +24,7 @@ export const VehiclesList = () => {
           {(vehiclesData?.vehicles ?? []).map((vehicle, index) => {
             const name = vehicle?.name ?? ''
             const id = atob(vehicle?.id ?? '').split(':')[1]
-            const image = `public/assets/images/vehicles/${id}.jpg`
+            const image = `assets/images/vehicles/${id}.jpg`
 
             return (
               <ListCard
@@ -45,7 +45,7 @@ export const VehiclesList = () => {
           {(vehiclesData?.vehicles ?? []).map((vehicle, index) => {
             const name = vehicle?.name ?? ''
             const id = atob(vehicle?.id ?? '').split(':')[1]
-            const image = `public/assets/images/vehicles/${id}.jpg`
+            const image = `assets/images/vehicles/${id}.jpg`
 
             return (
               <ListCard
@@ -66,7 +66,7 @@ export const VehiclesList = () => {
           {(vehiclesData?.vehicles ?? []).map((vehicle, index) => {
             const name = vehicle?.name ?? ''
             const id = atob(vehicle?.id ?? '').split(':')[1]
-            const image = `public/assets/images/vehicles/${id}.jpg`
+            const image = `assets/images/vehicles/${id}.jpg`
             console.log('id:', id)
 
             return (

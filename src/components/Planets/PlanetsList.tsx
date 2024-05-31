@@ -21,7 +21,7 @@ export const PlanetsList = () => {
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
             const id = atob(planet?.id ?? '').split(':')[1]
-            const image = `public/assets/images/planets/${id}.jpg`
+            const image = `assets/images/planets/${id}.jpg`
 
             return (
               <ListCard
@@ -42,7 +42,7 @@ export const PlanetsList = () => {
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
             const id = atob(planet?.id ?? '').split(':')[1]
-            const image = `public/assets/images/planets/${id}.jpg`
+            const image = `assets/images/planets/${id}.jpg`
 
             return (
               <ListCard
@@ -63,7 +63,7 @@ export const PlanetsList = () => {
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
             const id = atob(planet?.id ?? '').split(':')[1]
-            const image = `public/assets/images/planets/${id}.jpg`
+            const image = `assets/images/planets/${id}.jpg`
 
             return (
               <ListCard
