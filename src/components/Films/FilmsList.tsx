@@ -3,19 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { useGetAllFilmsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 
-const filmsImgs = Array.from(
-  { length: 6 },
-  (_, i) => `/assets/images/films/${i + 1}.jpg`,
-)
-
 export const FilmsList = () => {
   const { filmsData } = useGetAllFilmsQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
-    const decodedId = atob(id).split(':')[1]
-    navigate(`/films/${formattedName}?id=${decodedId}`)
+    navigate(`/films/${formattedName}?id=${id}`)
   }
 
   console.log('filmsData:', filmsData)
@@ -24,16 +18,17 @@ export const FilmsList = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
       <div className="block rounded-lg md:hidden pt-[104px]">
         <ImageList cols={1} sx={{ maxWidth: '74%', margin: 'auto' }}>
-          {filmsImgs.map((image, index) => {
-            const name = filmsData?.films?.[index]?.title ?? ''
-            const id = filmsData?.films?.[index]?.id ?? ''
+          {(filmsData?.films ?? []).map((film, index) => {
+            const name = film?.title ?? ''
+            const id = atob(film?.id ?? '').split(':')[1]
+            const image = `public/assets/images/films/${id}.jpg`
 
             return (
               <ListCard
                 key={index}
                 className="rounded-lg"
                 containerClassName="relative"
-                index={index}
+                id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
                 title={name}
@@ -44,16 +39,17 @@ export const FilmsList = () => {
       </div>
       <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={2} sx={{ margin: 'auto' }}>
-          {filmsImgs.map((image, index) => {
-            const name = filmsData?.films?.[index]?.title ?? ''
-            const id = filmsData?.films?.[index]?.id ?? ''
+          {(filmsData?.films ?? []).map((film, index) => {
+            const name = film?.title ?? ''
+            const id = atob(film?.id ?? '').split(':')[1]
+            const image = `public/assets/images/films/${id}.jpg`
 
             return (
               <ListCard
                 key={index}
                 className="rounded-lg"
                 containerClassName="relative"
-                index={index}
+                id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
                 title={name}
@@ -68,16 +64,17 @@ export const FilmsList = () => {
           cols={3}
           variant="standard"
         >
-          {filmsImgs.map((image, index) => {
-            const name = filmsData?.films?.[index]?.title ?? ''
-            const id = filmsData?.films?.[index]?.id ?? ''
+          {(filmsData?.films ?? []).map((film, index) => {
+            const name = film?.title ?? ''
+            const id = atob(film?.id ?? '').split(':')[1]
+            const image = `public/assets/images/films/${id}.jpg`
 
             return (
               <ListCard
                 key={index}
                 className="rounded-lg"
                 containerClassName="relative"
-                index={index}
+                id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
                 title={name}

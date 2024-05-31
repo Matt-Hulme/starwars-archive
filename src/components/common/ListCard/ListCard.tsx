@@ -4,8 +4,8 @@ interface ListCardProps {
   className?: string
   containerClassName?: string
   image: string
-  index: number
-  onClick: (index: number) => void
+  id: string
+  onClick: (id: string) => void
   title: string
 }
 
@@ -13,13 +13,13 @@ export const ListCard = ({
   className,
   containerClassName,
   image,
-  index,
+  id,
   onClick,
   title,
 }: ListCardProps) => (
   <ImageListItem
     className={`hover:cursor-pointer ${containerClassName}`}
-    onClick={() => onClick(index + 1)}
+    onClick={() => onClick(id)}
   >
     <div className="absolute bg-black bg-opacity-50 left-5 rounded-sm text-white top-5">
       {title}
