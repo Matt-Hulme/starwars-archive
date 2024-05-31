@@ -21,7 +21,7 @@ export const StarshipsList = () => {
           {(starshipsData?.starships ?? []).map((starship, index) => {
             const name = starship?.name ?? ''
             const id = atob(starship?.id ?? '').split(':')[1]
-            const image = `public/assets/images/starships/${id}.jpg`
+            const image = `assets/images/starships/${id}.jpg`
 
             return (
               <ListCard
@@ -42,7 +42,7 @@ export const StarshipsList = () => {
           {(starshipsData?.starships ?? []).map((starship, index) => {
             const name = starship?.name ?? ''
             const id = atob(starship?.id ?? '').split(':')[1]
-            const image = `public/assets/images/starships/${id}.jpg`
+            const image = `assets/images/starships/${id}.jpg`
 
             return (
               <ListCard
@@ -63,7 +63,7 @@ export const StarshipsList = () => {
           {(starshipsData?.starships ?? []).map((starship, index) => {
             const name = starship?.name ?? ''
             const id = atob(starship?.id ?? '').split(':')[1]
-            const image = `public/assets/images/starships/${id}.jpg`
+            const image = `assets/images/starships/${id}.jpg`
 
             return (
               <ListCard

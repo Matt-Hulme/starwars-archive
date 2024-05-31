@@ -21,7 +21,7 @@ export const FilmsList = () => {
           {(filmsData?.films ?? []).map((film, index) => {
             const name = film?.title ?? ''
             const id = atob(film?.id ?? '').split(':')[1]
-            const image = `public/assets/images/films/${id}.jpg`
+            const image = `assets/images/films/${id}.jpg`
 
             return (
               <ListCard
@@ -42,7 +42,7 @@ export const FilmsList = () => {
           {(filmsData?.films ?? []).map((film, index) => {
             const name = film?.title ?? ''
             const id = atob(film?.id ?? '').split(':')[1]
-            const image = `public/assets/images/films/${id}.jpg`
+            const image = `assets/images/films/${id}.jpg`
 
             return (
               <ListCard
@@ -67,7 +67,7 @@ export const FilmsList = () => {
           {(filmsData?.films ?? []).map((film, index) => {
             const name = film?.title ?? ''
             const id = atob(film?.id ?? '').split(':')[1]
-            const image = `public/assets/images/films/${id}.jpg`
+            const image = `assets/images/films/${id}.jpg`
 
             return (
               <ListCard
