@@ -3,19 +3,13 @@ import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllSpeciesQuery } from './hooks'
 
-const speciesImgs = Array.from(
-  { length: 37 },
-  (_, i) => `/assets/images/species/${i + 1}.jpg`,
-)
-
 export const SpeciesList = () => {
   const { speciesData } = useGetAllSpeciesQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
     const formattedName = name.replace(/ /g, '-').toLowerCase()
-    const decodedId = atob(id).split(':')[1]
-    navigate(`/species/${formattedName}?id=${decodedId}`)
+    navigate(`/species/${formattedName}?id=${id}`)
   }
 
   console.log('speciesData:', speciesData)
@@ -24,15 +18,17 @@ export const SpeciesList = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
       <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1}>
-          {speciesImgs.map((image, index) => {
-            const name = speciesData?.species?.[index]?.name ?? ''
-            const id = speciesData?.species?.[index]?.id ?? ''
+          {(speciesData?.species ?? []).map((species, index) => {
+            const name = species?.name ?? ''
+            const id = atob(species?.id ?? '').split(':')[1]
+            const image = `public/assets/images/species/${id}.jpg`
+
             return (
               <ListCard
                 key={index}
                 className="rounded-lg"
                 containerClassName="relative"
-                index={index}
+                id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
                 title={name}
@@ -43,15 +39,17 @@ export const SpeciesList = () => {
       </div>
       <div className="hidden pt-[104px] rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
-          {speciesImgs.map((image, index) => {
-            const name = speciesData?.species?.[index]?.name ?? ''
-            const id = speciesData?.species?.[index]?.id ?? ''
+          {(speciesData?.species ?? []).map((species, index) => {
+            const name = species?.name ?? ''
+            const id = atob(species?.id ?? '').split(':')[1]
+            const image = `public/assets/images/species/${id}.jpg`
+
             return (
               <ListCard
                 key={index}
                 className="rounded-lg"
                 containerClassName="relative"
-                index={index}
+                id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
                 title={name}
@@ -62,15 +60,17 @@ export const SpeciesList = () => {
       </div>
       <div className="hidden pt-[104px] rounded-lg lg:block">
         <ImageList cols={5}>
-          {speciesImgs.map((image, index) => {
-            const name = speciesData?.species?.[index]?.name ?? ''
-            const id = speciesData?.species?.[index]?.id ?? ''
+          {(speciesData?.species ?? []).map((species, index) => {
+            const name = species?.name ?? ''
+            const id = atob(species?.id ?? '').split(':')[1]
+            const image = `public/assets/images/species/${id}.jpg`
+
             return (
               <ListCard
                 key={index}
                 className="rounded-lg"
                 containerClassName="relative"
-                index={index}
+                id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
                 title={name}
