@@ -12,9 +12,13 @@ export const FilmDetails = () => {
   console.log('filmDetailsData::', filmDetailsData)
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10 pt-[104px]">
-      <div className="w-full space-y-5">
-        <DetailsHeader image={filmImage} name={title ?? ''} />
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
+      <div className="space-y-5 w-full">
+        <DetailsHeader
+          classNames={'h-[400px] w-[280px]'}
+          image={filmImage}
+          name={title ?? ''}
+        />
         <section className="bg-gray-100">Film Characters</section>
         <section className="bg-gray-100">Film Planets</section>
         <section className="bg-gray-100">Film Species</section>

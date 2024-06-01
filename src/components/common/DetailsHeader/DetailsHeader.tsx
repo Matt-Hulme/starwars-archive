@@ -1,12 +1,23 @@
 interface DetailsHeaderProps {
+  classNames?: string
   image: string
   name: string
 }
 
-export const DetailsHeader = ({ image, name }: DetailsHeaderProps) => {
+export const DetailsHeader = ({
+  classNames,
+  image,
+  name,
+}: DetailsHeaderProps) => {
   return (
-    <header className="w-[400px] h-400px object-contain">
-      <img className="rounded-full" alt={name ?? ''} src={image} />
+    <header>
+      <div className={`overflow-hidden relative ${classNames}`}>
+        <img
+          className="absolute inset-0 w-full h-full object-cover"
+          alt={name ?? ''}
+          src={image}
+        />
+      </div>
     </header>
   )
 }
