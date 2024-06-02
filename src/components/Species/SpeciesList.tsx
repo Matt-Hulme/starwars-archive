@@ -2,14 +2,14 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllSpeciesQuery } from './hooks'
+import { getFormattedId, getNameForUrl } from '../utils'
 
 export const SpeciesList = () => {
   const { speciesData } = useGetAllSpeciesQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
-    const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/species/${formattedName}?id=${id}`)
+    navigate(`/species/${getNameForUrl(name)}?id=${id}`)
   }
 
   console.log('speciesData:', speciesData)
@@ -20,7 +20,7 @@ export const SpeciesList = () => {
         <ImageList cols={1}>
           {(speciesData?.species ?? []).map((species, index) => {
             const name = species?.name ?? ''
-            const id = atob(species?.id ?? '').split(':')[1]
+            const id = getFormattedId(species?.id ?? '')
             const image = `assets/images/species/${id}.jpg`
 
             return (
@@ -41,7 +41,7 @@ export const SpeciesList = () => {
         <ImageList cols={3}>
           {(speciesData?.species ?? []).map((species, index) => {
             const name = species?.name ?? ''
-            const id = atob(species?.id ?? '').split(':')[1]
+            const id = getFormattedId(species?.id ?? '')
             const image = `assets/images/species/${id}.jpg`
 
             return (
@@ -62,7 +62,7 @@ export const SpeciesList = () => {
         <ImageList cols={5}>
           {(speciesData?.species ?? []).map((species, index) => {
             const name = species?.name ?? ''
-            const id = atob(species?.id ?? '').split(':')[1]
+            const id = getFormattedId(species?.id ?? '')
             const image = `assets/images/species/${id}.jpg`
 
             return (
