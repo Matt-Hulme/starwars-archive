@@ -2,14 +2,14 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useGetAllFilmsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
+import { getFormattedId, getNameForUrl } from '../utils'
 
 export const FilmsList = () => {
   const { filmsData } = useGetAllFilmsQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
-    const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/films/${formattedName}?id=${id}`)
+    navigate(`/films/${getNameForUrl(name)}?id=${id}`)
   }
 
   console.log('filmsData:', filmsData)
@@ -20,7 +20,7 @@ export const FilmsList = () => {
         <ImageList cols={1} sx={{ maxWidth: '74%', margin: 'auto' }}>
           {(filmsData?.films ?? []).map((film, index) => {
             const name = film?.title ?? ''
-            const id = atob(film?.id ?? '').split(':')[1]
+            const id = getFormattedId(film?.id ?? '')
             const image = `assets/images/films/${id}.jpg`
 
             return (
@@ -41,7 +41,7 @@ export const FilmsList = () => {
         <ImageList cols={2} sx={{ margin: 'auto' }}>
           {(filmsData?.films ?? []).map((film, index) => {
             const name = film?.title ?? ''
-            const id = atob(film?.id ?? '').split(':')[1]
+            const id = getFormattedId(film?.id ?? '')
             const image = `assets/images/films/${id}.jpg`
 
             return (
@@ -66,7 +66,7 @@ export const FilmsList = () => {
         >
           {(filmsData?.films ?? []).map((film, index) => {
             const name = film?.title ?? ''
-            const id = atob(film?.id ?? '').split(':')[1]
+            const id = getFormattedId(film?.id ?? '')
             const image = `assets/images/films/${id}.jpg`
 
             return (

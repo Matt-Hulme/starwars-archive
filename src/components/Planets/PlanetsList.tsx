@@ -2,14 +2,14 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllPlanetsQuery } from './hooks'
+import { getFormattedId, getNameForUrl } from '../utils'
 
 export const PlanetsList = () => {
   const { planetsData } = useGetAllPlanetsQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
-    const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/planets/${formattedName}?id=${id}`)
+    navigate(`/planets/${getNameForUrl(name)}?id=${id}`)
   }
 
   console.log('planetsData:', planetsData)
@@ -20,7 +20,7 @@ export const PlanetsList = () => {
         <ImageList cols={1}>
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
-            const id = atob(planet?.id ?? '').split(':')[1]
+            const id = getFormattedId(planet?.id ?? '')
             const image = `assets/images/planets/${id}.jpg`
 
             return (
@@ -41,7 +41,7 @@ export const PlanetsList = () => {
         <ImageList cols={3}>
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
-            const id = atob(planet?.id ?? '').split(':')[1]
+            const id = getFormattedId(planet?.id ?? '')
             const image = `assets/images/planets/${id}.jpg`
 
             return (
@@ -62,7 +62,7 @@ export const PlanetsList = () => {
         <ImageList cols={5}>
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
-            const id = atob(planet?.id ?? '').split(':')[1]
+            const id = getFormattedId(planet?.id ?? '')
             const image = `assets/images/planets/${id}.jpg`
 
             return (
