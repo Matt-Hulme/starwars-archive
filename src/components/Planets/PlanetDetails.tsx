@@ -77,7 +77,7 @@ export const PlanetDetails = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
       <div className="overflow-x-hidden space-y-5 w-full">
         <DetailsHeader
-          classNames="min-h-[300px] min-w-[300px] lg:min-h-[275px] lg:min-w-[275px]"
+          classNames="h-[300px] lg:min-h-[275px] lg:min-w-[275px]"
           image={planetImage}
           name={name ?? ''}
         >

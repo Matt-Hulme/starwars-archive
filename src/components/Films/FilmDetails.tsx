@@ -56,7 +56,7 @@ export const FilmDetails = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
       <div className="space-y-5 w-full overflow-x-hidden">
         <DetailsHeader
-          classNames="min-h-[400px] md:min-h-[300px] md:min-w-[225px] lg:min-h-[400px] lg:min-w-[280px]"
+          classNames="h-[400px] lg:min-h-[400px] lg:min-w-[280px]"
           image={filmImage}
           name={title ?? ''}
         >

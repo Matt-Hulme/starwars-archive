@@ -79,9 +79,9 @@ export const CharacterDetails = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
-      <div className="space-y-5 overflow-x-hidden">
+      <div className="overflow-x-hidden space-y-5">
         <DetailsHeader
-          classNames="min-h-[400px] md:min-h-[300px] md:min-w-[225px] lg:min-h-[400px] lg:min-w-[280px]"
+          classNames="h-[300px] lg:min-h-[400px] lg:min-w-[280px]"
           image={characterImage}
           name={name ?? ''}
         >
