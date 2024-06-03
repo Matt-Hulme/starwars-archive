@@ -2,25 +2,34 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllCharactersQuery } from './hooks'
+import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const CharactersList = () => {
-  const { charactersData } = useGetAllCharactersQuery()
+  const {
+    charactersData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllCharactersQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
-    const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/characters/${formattedName}?id=${id}`)
+    navigate(`/characters/${getNameForUrl(name)}?id=${id}`)
   }
 
   console.log('charactersData:', charactersData)
 
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Characters data" />
+
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
-      <div className="block rounded-lg md:hidden pt-[104px]">
+      <div className="block pt-[104px] rounded-lg md:hidden">
         <ImageList cols={1} sx={{ maxWidth: '78%', margin: 'auto' }}>
           {(charactersData?.people ?? []).map((character, index) => {
             const name = character?.name ?? ''
-            const id = atob(character?.id ?? '').split(':')[1]
+            const id = getFormattedId(character?.id ?? '')
             const image = `assets/images/characters/${id}.jpg`
 
             return (
@@ -37,11 +46,11 @@ export const CharactersList = () => {
           })}
         </ImageList>
       </div>
-      <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
+      <div className="hidden pt-[104px] rounded-lg md:block lg:hidden">
         <ImageList cols={3}>
           {(charactersData?.people ?? []).map((character, index) => {
             const name = character?.name ?? ''
-            const id = atob(character?.id ?? '').split(':')[1]
+            const id = getFormattedId(character?.id ?? '')
             const image = `assets/images/characters/${id}.jpg`
 
             return (
@@ -58,11 +67,11 @@ export const CharactersList = () => {
           })}
         </ImageList>
       </div>
-      <div className="hidden rounded-lg lg:block pt-[104px]">
+      <div className="hidden pt-[104px] rounded-lg lg:block">
         <ImageList cols={5}>
           {(charactersData?.people ?? []).map((character, index) => {
             const name = character?.name ?? ''
-            const id = atob(character?.id ?? '').split(':')[1]
+            const id = getFormattedId(character?.id ?? '')
             const image = `assets/images/characters/${id}.jpg`
 
             return (
