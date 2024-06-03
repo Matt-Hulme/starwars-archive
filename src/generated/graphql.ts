@@ -1336,7 +1336,7 @@ export type GetPlanetDetailsQueryVariables = Exact<{
 }>;
 
 
-export type GetPlanetDetailsQuery = { __typename?: 'Root', planet?: { __typename?: 'Planet', id: string, name?: string | null, climates?: Array<string | null> | null, diameter?: number | null, orbitalPeriod?: number | null, population?: number | null, rotationPeriod?: number | null, surfaceWater?: number | null, terrains?: Array<string | null> | null, filmConnection?: { __typename?: 'PlanetFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, residentConnection?: { __typename?: 'PlanetResidentsConnection', residents?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
+export type GetPlanetDetailsQuery = { __typename?: 'Root', planet?: { __typename?: 'Planet', id: string, name?: string | null, climates?: Array<string | null> | null, diameter?: number | null, gravity?: string | null, orbitalPeriod?: number | null, population?: number | null, rotationPeriod?: number | null, surfaceWater?: number | null, terrains?: Array<string | null> | null, filmConnection?: { __typename?: 'PlanetFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, residentConnection?: { __typename?: 'PlanetResidentsConnection', residents?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
 
 export type GetAllSpeciesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1360,7 +1360,7 @@ export type GetStarshipDetailsQueryVariables = Exact<{
 }>;
 
 
-export type GetStarshipDetailsQuery = { __typename?: 'Root', starship?: { __typename?: 'Starship', id: string, name?: string | null, MGLT?: number | null, cargoCapacity?: number | null, consumables?: string | null, costInCredits?: number | null, crew?: string | null, length?: number | null, manufacturers?: Array<string | null> | null, maxAtmospheringSpeed?: number | null, model?: string | null, passengers?: string | null, starshipClass?: string | null, filmConnection?: { __typename?: 'StarshipFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, pilotConnection?: { __typename?: 'StarshipPilotsConnection', pilots?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
+export type GetStarshipDetailsQuery = { __typename?: 'Root', starship?: { __typename?: 'Starship', id: string, name?: string | null, MGLT?: number | null, cargoCapacity?: number | null, consumables?: string | null, costInCredits?: number | null, crew?: string | null, hyperdriveRating?: number | null, length?: number | null, manufacturers?: Array<string | null> | null, maxAtmospheringSpeed?: number | null, model?: string | null, passengers?: string | null, starshipClass?: string | null, filmConnection?: { __typename?: 'StarshipFilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null } | null> | null } | null, pilotConnection?: { __typename?: 'StarshipPilotsConnection', pilots?: Array<{ __typename?: 'Person', id: string, name?: string | null } | null> | null } | null } | null };
 
 export type GetAllVehiclesQueryVariables = Exact<{ [key: string]: never; }>;
 

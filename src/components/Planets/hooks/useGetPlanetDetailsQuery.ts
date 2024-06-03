@@ -17,6 +17,7 @@ const GET_PLANET_DETAILS = gql`
           title
         }
       }
+      gravity
       orbitalPeriod
       population
       residentConnection {

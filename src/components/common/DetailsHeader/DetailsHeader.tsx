@@ -14,12 +14,12 @@ export const DetailsHeader = ({
   name,
 }: DetailsHeaderProps) => {
   return (
-    <header className="flex flex-col md:flex-row gap-4">
+    <header className="flex flex-col lg:flex-row gap-4">
       <div
         className={`max-h-full overflow-hidden relative flex justify-center items-center ${classNames}`}
       >
         <img
-          className="md:absolute h-full object-cover inset-0 rounded-lg"
+          className="lg:absolute h-full object-cover inset-0 rounded-lg"
           alt={name ?? ''}
           src={image}
         />
@@ -27,13 +27,7 @@ export const DetailsHeader = ({
       <div className="space-y-3">
         <div>
           <Typography
-            className="text-[#ffbe00] text-center md:hidden"
-            variant="h3"
-          >
-            {name}
-          </Typography>
-          <Typography
-            className="hidden line-clamp-1 text-[#ffbe00] relative right-20 md:block lg:hidden"
+            className="text-[#ffbe00] text-center lg:hidden"
             variant="h3"
           >
             {name}
