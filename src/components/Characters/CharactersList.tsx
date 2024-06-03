@@ -3,9 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllCharactersQuery } from './hooks'
 import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const CharactersList = () => {
-  const { charactersData } = useGetAllCharactersQuery()
+  const {
+    charactersData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllCharactersQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
@@ -13,6 +18,10 @@ export const CharactersList = () => {
   }
 
   console.log('charactersData:', charactersData)
+
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Characters data" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

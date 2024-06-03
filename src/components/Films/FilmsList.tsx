@@ -3,9 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { useGetAllFilmsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const FilmsList = () => {
-  const { filmsData } = useGetAllFilmsQuery()
+  const {
+    filmsData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllFilmsQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
@@ -13,6 +18,10 @@ export const FilmsList = () => {
   }
 
   console.log('filmsData:', filmsData)
+
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Characters data not found" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

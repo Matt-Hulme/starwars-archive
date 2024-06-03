@@ -23,8 +23,6 @@ export const CharacterDetails = () => {
 
   useEffect(() => {
     if (name && urlName !== getNameForUrl(name)) {
-      console.log('urlName:', urlName)
-      console.log('getName', getNameForUrl(name))
       setNameError(true)
     }
   }, [name, urlName])
@@ -54,29 +52,43 @@ export const CharacterDetails = () => {
     },
   ]
 
-  console.log('hasError:', hasError)
-
-  const isLoading2 = true
-  // const isLoading2 = false
-
-  if (isLoading2) return <LoadingPage />
-
-  if (nameError || hasError) return <ErrorPage type="Character" />
+  const panelContentB = [
+    {
+      heading: 'Height',
+      content: characterDetailsData?.height?.toString() ?? '',
+    },
+    {
+      heading: 'Mass',
+      content: characterDetailsData?.mass?.toString() ?? '',
+    },
+    {
+      heading: 'Hair Color',
+      content: startCase(characterDetailsData?.hairColor ?? ''),
+    },
+    {
+      heading: 'Eye Color',
+      content: startCase(characterDetailsData?.eyeColor ?? ''),
+    },
+  ]
 
   console.log('characterDetailsData:', characterDetailsData)
 
+  if (isLoading) return <LoadingPage />
+
+  if (nameError || hasError) return <ErrorPage type="Character" />
+
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
-      <div className="min-w-full relative space-y-5">
+      <div className="space-y-5">
         <DetailsHeader
-          classNames="min-h-[200px] min-w-[150px] md:min-h-[300px] md:min-w-[225px] lg:min-h-[400px] lg:min-w-[280px] rounded-full"
+          classNames="min-h-[400px] md:min-h-[300px] md:min-w-[225px] lg:min-h-[400px] lg:min-w-[280px]"
           image={characterImage}
           name={name ?? ''}
         >
-          <DetailsHeaderPanel
-            classNames="bg-[#ffbe00] text-[#39302e]"
-            panelContent={panelContentA}
-          />
+          <div className="flex flex-col gap-2 w-full">
+            <DetailsHeaderPanel variant="light" panelContent={panelContentA} />
+            <DetailsHeaderPanel variant="dark" panelContent={panelContentB} />
+          </div>
         </DetailsHeader>
         <section className="bg-gray-100">Character Films</section>
         <section className="bg-gray-100">Character Vehicles</section>

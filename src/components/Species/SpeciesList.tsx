@@ -3,9 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllSpeciesQuery } from './hooks'
 import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const SpeciesList = () => {
-  const { speciesData } = useGetAllSpeciesQuery()
+  const {
+    speciesData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllSpeciesQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
@@ -13,6 +18,10 @@ export const SpeciesList = () => {
   }
 
   console.log('speciesData:', speciesData)
+
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Species data" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

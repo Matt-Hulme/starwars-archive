@@ -7,6 +7,7 @@ import {
 const GET_CHARACTER_DETAILS = gql`
   query GetCharacterDetails($personId: ID) {
     person(personID: $personId) {
+      id
       birthYear
       eyeColor
       filmConnection {
@@ -22,6 +23,7 @@ const GET_CHARACTER_DETAILS = gql`
         id
         name
       }
+      mass
       name
       skinColor
       species {

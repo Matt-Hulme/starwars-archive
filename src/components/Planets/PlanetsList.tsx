@@ -3,9 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllPlanetsQuery } from './hooks'
 import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const PlanetsList = () => {
-  const { planetsData } = useGetAllPlanetsQuery()
+  const {
+    planetsData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllPlanetsQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
@@ -13,6 +18,10 @@ export const PlanetsList = () => {
   }
 
   console.log('planetsData:', planetsData)
+
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Planets data" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">

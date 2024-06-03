@@ -3,9 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { useGetAllVehiclesQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const VehiclesList = () => {
-  const { vehiclesData } = useGetAllVehiclesQuery()
+  const {
+    vehiclesData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllVehiclesQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
@@ -13,6 +18,10 @@ export const VehiclesList = () => {
   }
 
   console.log('vehiclesData:', vehiclesData)
+
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Vehicles data" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
