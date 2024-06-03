@@ -86,7 +86,7 @@ export const StarshipDetails = () => {
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
       <div className="overflow-x-hidden space-y-5 w-full">
         <DetailsHeader
-          classNames="min-w-[400px] md:min-w-[300px] md:min-h-[225px] lg:min-w-[400px] lg:min-h-[280px]"
+          classNames="h-[225px] lg:min-h-[280px] lg:min-w-[400px]"
           image={starshipImage}
           name={name ?? ''}
         >
