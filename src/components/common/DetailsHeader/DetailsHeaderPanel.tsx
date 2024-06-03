@@ -16,7 +16,7 @@ export const DetailsHeaderPanel = ({
 }: DetailsHeaderPanelProps) => (
   <div
     className={classNames(
-      'gap-6 px-7 py-3 relative rounded-lg self-start w-full md:w-auto md:flex-row md:inline-flex md:right-10 md:rounded-full',
+      'gap-3 px-7 py-3 relative rounded-lg self-start w-full lg:flex-row lg:inline-flex lg:right-10 lg:rounded-small',
       {
         'bg-[#ffbe00] text-[#39302e]': variant === 'light',
         'bg-[#39302e] text-[#ffbe00]': variant === 'dark',
@@ -30,12 +30,18 @@ export const DetailsHeaderPanel = ({
           item?.content && (
             <div
               key={index}
-              className="flex flex-col gap-3 md:flex-row md:inline-flex"
+              className="flex flex-col gap-3 lg:flex-row lg:inline-flex"
             >
-              <div className="flex flex-row items-center justify-between md:flex-col md:items-start">
+              <div className="flex flex-row gap-2 items-center justify-between lg:flex-col lg:gap-0 lg:items-start">
                 <Typography className="line-clamp-1" variant="h6">
                   {item?.heading}
                 </Typography>
+                <Divider
+                  className={classNames('grow lg:hidden', {
+                    'bg-[#39302e]': variant === 'light',
+                    'bg-[#ffbe00]': variant === 'dark',
+                  })}
+                />
                 {item?.href ? (
                   <Link
                     sx={{
@@ -58,10 +64,13 @@ export const DetailsHeaderPanel = ({
               </div>
               {index < array.length - 1 && array[index + 1]?.content && (
                 <Divider
-                  className={classNames('h-[2px] w-full md:h-full md:w-[2px]', {
-                    'bg-[#39302e]': variant === 'light',
-                    'bg-[#ffbe00]': variant === 'dark',
-                  })}
+                  className={classNames(
+                    'hidden lg:block lg:h-full lg:w-[2px]',
+                    {
+                      'bg-[#39302e]': variant === 'light',
+                      'bg-[#ffbe00]': variant === 'dark',
+                    },
+                  )}
                 />
               )}
             </div>

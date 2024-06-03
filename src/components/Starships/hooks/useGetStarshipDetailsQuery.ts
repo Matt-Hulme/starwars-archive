@@ -20,6 +20,7 @@ const GET_STARSHIP_DETAILS = gql`
           title
         }
       }
+      hyperdriveRating
       length
       manufacturers
       maxAtmospheringSpeed
