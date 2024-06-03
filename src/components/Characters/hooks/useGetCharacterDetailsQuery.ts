@@ -65,6 +65,6 @@ export const useGetCharacterDetailsQuery = (
   return {
     loading,
     error,
-    characterDetailsData: data?.person,
+    characterDetailsData: data?.person ?? {},
   }
 }
