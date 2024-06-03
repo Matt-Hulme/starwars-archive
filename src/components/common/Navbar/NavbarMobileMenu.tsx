@@ -14,7 +14,7 @@ export const NavbarMobileMenu = () => {
   }
 
   return (
-    <div className="flex flex-row h-16 items-center justify-center px-4 pt-1 w-full md:hidden">
+    <div className="flex flex-row h-18 items-center justify-center px-4 py-2 w-full md:hidden">
       <img
         src="/assets/images/SW_Logo.png"
         className="h-14 object-cover cursor-pointer"

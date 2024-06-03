@@ -2,17 +2,26 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllPlanetsQuery } from './hooks'
+import { getFormattedId, getNameForUrl } from '../utils'
+import { ErrorPage, LoadingPage } from '../common'
 
 export const PlanetsList = () => {
-  const { planetsData } = useGetAllPlanetsQuery()
+  const {
+    planetsData,
+    error: hasError,
+    loading: isLoading,
+  } = useGetAllPlanetsQuery()
   const navigate = useNavigate()
 
   const onClick = (name: string, id: string) => {
-    const formattedName = name.replace(/ /g, '-').toLowerCase()
-    navigate(`/planets/${formattedName}?id=${id}`)
+    navigate(`/planets/${getNameForUrl(name)}?id=${id}`)
   }
 
   console.log('planetsData:', planetsData)
+
+  if (isLoading) return <LoadingPage />
+
+  if (hasError) return <ErrorPage type="Planets data" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen px-10">
@@ -20,7 +29,7 @@ export const PlanetsList = () => {
         <ImageList cols={1}>
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
-            const id = atob(planet?.id ?? '').split(':')[1]
+            const id = getFormattedId(planet?.id ?? '')
             const image = `assets/images/planets/${id}.jpg`
 
             return (
@@ -41,7 +50,7 @@ export const PlanetsList = () => {
         <ImageList cols={3}>
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
-            const id = atob(planet?.id ?? '').split(':')[1]
+            const id = getFormattedId(planet?.id ?? '')
             const image = `assets/images/planets/${id}.jpg`
 
             return (
@@ -62,7 +71,7 @@ export const PlanetsList = () => {
         <ImageList cols={5}>
           {(planetsData?.planets ?? []).map((planet, index) => {
             const name = planet?.name ?? ''
-            const id = atob(planet?.id ?? '').split(':')[1]
+            const id = getFormattedId(planet?.id ?? '')
             const image = `assets/images/planets/${id}.jpg`
 
             return (
