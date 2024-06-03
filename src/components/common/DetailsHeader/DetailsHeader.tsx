@@ -19,7 +19,7 @@ export const DetailsHeader = ({
         className={`max-h-full overflow-hidden relative flex justify-center items-center ${classNames}`}
       >
         <img
-          className="md:absolute h-full inset-0 rounded-lg"
+          className="md:absolute h-full object-cover inset-0 rounded-lg"
           alt={name ?? ''}
           src={image}
         />

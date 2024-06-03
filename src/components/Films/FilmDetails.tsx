@@ -5,6 +5,8 @@ import { ErrorPage } from '../common/ErrorPage'
 import { LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
 import { getNameForUrl } from '../utils'
+import { startCase } from 'lodash'
+import { DetailsHeaderPanel } from '../common/DetailsHeader/DetailsHeaderPanel'
 
 export const FilmDetails = () => {
   const { name: urlTitle } = useParams()
@@ -27,6 +29,25 @@ export const FilmDetails = () => {
 
   console.log('filmDetailsData::', filmDetailsData)
 
+  const panelContentA = [
+    {
+      heading: 'Director',
+      content: startCase(filmDetailsData?.director ?? ''),
+    },
+    {
+      heading: 'Producers',
+      content:
+        filmDetailsData?.producers
+          ?.filter((producer: string | null) => producer !== null)
+          .map((producer: string | null) => producer && startCase(producer))
+          .join(', ') ?? '',
+    },
+    {
+      heading: 'Release Date',
+      content: startCase(filmDetailsData?.releaseDate ?? ''),
+    },
+  ]
+
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Film" />
@@ -38,7 +59,11 @@ export const FilmDetails = () => {
           classNames="min-h-[400px] md:min-h-[300px] md:min-w-[225px] lg:min-h-[400px] lg:min-w-[280px]"
           image={filmImage}
           name={title ?? ''}
-        />
+        >
+          <div className="flex flex-col gap-2 w-full">
+            <DetailsHeaderPanel variant="light" panelContent={panelContentA} />
+          </div>
+        </DetailsHeader>
         <section className="bg-gray-100">Film Characters</section>
         <section className="bg-gray-100">Film Planets</section>
         <section className="bg-gray-100">Film Species</section>
