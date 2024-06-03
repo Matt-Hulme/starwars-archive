@@ -16,7 +16,7 @@ export const DetailsHeaderPanel = ({
 }: DetailsHeaderPanelProps) => (
   <div
     className={classNames(
-      'gap-3 px-7 py-3 relative rounded-lg self-start w-full lg:flex-row lg:inline-flex lg:right-10 lg:rounded-small',
+      'gap-3 px-7 py-3 relative rounded-lg self-start w-full lg:w-auto lg:flex-row lg:inline-flex lg:right-10 lg:rounded-small',
       {
         'bg-[#ffbe00] text-[#39302e]': variant === 'light',
         'bg-[#39302e] text-[#ffbe00]': variant === 'dark',
