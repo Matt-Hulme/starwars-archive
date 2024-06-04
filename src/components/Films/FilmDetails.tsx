@@ -1,12 +1,11 @@
 import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetFilmDetailsQuery } from './hooks'
-import { DetailsHeader } from '../common/DetailsHeader'
 import { ErrorPage } from '../common/ErrorPage'
 import { LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
 import { getNameForUrl } from '../utils'
 import { startCase } from 'lodash'
-import { DetailsHeaderPanel } from '../common/DetailsHeader/DetailsHeaderPanel'
+import { DetailsHeader, DetailsHeaderPanel } from '../common'
 
 export const FilmDetails = () => {
   const { name: urlTitle } = useParams()

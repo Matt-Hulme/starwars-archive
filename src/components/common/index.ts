@@ -1,3 +1,6 @@
-export { Navbar } from './Navbar'
+export { DetailsHeader, DetailsHeaderPanel } from './DetailsHeader'
+export { DetailsPanel } from './DetailsPanel'
 export { ErrorPage } from './ErrorPage'
+export { HorizontalScroller } from './HorizontalScroller'
 export { LoadingPage } from './LoadingPage'
+export { Navbar } from './Navbar'
