@@ -1,11 +1,10 @@
 import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetPlanetDetailsQuery } from './hooks'
-import { DetailsHeader } from '../common/DetailsHeader'
+import { DetailsHeader, DetailsHeaderPanel } from '../common'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
 import { getNameForUrl } from '../utils'
 import { LoadingPage } from '../common'
-import { DetailsHeaderPanel } from '../common/DetailsHeader/DetailsHeaderPanel'
 import { startCase } from 'lodash'
 
 export const PlanetDetails = () => {

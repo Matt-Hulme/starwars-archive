@@ -1,12 +1,11 @@
 import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetSpeciesDetailsQuery } from './hooks'
-import { DetailsHeader } from '../common/DetailsHeader'
+import { DetailsHeader, DetailsHeaderPanel } from '../common'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
 import { getFormattedId, getNameForUrl } from '../utils'
 import { LoadingPage } from '../common'
 import { startCase } from 'lodash'
-import { DetailsHeaderPanel } from '../common/DetailsHeader/DetailsHeaderPanel'
 
 export const SpeciesDetails = () => {
   const { name: urlName } = useParams()
