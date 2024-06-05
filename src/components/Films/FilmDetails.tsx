@@ -3,7 +3,7 @@ import { useGetFilmDetailsQuery } from './hooks'
 import { ErrorPage } from '../common/ErrorPage'
 import { LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
-import { getNameForUrl } from '../utils'
+import { getNameForUrl } from '../../utils'
 import { startCase } from 'lodash'
 import { DetailsHeader, DetailsHeaderPanel } from '../common'
 

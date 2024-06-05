@@ -3,7 +3,7 @@ import { useGetVehicleDetailsQuery } from './hooks'
 import { DetailsHeader, DetailsHeaderPanel } from '../common'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
-import { getNameForUrl } from '../utils'
+import { getNameForUrl } from '../../utils'
 import { LoadingPage } from '../common'
 import { startCase } from 'lodash'
 

@@ -21,7 +21,7 @@ export const ListCard = ({
     className={`hover:cursor-pointer ${containerClassName}`}
     onClick={() => onClick(id)}
   >
-    <div className="absolute bg-black bg-opacity-50 left-5 rounded-sm text-white top-5">
+    <div className="absolute bg-black bg-opacity-50 left-5 rounded-sm text-white top-5 z-10">
       {title}
     </div>
     <img src={image} alt={title} className={className} />

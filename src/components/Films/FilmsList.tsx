@@ -2,7 +2,7 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useGetAllFilmsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
-import { getFormattedId, getNameForUrl } from '../utils'
+import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage, LoadingPage } from '../common'
 
 export const FilmsList = () => {
@@ -13,8 +13,8 @@ export const FilmsList = () => {
   } = useGetAllFilmsQuery()
   const navigate = useNavigate()
 
-  const onClick = (name: string, id: string) => {
-    navigate(`/films/${getNameForUrl(name)}?id=${id}`)
+  const onClick = (title: string, id: string) => {
+    navigate(`/films/${getNameForUrl(title)}?id=${id}`)
   }
 
   console.log('filmsData:', filmsData)
@@ -28,7 +28,7 @@ export const FilmsList = () => {
       <div className="block rounded-lg md:hidden pt-[104px]">
         <ImageList cols={1} sx={{ maxWidth: '74%', margin: 'auto' }}>
           {(filmsData?.films ?? []).map((film, index) => {
-            const name = film?.title ?? ''
+            const title = film?.title ?? ''
             const id = getFormattedId(film?.id ?? '')
             const image = `assets/images/films/${id}.jpg`
 
@@ -39,8 +39,8 @@ export const FilmsList = () => {
                 containerClassName="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(name, id)}
-                title={name}
+                onClick={() => onClick(title, id)}
+                title={title}
               />
             )
           })}
@@ -49,7 +49,7 @@ export const FilmsList = () => {
       <div className="hidden rounded-lg md:block lg:hidden pt-[104px]">
         <ImageList cols={2} sx={{ margin: 'auto' }}>
           {(filmsData?.films ?? []).map((film, index) => {
-            const name = film?.title ?? ''
+            const title = film?.title ?? ''
             const id = getFormattedId(film?.id ?? '')
             const image = `assets/images/films/${id}.jpg`
 
@@ -60,8 +60,8 @@ export const FilmsList = () => {
                 containerClassName="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(name, id)}
-                title={name}
+                onClick={() => onClick(title, id)}
+                title={title}
               />
             )
           })}
@@ -74,7 +74,7 @@ export const FilmsList = () => {
           variant="standard"
         >
           {(filmsData?.films ?? []).map((film, index) => {
-            const name = film?.title ?? ''
+            const title = film?.title ?? ''
             const id = getFormattedId(film?.id ?? '')
             const image = `assets/images/films/${id}.jpg`
 
@@ -85,8 +85,8 @@ export const FilmsList = () => {
                 containerClassName="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(name, id)}
-                title={name}
+                onClick={() => onClick(title, id)}
+                title={title}
               />
             )
           })}

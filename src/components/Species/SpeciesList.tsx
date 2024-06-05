@@ -2,7 +2,7 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { ListCard } from '../common/ListCard'
 import { useGetAllSpeciesQuery } from './hooks'
-import { getFormattedId, getNameForUrl } from '../utils'
+import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage, LoadingPage } from '../common'
 
 export const SpeciesList = () => {
