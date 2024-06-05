@@ -19,3 +19,12 @@ body {
 .ball-pulse-sync > div {
   background-color: #ffbe00 !important;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

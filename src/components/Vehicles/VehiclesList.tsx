@@ -2,7 +2,7 @@ import { ImageList } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { useGetAllVehiclesQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
-import { getFormattedId, getNameForUrl } from '../utils'
+import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage, LoadingPage } from '../common'
 
 export const VehiclesList = () => {
