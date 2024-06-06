@@ -1,8 +1,8 @@
 import { ImageListItem } from '@mui/material'
 
 interface ListCardProps {
-  className?: string
-  containerClassName?: string
+  classNames?: string
+  containerClassNames?: string
   image: string
   id: string
   onClick: (id: string) => void
@@ -10,20 +10,20 @@ interface ListCardProps {
 }
 
 export const ListCard = ({
-  className,
-  containerClassName,
+  classNames,
+  containerClassNames,
   image,
   id,
   onClick,
   title,
 }: ListCardProps) => (
   <ImageListItem
-    className={`hover:cursor-pointer ${containerClassName}`}
+    className={`hover:cursor-pointer ${containerClassNames}`}
     onClick={() => onClick(id)}
   >
     <div className="absolute bg-black bg-opacity-50 left-5 rounded-sm text-white top-5 z-10">
       {title}
     </div>
-    <img src={image} alt={title} className={className} />
+    <img src={image} alt={title} className={`h-full object-cover w-full ${classNames}`} />
   </ImageListItem>
 )

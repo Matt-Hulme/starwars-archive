@@ -82,8 +82,8 @@ export const CharacterDetails = () => {
   if (nameError || hasError) return <ErrorPage type="Character" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] pb-10 px-10 overflow-y-auto">
-      <div className="space-y-5 overflow-hidden">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen overflow-y-auto pb-10 pt-[104px] px-10">
+      <div className="overflow-hidden space-y-5">
         <DetailsHeader
           classNames="h-[300px] lg:min-h-[400px] lg:min-w-[280px]"
           image={characterImage}
@@ -95,7 +95,7 @@ export const CharacterDetails = () => {
           </div>
         </DetailsHeader>
         {(characterDetailsData?.filmConnection?.films?.length ?? 0 > 0) && (
-          <section className="bg-[#39302e] rounded-lg w-fit max-w-full">
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
             <HorizontalScroller>
               {characterDetailsData?.filmConnection?.films?.map((film, index) => {
                 const title = film?.title ?? ''
@@ -103,14 +103,14 @@ export const CharacterDetails = () => {
                 const image = `/assets/images/films/${id}.jpg`
 
                 return (
-                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassName='flex-none min-w-64 relative h-[400px] min-h-[400px]' className='absolute inset-0 object-cover'/>
+                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassNames='flex-none max-w-[180px] max-h-[260px] rounded-lg overflow-hidden' classNames=''/>
                 )
               })}
             </HorizontalScroller>
           </section>
         )}
         {(characterDetailsData?.vehicleConnection?.vehicles?.length ?? 0 > 0) && (
-          <section className="bg-[#39302e] rounded-lg w-fit max-w-full">
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
             <HorizontalScroller>
               {characterDetailsData?.vehicleConnection?.vehicles?.map((vehicle, index) => {
                 const title = vehicle?.name ?? ''
@@ -118,14 +118,14 @@ export const CharacterDetails = () => {
                 const image = `/assets/images/vehicles/${id}.jpg`
 
                 return (
-                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassName='flex-none min-w-64 relative h-[400px] min-h-[400px]' className='absolute inset-0 object-cover'/>
+                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassNames='flex-none h-full max-w-[260px] rounded-lg overflow-hidden'/>
                 )
               })}
             </HorizontalScroller>
           </section>
         )}
         {(characterDetailsData?.starshipConnection?.starships?.length ?? 0 > 0) && (
-          <section className="bg-[#39302e] rounded-lg w-fit max-w-full">
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
             <HorizontalScroller>
               {characterDetailsData?.starshipConnection?.starships?.map((starship, index) => {
                 const title = starship?.name ?? ''
@@ -133,7 +133,7 @@ export const CharacterDetails = () => {
                 const image = `/assets/images/starships/${id}.jpg`
 
                 return (
-                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassName='flex-none min-w-64 relative h-[400px] min-h-[400px]' className='absolute inset-0 object-cover'/>
+                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassNames='flex-none h-full max-w-[260px] rounded-lg overflow-hidden' classNames='object-cover'/>
                 )
               })}
             </HorizontalScroller>
