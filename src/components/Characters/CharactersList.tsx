@@ -35,8 +35,8 @@ export const CharactersList = () => {
             return (
               <ListCard
                 key={index}
-                className="rounded-lg"
-                containerClassName="relative"
+                classNames="rounded-lg"
+                containerClassNames="relative"
                 id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
@@ -56,8 +56,8 @@ export const CharactersList = () => {
             return (
               <ListCard
                 key={index}
-                className="rounded-lg"
-                containerClassName="relative"
+                classNames="rounded-lg"
+                containerClassNames="relative"
                 id={id}
                 image={image}
                 onClick={() => onClick(name, id)}
@@ -77,8 +77,8 @@ export const CharactersList = () => {
             return (
               <ListCard
                 key={index}
-                className="rounded-lg"
-                containerClassName="relative"
+                classNames="rounded-lg"
+                containerClassNames="relative"
                 id={id}
                 image={image}
                 onClick={() => onClick(name, id)}

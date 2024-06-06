@@ -35,8 +35,8 @@ export const FilmsList = () => {
             return (
               <ListCard
                 key={index}
-                className="rounded-lg"
-                containerClassName="relative"
+                classNames="rounded-lg"
+                containerClassNames="relative"
                 id={id}
                 image={image}
                 onClick={() => onClick(title, id)}
@@ -56,8 +56,8 @@ export const FilmsList = () => {
             return (
               <ListCard
                 key={index}
-                className="rounded-lg"
-                containerClassName="relative"
+                classNames="rounded-lg"
+                containerClassNames="relative"
                 id={id}
                 image={image}
                 onClick={() => onClick(title, id)}
@@ -81,8 +81,8 @@ export const FilmsList = () => {
             return (
               <ListCard
                 key={index}
-                className="rounded-lg"
-                containerClassName="relative"
+                classNames="rounded-lg"
+                containerClassNames="relative"
                 id={id}
                 image={image}
                 onClick={() => onClick(title, id)}
