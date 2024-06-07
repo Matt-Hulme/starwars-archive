@@ -1,4 +1,4 @@
-import { ImageListItem } from '@mui/material'
+import { ImageListItem, Typography } from '@mui/material'
 
 interface ListCardProps {
   classNames?: string
@@ -7,23 +7,33 @@ interface ListCardProps {
   id: string
   onClick: (id: string) => void
   title: string
+  titlePosition?: string
 }
 
 export const ListCard = ({
   classNames,
   containerClassNames,
-  image,
   id,
+  image,
   onClick,
   title,
+  titlePosition = 'top',
 }: ListCardProps) => (
   <ImageListItem
     className={`hover:cursor-pointer ${containerClassNames}`}
     onClick={() => onClick(id)}
   >
-    <div className="absolute bg-black bg-opacity-50 left-5 rounded-sm text-white top-5 z-10">
-      {title}
+    <div className={`absolute bg-[#39302e] bottom-0 left-0 h-fit rounded-md px-1 text-[#ffbe00] z-10 ${titlePosition === 'top' ? 'top-0' : 'bottom-0' }`}>
+      {titlePosition ==='top' && 
+      <Typography variant='h6'>
+        {title}
+      </Typography>}
+      {titlePosition ==='bottom' && 
+      <Typography variant='caption'>
+        {title}
+      </Typography>}
     </div>
-    <img src={image} alt={title} className={`h-full object-cover w-full ${classNames}`} />
+    <img alt={title} className={`${classNames}`} src={image} />
   </ImageListItem>
 )
+

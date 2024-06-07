@@ -1,11 +1,12 @@
 import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetSpeciesDetailsQuery } from './hooks'
-import { DetailsHeader, DetailsHeaderPanel } from '../common'
+import { DetailsHeader, DetailsHeaderPanel, HorizontalScroller } from '../common'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
 import { getFormattedId, getNameForUrl } from '../../utils'
 import { LoadingPage } from '../common'
 import { startCase } from 'lodash'
+import { ListCard } from '../common/ListCard'
 
 export const SpeciesDetails = () => {
   const { name: urlName } = useParams()
@@ -84,12 +85,62 @@ export const SpeciesDetails = () => {
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel variant="light" panelContent={panelContentA} />
-            <DetailsHeaderPanel variant="dark" panelContent={panelContentB} />
+            <DetailsHeaderPanel panelContent={panelContentA} variant="light" />
+            <DetailsHeaderPanel panelContent={panelContentB} variant="dark" />
           </div>
         </DetailsHeader>
-        <section className="bg-gray-100">Species Characters</section>
-        <section className="bg-gray-100">Species Films</section>
+        {(speciesDetailsData?.personConnection?.people?.length ?? 0 > 0) && (
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
+            <HorizontalScroller
+              title='Characters'
+            >
+              {speciesDetailsData?.personConnection?.people?.map((person, index) => {
+                const title = person?.name ?? ''
+                const id = getFormattedId(person?.id ?? '')
+                const image = `/assets/images/characters/${id}.jpg`
+
+                return (
+                  <ListCard 
+                    classNames='absolute inset-0 z--1'
+                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
+                )
+              })}
+            </HorizontalScroller>
+          </section>
+        )}
+        {(speciesDetailsData?.filmConnection?.films?.length ?? 0 > 0) && (
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
+            <HorizontalScroller
+              title='Films'
+            >
+              {speciesDetailsData?.filmConnection?.films?.map((film, index) => {
+                const title = film?.title ?? ''
+                const id = getFormattedId(film?.id ?? '')
+                const image = `/assets/images/characters/${id}.jpg`
+
+                return (
+                  <ListCard 
+                    classNames='absolute inset-0 z--1'
+                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
+                )
+              })}
+            </HorizontalScroller>
+          </section>
+        )}
       </div>
     </div>
   )

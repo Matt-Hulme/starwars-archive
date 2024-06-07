@@ -29,8 +29,8 @@ export const DetailsHeaderPanel = ({
         (item, index, array) =>
           item?.content && (
             <div
-              key={index}
               className="flex flex-col gap-3 lg:flex-row lg:inline-flex"
+              key={index}
             >
               <div className="flex flex-row gap-2 items-center justify-between lg:flex-col lg:gap-0 lg:items-start">
                 <Typography className="line-clamp-1" variant="h6">
@@ -44,6 +44,7 @@ export const DetailsHeaderPanel = ({
                 />
                 {item?.href ? (
                   <Link
+                    href={item?.href}
                     sx={{
                       color: '#ffffff',
                       '&:hover': {
@@ -51,7 +52,6 @@ export const DetailsHeaderPanel = ({
                       },
                       WebkitLineClamp: 1,
                     }}
-                    href={item?.href}
                     underline="none"
                   >
                     {item?.content}

@@ -34,13 +34,13 @@ export const SpeciesList = () => {
 
             return (
               <ListCard
-                key={index}
                 classNames="rounded-lg"
                 containerClassNames="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(name, id)}
+                key={index}
                 title={name}
+                onClick={() => onClick(name, id)}
               />
             )
           })}
@@ -55,13 +55,13 @@ export const SpeciesList = () => {
 
             return (
               <ListCard
-                key={index}
                 classNames="rounded-lg"
                 containerClassNames="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(name, id)}
+                key={index}
                 title={name}
+                onClick={() => onClick(name, id)}
               />
             )
           })}
@@ -76,13 +76,13 @@ export const SpeciesList = () => {
 
             return (
               <ListCard
-                key={index}
                 classNames="rounded-lg"
                 containerClassNames="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(name, id)}
+                key={index}
                 title={name}
+                onClick={() => onClick(name, id)}
               />
             )
           })}

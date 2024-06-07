@@ -1,11 +1,12 @@
 import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetStarshipDetailsQuery } from './hooks'
-import { DetailsHeader, DetailsHeaderPanel } from '../common'
+import { DetailsHeader, DetailsHeaderPanel, HorizontalScroller } from '../common'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
-import { getNameForUrl } from '../../utils'
+import { getFormattedId, getNameForUrl } from '../../utils'
 import { LoadingPage } from '../common'
 import { startCase } from 'lodash'
+import { ListCard } from '../common/ListCard'
 
 export const StarshipDetails = () => {
   const { name: urlName } = useParams()
@@ -90,12 +91,62 @@ export const StarshipDetails = () => {
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel variant="light" panelContent={panelContentA} />
-            <DetailsHeaderPanel variant="dark" panelContent={panelContentB} />
+            <DetailsHeaderPanel panelContent={panelContentA} variant="light" />
+            <DetailsHeaderPanel panelContent={panelContentB} variant="dark" />
           </div>
         </DetailsHeader>
-        <section className="bg-gray-100">Starship Pilots</section>
-        <section className="bg-gray-100">Starship Films</section>
+        {(starshipDetailsData?.pilotConnection?.pilots?.length ?? 0 > 0) && (
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
+            <HorizontalScroller
+              title='Pilots'
+            >
+              {starshipDetailsData?.pilotConnection?.pilots?.map((pilot, index) => {
+                const title = pilot?.name ?? ''
+                const id = getFormattedId(pilot?.id ?? '')
+                const image = `/assets/images/characters/${id}.jpg`
+
+                return (
+                  <ListCard 
+                    classNames='absolute inset-0 z--1'
+                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
+                )
+              })}
+            </HorizontalScroller>
+          </section>
+        )}
+        {(starshipDetailsData?.filmConnection?.films?.length ?? 0 > 0) && (
+          <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
+            <HorizontalScroller
+              title='Films'
+            >
+              {starshipDetailsData?.filmConnection?.films?.map((film, index) => {
+                const title = film?.title ?? ''
+                const id = getFormattedId(film?.id ?? '')
+                const image = `/assets/images/films/${id}.jpg`
+
+                return (
+                  <ListCard 
+                    classNames='absolute inset-0 z--1'
+                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
+                )
+              })}
+            </HorizontalScroller>
+          </section>
+        )}
       </div>
     </div>
   )

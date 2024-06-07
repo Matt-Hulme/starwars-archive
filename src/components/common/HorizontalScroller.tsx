@@ -1,12 +1,13 @@
 import { ArrowLeft, ArrowRight } from '@mui/icons-material'
-import { IconButton } from '@mui/material'
+import { IconButton, Typography } from '@mui/material'
 import { useRef, useState, useEffect } from 'react'
 
 interface HorizontalScrollerProps {
   children: React.ReactNode
+  title?: string
 }
 
-export const HorizontalScroller = ({ children }: HorizontalScrollerProps) => {
+export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const [isAtLeftEnd, setIsAtLeftEnd] = useState(true)
   const [isAtRightEnd, setIsAtRightEnd] = useState(true)
@@ -47,9 +48,14 @@ export const HorizontalScroller = ({ children }: HorizontalScrollerProps) => {
         <ArrowLeft className='bg-[#ffbe00] rounded-md'/>
       </IconButton>
       <div
-        ref={ref}
         className="flex flex-row items-center gap-2 px-1 overflow-auto no-scrollbar scroll-smooth w-full"
+        ref={ref}
       >
+        <div className="absolute bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] -top-4 z-20">
+          <Typography variant='h4'>
+            {title}
+          </Typography>
+        </div>
         {children}
       </div>
       <IconButton

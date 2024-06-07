@@ -90,20 +90,31 @@ export const CharacterDetails = () => {
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel variant="light" panelContent={panelContentA} />
-            <DetailsHeaderPanel variant="dark" panelContent={panelContentB} />
+            <DetailsHeaderPanel panelContent={panelContentA} variant="light" />
+            <DetailsHeaderPanel panelContent={panelContentB} variant="dark" />
           </div>
         </DetailsHeader>
         {(characterDetailsData?.filmConnection?.films?.length ?? 0 > 0) && (
           <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
-            <HorizontalScroller>
+            <HorizontalScroller
+              title='Films'
+            >
               {characterDetailsData?.filmConnection?.films?.map((film, index) => {
                 const title = film?.title ?? ''
                 const id = getFormattedId(film?.id ?? '')
                 const image = `/assets/images/films/${id}.jpg`
 
                 return (
-                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassNames='flex-none max-w-[180px] max-h-[260px] rounded-lg overflow-hidden' classNames=''/>
+                  <ListCard 
+                    classNames='absolute inset-0'
+                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
                 )
               })}
             </HorizontalScroller>
@@ -111,14 +122,25 @@ export const CharacterDetails = () => {
         )}
         {(characterDetailsData?.vehicleConnection?.vehicles?.length ?? 0 > 0) && (
           <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
-            <HorizontalScroller>
+            <HorizontalScroller
+              title='Vehicles'
+            >
               {characterDetailsData?.vehicleConnection?.vehicles?.map((vehicle, index) => {
                 const title = vehicle?.name ?? ''
                 const id = getFormattedId(vehicle?.id ?? '')
                 const image = `/assets/images/vehicles/${id}.jpg`
-
+                
                 return (
-                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassNames='flex-none h-full max-w-[260px] rounded-lg overflow-hidden'/>
+                  <ListCard 
+                    classNames='absolute inset-0'
+                    containerClassNames='min-h-[180px] min-w-[260px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
                 )
               })}
             </HorizontalScroller>
@@ -126,14 +148,25 @@ export const CharacterDetails = () => {
         )}
         {(characterDetailsData?.starshipConnection?.starships?.length ?? 0 > 0) && (
           <section className="bg-[#39302e] max-w-full rounded-lg w-fit">
-            <HorizontalScroller>
+            <HorizontalScroller
+              title='Starships'
+            >
               {characterDetailsData?.starshipConnection?.starships?.map((starship, index) => {
                 const title = starship?.name ?? ''
                 const id = getFormattedId(starship?.id ?? '')
                 const image = `/assets/images/starships/${id}.jpg`
 
                 return (
-                  <ListCard key={index} title={title} id={id} onClick={() => {}} image={image} containerClassNames='flex-none h-full max-w-[260px] rounded-lg overflow-hidden' classNames='object-cover'/>
+                  <ListCard 
+                    classNames='absolute inset-0'
+                    containerClassNames='min-h-[180px] min-w-[260px] rounded-lg overflow-hidden relative'
+                    id={id}
+                    image={image}
+                    key={index}
+                    title={title}
+                    titlePosition='bottom'
+                    onClick={() => {}}
+                  />
                 )
               })}
             </HorizontalScroller>
