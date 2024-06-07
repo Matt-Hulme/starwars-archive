@@ -13,7 +13,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed px-20 w-full z-10">
+    <nav className="bg-black fixed px-20 w-full z-20">
       {location.pathname !== '/' && (
         <div className=" absolute left-2 top-[18px]">
           <Button

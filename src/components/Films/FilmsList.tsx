@@ -34,13 +34,13 @@ export const FilmsList = () => {
 
             return (
               <ListCard
-                key={index}
                 classNames="rounded-lg"
                 containerClassNames="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(title, id)}
+                key={index}
                 title={title}
+                onClick={() => onClick(title, id)}
               />
             )
           })}
@@ -55,13 +55,13 @@ export const FilmsList = () => {
 
             return (
               <ListCard
-                key={index}
                 classNames="rounded-lg"
                 containerClassNames="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(title, id)}
+                key={index}
                 title={title}
+                onClick={() => onClick(title, id)}
               />
             )
           })}
@@ -69,8 +69,8 @@ export const FilmsList = () => {
       </div>
       <div className="hidden rounded-lg lg:block pt-[104px]">
         <ImageList
-          sx={{ maxWidth: '88%', margin: 'auto' }}
           cols={3}
+          sx={{ maxWidth: '88%', margin: 'auto' }}
           variant="standard"
         >
           {(filmsData?.films ?? []).map((film, index) => {
@@ -80,13 +80,13 @@ export const FilmsList = () => {
 
             return (
               <ListCard
-                key={index}
                 classNames="rounded-lg"
                 containerClassNames="relative"
                 id={id}
                 image={image}
-                onClick={() => onClick(title, id)}
+                key={index}
                 title={title}
+                onClick={() => onClick(title, id)}
               />
             )
           })}

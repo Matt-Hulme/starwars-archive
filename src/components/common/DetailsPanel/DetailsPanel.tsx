@@ -11,6 +11,8 @@ export const DetailsPanel = ({ children, title }: DetailsPanelProps) => (
     <Typography className="absolute left-0 top-0" variant="h6">
       {title}
     </Typography>
-    <HorizontalScroller children={children} />
+    <HorizontalScroller>
+      {children}
+    </HorizontalScroller>
   </div>
 )
