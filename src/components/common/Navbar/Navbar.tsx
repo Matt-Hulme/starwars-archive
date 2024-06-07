@@ -13,80 +13,80 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed px-20 w-full z-20">
+    <nav className="bg-black fixed px-20 w-full z-50">
       {location.pathname !== '/' && (
         <div className=" absolute left-2 top-[18px]">
           <Button
             className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
-            onClick={onClick}
             size="large"
             startIcon={<ArrowBack />}
             sx={{ color: '#FFBE00B3' }}
+            onClick={onClick}
           ></Button>
         </div>
       )}
       <div className="grid-cols-7 hidden md:grid">
         <Link
-          to="/characters"
           className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          to="/characters"
         >
-          <Typography variant="h6" className="hidden lg:block">
+          <Typography className="hidden lg:block" variant="h6">
             Characters
           </Typography>
           <Typography className="block lg:hidden">Characters</Typography>
         </Link>
         <Link
-          to="/films"
           className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          to="/films"
         >
-          <Typography variant="h6" className="hidden lg:block">
+          <Typography className="hidden lg:block" variant="h6">
             Films
           </Typography>
           <Typography className="block lg:hidden">Films</Typography>
         </Link>
         <Link
-          to="/planets"
           className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          to="/planets"
         >
-          <Typography variant="h6" className="hidden lg:block">
+          <Typography className="hidden lg:block" variant="h6">
             Planets
           </Typography>
           <Typography className="block lg:hidden">Planets</Typography>
         </Link>
         <div className="py-2">
           <Link
-            to="/"
             className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 transition-all hover:opacity-100"
+            to="/"
           >
             <img
-              src="/assets/images/SW_Logo.png"
               className="h-14 object-contain"
+              src="/assets/images/SW_Logo.png"
             />
           </Link>
         </div>
         <Link
-          to="/species"
           className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          to="/species"
         >
-          <Typography variant="h6" className="hidden lg:block">
+          <Typography className="hidden lg:block" variant="h6">
             Species
           </Typography>
           <Typography className="block lg:hidden">Species</Typography>
         </Link>
         <Link
-          to="/starships"
           className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          to="/starships"
         >
-          <Typography variant="h6" className="hidden lg:block">
+          <Typography className="hidden lg:block" variant="h6">
             Starships
           </Typography>
           <Typography className="block lg:hidden">Starships</Typography>
         </Link>
         <Link
-          to="/vehicles"
           className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          to="/vehicles"
         >
-          <Typography variant="h6" className="hidden lg:block">
+          <Typography className="hidden lg:block" variant="h6">
             Vehicles
           </Typography>
           <Typography className="block lg:hidden">Vehicles</Typography>
