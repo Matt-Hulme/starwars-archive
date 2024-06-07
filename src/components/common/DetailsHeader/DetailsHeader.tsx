@@ -33,7 +33,7 @@ export const DetailsHeader = ({
             {name}
           </Typography>
           <Typography
-            className="hidden line-clamp-1 text-[#ffbe00] relative right-20 lg:block"
+            className="hidden line-clamp-1 relative right-20 text-[#ffbe00] lg:block"
             variant="h2"
           >
             {name}
