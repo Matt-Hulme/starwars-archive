@@ -1,12 +1,9 @@
 import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetVehicleDetailsQuery } from './hooks'
-import { DetailsHeader, DetailsHeaderPanel, HorizontalScroller } from '../common'
-import { ErrorPage } from '../common/ErrorPage'
+import { DetailsHeader, DetailsHeaderPanel, ErrorPage, HorizontalScroller, ListCard, LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
 import { getFormattedId, getNameForUrl } from '../../utils'
-import { LoadingPage } from '../common'
 import { startCase } from 'lodash'
-import { ListCard } from '../common/ListCard'
 
 export const VehicleDetails = () => {
   const { name: urlName } = useParams()
