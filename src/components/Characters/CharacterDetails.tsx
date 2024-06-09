@@ -5,12 +5,12 @@ import {
   DetailsHeader,
   DetailsHeaderPanel,
   HorizontalScroller,
+  ListCard,
+  LoadingPage,
 } from '../common'
 import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
-import { LoadingPage } from '../common'
-import { ListCard } from '../common/ListCard'
 
 export const CharacterDetails = () => {
   const { name: urlName } = useParams()
