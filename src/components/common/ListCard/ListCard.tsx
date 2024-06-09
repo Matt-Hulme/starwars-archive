@@ -25,9 +25,19 @@ export const ListCard = ({
   >
     <div className={`absolute bg-[#39302e] bottom-0 left-0 h-fit rounded-md px-1 text-[#ffbe00] z-10 ${titlePosition === 'top' ? 'top-0' : 'bottom-0' }`}>
       {titlePosition ==='top' && 
-      <Typography variant='h6'>
-        {title}
-      </Typography>}
+      <>
+        <div className='lg:hidden'>
+          <Typography variant='subtitle2'>
+            {title}
+          </Typography>
+        </div>
+        <div className='hidden lg:block'>
+          <Typography variant='h6'>
+            {title}
+          </Typography>
+        </div>
+      </>
+      }
       {titlePosition ==='bottom' && 
       <Typography variant='caption'>
         {title}
