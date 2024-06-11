@@ -2,8 +2,7 @@ import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetStarshipDetailsQuery } from './hooks'
 import { DetailsHeader, DetailsHeaderPanel, ErrorPage, HorizontalScroller, ListCard, LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
-import { getFormattedId, getNameForUrl } from '../../utils'
-import { startCase } from 'lodash'
+import { getFormattedId, getNameForUrl, getStarshipPanelAContent, getStarshipPanelBContent } from '../../utils'
 
 export const StarshipDetails = () => {
   const { name: urlName } = useParams()
@@ -26,70 +25,21 @@ export const StarshipDetails = () => {
 
   console.log('starshipDetailsData:', starshipDetailsData)
 
-  const panelContentA = [
-    {
-      heading: 'Manufacturer',
-      content:
-        starshipDetailsData?.manufacturers
-          ?.map((manufacturer: string | null) => manufacturer)
-          .join(', ') ?? '',
-    },
-    {
-      heading: 'Model',
-      content: startCase(starshipDetailsData?.model ?? ''),
-    },
-    {
-      heading: 'Class',
-      content: startCase(starshipDetailsData?.starshipClass ?? ''),
-    },
-    {
-      heading: 'Cost',
-      content: starshipDetailsData?.costInCredits?.toString() ?? '',
-    },
-  ]
-
-  const panelContentB = [
-    {
-      heading: 'Crew',
-      content: starshipDetailsData?.crew?.toString() ?? '',
-    },
-    {
-      heading: 'Passengers',
-      content: starshipDetailsData?.passengers?.toString() ?? '',
-    },
-    {
-      heading: 'Speed',
-      content: starshipDetailsData?.maxAtmospheringSpeed?.toString() ?? '',
-    },
-    {
-      heading: 'Length',
-      content: starshipDetailsData?.length?.toString() ?? '',
-    },
-    {
-      heading: 'Cargo Capacity',
-      content: starshipDetailsData?.cargoCapacity?.toString() ?? '',
-    },
-    {
-      heading: 'Hyperdrive',
-      content: starshipDetailsData?.hyperdriveRating?.toString() ?? '',
-    },
-  ]
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Starship" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
-      <div className="overflow-x-hidden space-y-5 w-full">
+      <div className="overflow-x-hidden space-y-10 w-full">
         <DetailsHeader
           classNames="h-[225px] lg:min-h-[280px] lg:min-w-[400px]"
           image={starshipImage}
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel panelContent={panelContentA} variant="light" />
-            <DetailsHeaderPanel panelContent={panelContentB} variant="dark" />
+            <DetailsHeaderPanel panelContent={getStarshipPanelAContent(starshipDetailsData)} variant="light" />
+            <DetailsHeaderPanel panelContent={getStarshipPanelBContent(starshipDetailsData)} variant="dark" />
           </div>
         </DetailsHeader>
         {(starshipDetailsData?.pilotConnection?.pilots?.length ?? 0 > 0) && (
