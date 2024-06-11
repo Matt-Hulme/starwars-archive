@@ -2,8 +2,7 @@ import { useParams, useSearchParams } from 'react-router-dom'
 import { useGetSpeciesDetailsQuery } from './hooks'
 import { DetailsHeader, DetailsHeaderPanel, ErrorPage, HorizontalScroller, ListCard, LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
-import { getFormattedId, getNameForUrl } from '../../utils'
-import { startCase } from 'lodash'
+import { getFormattedId, getNameForUrl, getSpeciesPanelAContent, getSpeciesPanelBContent } from '../../utils'
 
 export const SpeciesDetails = () => {
   const { name: urlName } = useParams()
@@ -26,64 +25,21 @@ export const SpeciesDetails = () => {
 
   console.log('speciesDetailsData:', speciesDetailsData)
 
-  const panelContentA = [
-    {
-      heading: 'Homeworld',
-      content: startCase(speciesDetailsData?.homeworld?.name ?? ''),
-      href: `/species/${getNameForUrl(
-        speciesDetailsData?.homeworld?.name ?? '',
-      )}?id=${getFormattedId(speciesDetailsData?.homeworld?.id ?? '')}`,
-    },
-    {
-      heading: 'Language',
-      content: startCase(speciesDetailsData?.language ?? ''),
-    },
-    {
-      heading: 'Designation',
-      content: startCase(speciesDetailsData?.designation ?? ''),
-    },
-  ]
-
-  const panelContentB = [
-    {
-      heading: 'Avg Height',
-      content: startCase(speciesDetailsData?.averageHeight?.toString() ?? ''),
-    },
-    {
-      heading: 'Avg Lifespan',
-      content: startCase(speciesDetailsData?.averageLifespan?.toString() ?? ''),
-    },
-    {
-      heading: 'Skin Colors',
-      content:
-        speciesDetailsData?.skinColors
-          ?.map((skinColor: string | null) => startCase(skinColor ?? ''))
-          .join(', ') ?? '',
-    },
-    {
-      heading: 'Eye Colors',
-      content:
-        speciesDetailsData?.eyeColors
-          ?.map((eyeColor: string | null) => startCase(eyeColor ?? ''))
-          .join(', ') ?? '',
-    },
-  ]
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Species" />
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
-      <div className="space-y-5 overflow-x-hidden w-full">
+      <div className="space-y-10 overflow-x-hidden w-full">
         <DetailsHeader
           classNames="h-[300px] min-w-[225px] lg:min-h-[400px] lg:min-w-[280px]"
           image={speciesImage}
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel panelContent={panelContentA} variant="light" />
-            <DetailsHeaderPanel panelContent={panelContentB} variant="dark" />
+            <DetailsHeaderPanel panelContent={getSpeciesPanelAContent(speciesDetailsData)} variant="light" />
+            <DetailsHeaderPanel panelContent={getSpeciesPanelBContent(speciesDetailsData)} variant="dark" />
           </div>
         </DetailsHeader>
         {(speciesDetailsData?.personConnection?.people?.length ?? 0 > 0) && (

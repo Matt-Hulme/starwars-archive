@@ -25,7 +25,6 @@ export const FilmsList = () => {
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
       <div className="gap-1 grid max-w-[1500px] pt-[104px] md:grid-cols-2 lg:grid-cols-3 rounded-lg w-full">
-
         {(filmsData?.films ?? []).map((film, index) => {
           const title = film?.title ?? ''
           const id = getFormattedId(film?.id ?? '')

@@ -1,5 +1,4 @@
 import { useParams, useSearchParams } from 'react-router-dom'
-import { startCase } from 'lodash'
 import { useGetCharacterDetailsQuery } from './hooks'
 import {
   DetailsHeader,
@@ -8,7 +7,7 @@ import {
   ListCard,
   LoadingPage,
 } from '../common'
-import { getFormattedId, getNameForUrl } from '../../utils'
+import { getCharacterPanelAContent, getCharacterPanelBContent, getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage } from '../common/ErrorPage'
 import { useEffect, useState } from 'react'
 
@@ -31,51 +30,6 @@ export const CharacterDetails = () => {
     }
   }, [name, urlName])
 
-  const panelContentA = [
-    {
-      heading: 'Species',
-      content: startCase(characterDetailsData?.species?.name ?? ''),
-      href: `/species/${getNameForUrl(
-        characterDetailsData?.species?.name ?? '',
-      )}?id=${getFormattedId(characterDetailsData?.species?.id ?? '')}`,
-    },
-    {
-      heading: 'Homeworld',
-      content: startCase(characterDetailsData?.homeworld?.name ?? ''),
-      href: `/planets/${getNameForUrl(
-        characterDetailsData?.homeworld?.name ?? '',
-      )}?id=${getFormattedId(characterDetailsData?.homeworld?.id ?? '')}`,
-    },
-    {
-      heading: 'Birth Year',
-      content: startCase(characterDetailsData?.birthYear?.toString() ?? ''),
-    },
-    {
-      heading: 'Gender',
-      content: startCase(characterDetailsData?.gender ?? ''),
-    },
-  ]
-
-  const panelContentB = [
-    {
-      heading: 'Height',
-      content: characterDetailsData?.height?.toString() ?? '',
-    },
-    {
-      heading: 'Mass',
-      content: characterDetailsData?.mass?.toString() ?? '',
-    },
-    {
-      heading: 'Hair Color',
-      content: startCase(characterDetailsData?.hairColor ?? ''),
-    },
-    {
-      heading: 'Eye Color',
-      content: startCase(characterDetailsData?.eyeColor ?? ''),
-    },
-  ]
-
-  console.log('characterDetailsData:', characterDetailsData)
 
   if (isLoading) return <LoadingPage />
 
@@ -83,15 +37,15 @@ export const CharacterDetails = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen overflow-y-auto pb-10 pt-[104px] px-10">
-      <div className="overflow-hidden space-y-5">
+      <div className="overflow-hidden space-y-10">
         <DetailsHeader
           classNames="h-[300px] lg:min-h-[400px] lg:min-w-[280px]"
           image={characterImage}
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel panelContent={panelContentA} variant="light" />
-            <DetailsHeaderPanel panelContent={panelContentB} variant="dark" />
+            <DetailsHeaderPanel panelContent={getCharacterPanelAContent(characterDetailsData)} variant="light" />
+            <DetailsHeaderPanel panelContent={getCharacterPanelBContent(characterDetailsData)} variant="dark" />
           </div>
         </DetailsHeader>
         {(characterDetailsData?.filmConnection?.films?.length ?? 0 > 0) && (

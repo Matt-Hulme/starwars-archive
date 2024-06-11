@@ -1,1 +1,1 @@
-export { getFormattedId, getNameForUrl } from './utils'
+export { getCharacterPanelAContent, getCharacterPanelBContent, getFilmPanelAContent, getFormattedId, getNameForUrl, getPlanetPanelAContent, getPlanetPanelBContent, getSpeciesPanelAContent, getSpeciesPanelBContent, getStarshipPanelAContent, getStarshipPanelBContent, getVehiclePanelAContent, getVehiclePanelBContent} from './utils'
