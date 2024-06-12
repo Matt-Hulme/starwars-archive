@@ -1,11 +1,13 @@
 import { Card, CardContent, Typography } from '@mui/material'
+import { ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 interface HomeCardProps {
+  children?: ReactNode
   title: string
 }
 
-export const HomeCard = ({ title }: HomeCardProps) => {
+export const HomeCard = ({ title, children }: HomeCardProps) => {
   const navigate = useNavigate()
 
   const onClick = () => {
@@ -19,6 +21,7 @@ export const HomeCard = ({ title }: HomeCardProps) => {
         sx={{ padding: '3px' }}
         onClick={onClick}
       >
+        {children}
         <div className="hidden lg:block">
           <Typography className="text-[#ffbe00]" variant="h5">
             {title}
