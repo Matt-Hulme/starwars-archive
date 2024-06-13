@@ -15,20 +15,22 @@ export const HomeCard = ({ title, children }: HomeCardProps) => {
   }
 
   return (
-    <Card className="border-2 border-[#ffbe00] border-solid cursor-pointer h-full">
+    <Card className="cursor-pointer h-full bg-transparent rounded-[12px] overflow-hidden"
+      sx={{ padding: '0px', borderRadius: '14px', overflow: 'hidden'}}
+    >
       <CardContent
-        className="bg-transparent h-full"
-        sx={{ padding: '3px' }}
+        className="relative h-full"
+        sx={{ padding: '0px',}}
         onClick={onClick}
       >
         {children}
-        <div className="hidden lg:block">
+        <div className="absolute bg-[#39302e] hidden px-1 rounded-lg text-[#ffbe00] lg:block">
           <Typography className="text-[#ffbe00]" variant="h5">
             {title}
           </Typography>
         </div>
-        <div className="block lg:hidden">
-          <Typography className="text-[#ffbe00]" variant="h4">
+        <div className="absolute bg-[#39302e] block px-1 rounded-lg text-[#ffbe00] lg:hidden">
+          <Typography className="text-[#ffbe00]" variant="h6">
             {title}
           </Typography>
         </div>
