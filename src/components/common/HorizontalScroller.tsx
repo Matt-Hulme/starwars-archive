@@ -48,7 +48,7 @@ export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps)
         <ArrowLeft className="bg-[#ffbe00] rounded-md"/>
       </IconButton>
       <div
-        className="flex flex-row gap-2 group/horizontalscroller items-center no-scrollbar overflow-auto px-1 py-1 scroll-smooth w-full"
+        className="flex flex-row gap-2 group/horizontalScroller items-center no-scrollbar overflow-auto px-1 py-1 scroll-smooth w-full"
         ref={ref}
       >
         <div className="-top-4 absolute bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] z-20">
