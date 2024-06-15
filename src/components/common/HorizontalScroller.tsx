@@ -39,19 +39,19 @@ export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps)
   }
 
   return (
-    <div className="flex flex-row items-center py-2 relative max-w-full">
+    <div className="flex flex-row items-center max-w-full py-2 relative">
       <IconButton 
         aria-label="Scroll Left" 
         className={`absolute left-0 ${isAtLeftEnd ? 'opacity-0' : 'opacity-100'}`}
         onClick={() => handleScroll('left')}
       >
-        <ArrowLeft className='bg-[#ffbe00] rounded-md'/>
+        <ArrowLeft className="bg-[#ffbe00] rounded-md"/>
       </IconButton>
       <div
-        className="flex flex-row items-center gap-2 px-1 overflow-auto no-scrollbar scroll-smooth w-full"
+        className="flex flex-row gap-2 group/horizontalScroller items-center no-scrollbar overflow-auto px-1 py-1 scroll-smooth w-full"
         ref={ref}
       >
-        <div className="absolute bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] -top-4 z-20">
+        <div className="-top-4 absolute bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] z-20">
           <Typography variant='h4'>
             {title}
           </Typography>
@@ -63,7 +63,7 @@ export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps)
         className={`absolute right-0 ${isAtRightEnd ? 'opacity-0' : 'opacity-100'}`}
         onClick={() => handleScroll('right')}
       >
-        <ArrowRight className='bg-[#ffbe00] rounded-md'/>
+        <ArrowRight className="bg-[#ffbe00] rounded-md"/>
       </IconButton>
     </div>
   )

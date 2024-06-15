@@ -20,30 +20,33 @@ export const ListCard = ({
   titlePosition = 'top',
 }: ListCardProps) => (
   <ImageListItem
-    className={`hover:cursor-pointer ${containerClassNames}`}
+    className={`duration-500 group/listcard relative rounded-[12px] transition hover:cursor-pointer hover:outline hover:outline-[#ffbe00] hover:outline-[2px] ${containerClassNames}`}
     onClick={() => onClick(id)}
   >
-    <div className={`absolute bg-[#39302e] bottom-0 left-0 h-fit rounded-md px-1 text-[#ffbe00] z-10 ${titlePosition === 'top' ? 'top-0' : 'bottom-0' }`}>
-      {titlePosition ==='top' && 
+    <div className={`absolute bottom-0 h-fit inline-flex left-1 rounded-md w-max z-10 ${titlePosition === 'top' ? 'top-1' : 'bottom-1' }`}
+    >
+      {titlePosition === 'top' && 
       <>
-        <div className='lg:hidden'>
+        <div className="bg-[#39302e] duration-500 px-1 rounded-[12px] text-[#ffbe00] transition lg:hidden group-hover/listcard:bg-[#ffbe00] group-hover/listcard:text-[#39302e]">
           <Typography variant='subtitle2'>
             {title}
           </Typography>
         </div>
-        <div className='hidden lg:block'>
+        <div className="bg-[#39302e] duration-500 hidden px-1 rounded-[12px] text-[#ffbe00] transition lg:block group-hover/listcard:bg-[#ffbe00] group-hover/listcard:text-[#39302e]">
           <Typography variant='h6'>
             {title}
           </Typography>
         </div>
       </>
       }
-      {titlePosition ==='bottom' && 
-      <Typography variant='caption'>
-        {title}
-      </Typography>}
+      {titlePosition === 'bottom' && 
+      <div className="bg-[#39302e] duration-500 inline-flex px-1 rounded-[12px] text-[#ffbe00] transition group-hover/listcard:bg-[#ffbe00] group-hover/listcard:text-[#39302e]">
+        <Typography variant='caption'>
+          {title}
+        </Typography>
+      </div>
+      }
     </div>
-    <img alt={title} className={`${classNames}`} src={image} />
+    <img alt={title} className={classNames} src={image} />
   </ImageListItem>
 )
-

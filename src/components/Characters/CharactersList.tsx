@@ -24,7 +24,7 @@ export const CharactersList = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
-      <div className="gap-1 grid max-w-[2000px] grid-cols-[repeat(auto-fill,minmax(260px,1fr))] pt-[104px] rounded-lg w-full">
+      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pt-[104px] rounded-lg w-full">
         {(charactersData?.people ?? []).map((character, index) => {
           const name = character?.name ?? ''
           const id = getFormattedId(character?.id ?? '')
@@ -32,8 +32,8 @@ export const CharactersList = () => {
 
           return (
             <ListCard
-              classNames="rounded-lg absolute inset-0"
-              containerClassNames="relative min-h-[400px]"
+              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-500"
+              containerClassNames="min-h-[400px]"
               id={id}
               image={image}
               key={index}
