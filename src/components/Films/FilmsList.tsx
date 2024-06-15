@@ -24,7 +24,7 @@ export const FilmsList = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
-      <div className="gap-1 grid max-w-[1500px] pt-[104px] md:grid-cols-2 lg:grid-cols-3 rounded-lg w-full">
+      <div className="gap-1 grid group max-w-[1500px] pt-[104px] rounded-lg w-full md:grid-cols-2 lg:grid-cols-3">
         {(filmsData?.films ?? []).map((film, index) => {
           const title = film?.title ?? ''
           const id = getFormattedId(film?.id ?? '')
@@ -32,8 +32,8 @@ export const FilmsList = () => {
 
           return (
             <ListCard
-              classNames="rounded-lg inset-0"
-              containerClassNames="relative"
+              classNames="rounded-[12px] inset-0 absolute group-hover:brightness-50 hover:!brightness-100 transition duration-500"
+              containerClassNames="min-h-[700px]"
               id={id}
               image={image}
               key={index}

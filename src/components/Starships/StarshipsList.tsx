@@ -24,7 +24,7 @@ export const StarshipsList = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
-      <div className="gap-1 grid max-w-[2000px] grid-cols-[repeat(auto-fill,minmax(200px,1fr))] lg:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] pt-[104px] rounded-lg w-full">
+      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] group max-w-[2000px] pt-[104px] rounded-lg w-full lg:grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
         {(starshipsData?.starships ?? []).map((starship, index) => {
           const name = starship?.name ?? ''
           const id = getFormattedId(starship?.id ?? '')
@@ -32,7 +32,7 @@ export const StarshipsList = () => {
 
           return (
             <ListCard
-              classNames="rounded-lg absolute inset-0"
+              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-500"
               containerClassNames="relative min-h-[130px] lg:min-h-[260px]"
               id={id}
               image={image}

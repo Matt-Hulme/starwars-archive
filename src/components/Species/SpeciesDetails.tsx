@@ -31,7 +31,7 @@ export const SpeciesDetails = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
-      <div className="space-y-10 overflow-x-hidden w-full">
+      <div className="overflow-x-hidden space-y-10 w-full">
         <DetailsHeader
           classNames="h-[300px] min-w-[225px] lg:min-h-[400px] lg:min-w-[280px]"
           image={speciesImage}
@@ -55,7 +55,7 @@ export const SpeciesDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500'
                     id={id}
                     image={image}
                     key={index}
@@ -81,7 +81,7 @@ export const SpeciesDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500'
                     id={id}
                     image={image}
                     key={index}

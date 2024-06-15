@@ -15,22 +15,24 @@ export const HomeCard = ({ title, children }: HomeCardProps) => {
   }
 
   return (
-    <Card className="cursor-pointer h-full bg-transparent rounded-[12px] overflow-hidden"
-      sx={{ padding: '0px', borderRadius: '14px', overflow: 'hidden'}}
+    <Card className="cursor-pointer group/homecard h-full relative rounded-[12px] hover:outline hover:outline-[#ffbe00] hover:outline-[2px]"
+      sx={{ padding: '0px', borderRadius: '12px', margin: '0px',}}
     >
       <CardContent
-        className="relative h-full"
+        className="h-full overflow-hidden"
         sx={{ padding: '0px',}}
         onClick={onClick}
       >
         {children}
-        <div className="absolute bg-[#39302e] hidden px-1 rounded-lg text-[#ffbe00] lg:block">
-          <Typography className="text-[#ffbe00]" variant="h5">
+        <div className="absolute bg-[#39302e] duration-500 hidden left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:block group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
+          <Typography sx={{ margin: '0px', padding: '0px',}}
+            variant="h5"
+          >
             {title}
           </Typography>
         </div>
-        <div className="absolute bg-[#39302e] block px-1 rounded-lg text-[#ffbe00] lg:hidden">
-          <Typography className="text-[#ffbe00]" variant="h6">
+        <div className="absolute bg-[#39302e] block duration-500 left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:hidden group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
+          <Typography sx={{ margin: '0px', padding: '0px',}} variant="h6">
             {title}
           </Typography>
         </div>

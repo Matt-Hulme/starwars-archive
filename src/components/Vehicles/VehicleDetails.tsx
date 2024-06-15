@@ -55,7 +55,7 @@ export const VehicleDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500'
                     id={id}
                     image={image}
                     key={index}
@@ -81,7 +81,7 @@ export const VehicleDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[260px] min-w-[180px] rounded-lg overflow-hidden relative'
+                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500'
                     id={id}
                     image={image}
                     key={index}

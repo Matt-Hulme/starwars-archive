@@ -15,9 +15,9 @@ export const Navbar = () => {
   return (
     <nav className="bg-black fixed px-20 w-full z-50">
       {location.pathname !== '/' && (
-        <div className=" absolute left-2 top-[18px]">
+        <div className="absolute left-2 top-[18px]">
           <Button
-            className="duration-800 ease-linear opacity-80 transition-all hover:opacity-100"
+            className="brightness-50 duration-800 ease-linear transition-all hover:!brightness-100"
             size="large"
             startIcon={<ArrowBack />}
             sx={{ color: '#FFBE00B3' }}
@@ -27,7 +27,7 @@ export const Navbar = () => {
       )}
       <div className="grid-cols-7 hidden md:grid">
         <Link
-          className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/characters"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -36,7 +36,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Characters</Typography>
         </Link>
         <Link
-          className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/films"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -45,7 +45,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Films</Typography>
         </Link>
         <Link
-          className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/planets"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -55,7 +55,7 @@ export const Navbar = () => {
         </Link>
         <div className="py-2">
           <Link
-            className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 transition-all hover:opacity-100"
+            className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center transition-all hover:!brightness-100"
             to="/"
           >
             <img
@@ -65,7 +65,7 @@ export const Navbar = () => {
           </Link>
         </div>
         <Link
-          className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/species"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -74,7 +74,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Species</Typography>
         </Link>
         <Link
-          className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/starships"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -83,7 +83,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Starships</Typography>
         </Link>
         <Link
-          className="col-span-1 duration-800 ease-linear flex items-center justify-center opacity-60 text-[#ffbe00] transition-all hover:opacity-100"
+          className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/vehicles"
         >
           <Typography className="hidden lg:block" variant="h6">
