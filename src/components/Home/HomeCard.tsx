@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography } from '@mui/material'
+import { Card, Typography } from '@mui/material'
 import { ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -15,28 +15,18 @@ export const HomeCard = ({ title, children }: HomeCardProps) => {
   }
 
   return (
-    <Card className="cursor-pointer group/homecard h-full relative rounded-[12px] hover:outline hover:outline-[#ffbe00] hover:outline-[2px]"
-      sx={{ padding: '0px', borderRadius: '12px', margin: '0px',}}
+    <Card className="cursor-pointer group/homecard h-full relative hover:outline hover:outline-[#ffbe00] hover:outline-[2px]"
+      sx={{ padding: '0px', margin: '0px', borderRadius: '0.5empx', overflow: 'hidden', backgroundColor: 'transparent'}}
+      onClick={onClick}
     >
-      <CardContent
-        className="h-full overflow-hidden"
-        sx={{ padding: '0px',}}
-        onClick={onClick}
-      >
-        {children}
-        <div className="absolute bg-[#39302e] duration-200 hidden left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:block group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
-          <Typography sx={{ margin: '0px', padding: '0px',}}
-            variant="h5"
-          >
-            {title}
-          </Typography>
-        </div>
-        <div className="absolute bg-[#39302e] block duration-200 left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:hidden group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
-          <Typography sx={{ margin: '0px', padding: '0px',}} variant="h6">
-            {title}
-          </Typography>
-        </div>
-      </CardContent>
+      {children}
+      <div className="absolute bg-[#39302e] duration-200 left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
+        <Typography sx={{ margin: '0px', padding: '0px',}}
+          variant="h6"
+        >
+          {title}
+        </Typography>
+      </div>
     </Card>
   )
 }

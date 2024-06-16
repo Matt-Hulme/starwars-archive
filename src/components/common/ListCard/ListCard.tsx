@@ -20,10 +20,10 @@ export const ListCard = ({
   titlePosition = 'top',
 }: ListCardProps) => (
   <ImageListItem
-    className={`duration-200 group/listcard relative rounded-[12px] transition hover:cursor-pointer hover:outline hover:outline-[#ffbe00] hover:outline-[2px] ${containerClassNames}`}
+    className={`duration-200 group/listcard relative transition hover:cursor-pointer hover:outline hover:outline-[#ffbe00] hover:outline-[2px] ${containerClassNames}`}
     onClick={() => onClick(id)}
   >
-    <div className={`absolute bottom-0 h-fit inline-flex left-1 rounded-md w-max z-10 ${titlePosition === 'top' ? 'top-1' : 'bottom-1' }`}
+    <div className={`absolute bottom-0 h-fit inline-flex left-1 w-max z-10 ${titlePosition === 'top' ? 'top-1' : 'bottom-1' }`}
     >
       {titlePosition === 'top' && 
       <>
