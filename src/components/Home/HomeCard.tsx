@@ -16,7 +16,7 @@ export const HomeCard = ({ title, children }: HomeCardProps) => {
 
   return (
     <Card className="cursor-pointer group/homecard h-full relative hover:outline hover:outline-[#ffbe00] hover:outline-[2px]"
-      sx={{ padding: '0px', margin: '0px', borderRadius: '0.5empx', overflow: 'hidden', backgroundColor: 'transparent'}}
+      sx={{ padding: '0px', margin: '0px', borderRadius: '0px', overflow: 'hidden', backgroundColor: 'transparent'}}
       onClick={onClick}
     >
       {children}
