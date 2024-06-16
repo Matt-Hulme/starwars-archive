@@ -32,24 +32,14 @@ export const DetailsHeaderPanel = ({
               className="flex flex-col gap-3 lg:flex-row lg:inline-flex"
               key={index}
             >
-              <div className="flex flex-row gap-2 items-center justify-between lg:flex-col lg:gap-0 lg:items-start">
+              <div className="flex flex-col justify-between lg:gap-0 items-start">
                 <Typography className="line-clamp-1" variant="h6">
                   {item?.heading}
                 </Typography>
-                <Divider
-                  className={classNames('grow lg:hidden', {
-                    'bg-[#39302e]': variant === 'light',
-                    'bg-[#ffbe00]': variant === 'dark',
-                  })}
-                />
                 {item?.href ? (
                   <Link
                     href={item?.href}
                     sx={{
-                      color: '#ffffff',
-                      '&:hover': {
-                        color: 'inherit',
-                      },
                       WebkitLineClamp: 1,
                     }}
                     underline="none"
@@ -57,7 +47,7 @@ export const DetailsHeaderPanel = ({
                     {item?.content}
                   </Link>
                 ) : (
-                  <Typography className="line-clamp-1" variant="body1">
+                  <Typography className="line-clamp-1 text-[#ffffff]" variant="body1">
                     {item?.content}
                   </Typography>
                 )}
@@ -65,7 +55,7 @@ export const DetailsHeaderPanel = ({
               {index < array.length - 1 && array[index + 1]?.content && (
                 <Divider
                   className={classNames(
-                    'hidden lg:block lg:h-full lg:w-[2px]',
+                    'block lg:h-full lg:w-[2px]',
                     {
                       'bg-[#39302e]': variant === 'light',
                       'bg-[#ffbe00]': variant === 'dark',

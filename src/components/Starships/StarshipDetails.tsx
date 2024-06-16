@@ -56,7 +56,7 @@ export const StarshipDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200'
+                    containerClassNames='min-h-[280px] min-w-[200px] overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200'
                     id={id}
                     image={image}
                     key={index}
@@ -82,7 +82,7 @@ export const StarshipDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200'
+                    containerClassNames='min-h-[280px] min-w-[200px] overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200'
                     id={id}
                     image={image}
                     key={index}

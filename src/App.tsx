@@ -19,19 +19,19 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/characters" element={<CharactersList />} />
-            <Route path="/characters/:name" element={<CharacterDetails />} />
-            <Route path="/films" element={<FilmsList />} />
-            <Route path="/films/:name" element={<FilmDetails />} />
-            <Route path="/planets" element={<PlanetsList />} />
-            <Route path="/planets/:name" element={<PlanetDetails />} />
-            <Route path="/species" element={<SpeciesList />} />
-            <Route path="/species/:name" element={<SpeciesDetails />} />
-            <Route path="/starships" element={<StarshipsList />} />
-            <Route path="/starships/:name" element={<StarshipDetails />} />
-            <Route path="/vehicles" element={<VehiclesList />} />a
-            <Route path="/vehicles/:name" element={<VehicleDetails />} />
+            <Route element={<Home />} path="/" />
+            <Route element={<CharactersList />} path="/characters" />
+            <Route element={<CharacterDetails />} path="/characters/:name" />
+            <Route element={<FilmsList />} path="/films" />
+            <Route element={<FilmDetails />} path="/films/:name" />
+            <Route element={<PlanetsList />} path="/planets" />
+            <Route element={<PlanetDetails />} path="/planets/:name" />
+            <Route element={<SpeciesList />} path="/species" />
+            <Route element={<SpeciesDetails />} path="/species/:name" />
+            <Route element={<StarshipsList />} path="/starships" />
+            <Route element={<StarshipDetails />} path="/starships/:name" />
+            <Route element={<VehiclesList />} path="/vehicles" />a
+            <Route element={<VehicleDetails />} path="/vehicles/:name" />
           </Routes>
         </Router>
       </ThemeProvider>

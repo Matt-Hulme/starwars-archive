@@ -24,7 +24,7 @@ export const SpeciesList = () => {
 
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
-      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pt-[104px] rounded-lg w-full">
+      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pt-[104px] w-full">
         {(speciesData?.species ?? []).map((species, index) => {
           const name = species?.name ?? ''
           const id = getFormattedId(species?.id ?? '')
@@ -32,7 +32,7 @@ export const SpeciesList = () => {
 
           return (
             <ListCard
-              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-200"
+              classNames="absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-200"
               containerClassNames="relative min-h-[400px]"
               id={id}
               image={image}
