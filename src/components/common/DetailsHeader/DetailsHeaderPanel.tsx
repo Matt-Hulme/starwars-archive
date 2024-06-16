@@ -44,7 +44,7 @@ export const DetailsHeaderPanel = ({
                   {item.content}
                 </Link>
               ) : (
-                <Typography className="line-clamp-1 text-[#ffffff]" variant="body1">
+                <Typography className="lg:line-clamp-1 text-[#ffffff]" variant="body1">
                   {item.content}
                 </Typography>
               )}
