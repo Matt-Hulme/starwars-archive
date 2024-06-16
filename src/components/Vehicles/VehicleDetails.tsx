@@ -1,10 +1,11 @@
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useGetVehicleDetailsQuery } from './hooks'
 import { DetailsHeader, DetailsHeaderPanel, ErrorPage, HorizontalScroller, ListCard, LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
 import { getFormattedId, getNameForUrl, getVehiclePanelAContent, getVehiclePanelBContent } from '../../utils'
 
 export const VehicleDetails = () => {
+  const navigate = useNavigate()
   const { name: urlName } = useParams()
   const [searchParams] = useSearchParams()
   const [nameError, setNameError] = useState(false)
@@ -55,13 +56,13 @@ export const VehicleDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500'
+                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200'
                     id={id}
                     image={image}
                     key={index}
                     title={title}
                     titlePosition='bottom'
-                    onClick={() => {}}
+                    onClick={() => {navigate(`/characters/${getNameForUrl(title)}?id=${id}`)}}
                   />
                 )
               })}
@@ -81,13 +82,13 @@ export const VehicleDetails = () => {
                 return (
                   <ListCard 
                     classNames='absolute inset-0 z--1'
-                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500'
+                    containerClassNames='min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200'
                     id={id}
                     image={image}
                     key={index}
                     title={title}
                     titlePosition='bottom'
-                    onClick={() => {}}
+                    onClick={() => {navigate(`/films/${getNameForUrl(title)}?id=${id}`)}}
                   />
                 )
               })}

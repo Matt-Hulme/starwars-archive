@@ -32,7 +32,7 @@ export const SpeciesList = () => {
 
           return (
             <ListCard
-              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-500"
+              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-200"
               containerClassNames="relative min-h-[400px]"
               id={id}
               image={image}

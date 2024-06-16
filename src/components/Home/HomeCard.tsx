@@ -24,14 +24,14 @@ export const HomeCard = ({ title, children }: HomeCardProps) => {
         onClick={onClick}
       >
         {children}
-        <div className="absolute bg-[#39302e] duration-500 hidden left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:block group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
+        <div className="absolute bg-[#39302e] duration-200 hidden left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:block group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
           <Typography sx={{ margin: '0px', padding: '0px',}}
             variant="h5"
           >
             {title}
           </Typography>
         </div>
-        <div className="absolute bg-[#39302e] block duration-500 left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:hidden group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
+        <div className="absolute bg-[#39302e] block duration-200 left-1 px-2 rounded-[12px] text-[#ffbe00] top-1 transition lg:hidden group-hover/homecard:bg-[#ffbe00] group-hover/homecard:text-[#39302e]">
           <Typography sx={{ margin: '0px', padding: '0px',}} variant="h6">
             {title}
           </Typography>
