@@ -32,7 +32,7 @@ export const FilmsList = () => {
 
           return (
             <ListCard
-              classNames="rounded-[12px] inset-0 absolute group-hover:brightness-50 hover:!brightness-100 transition duration-500"
+              classNames="rounded-[12px] inset-0 absolute group-hover:brightness-50 hover:!brightness-100 transition duration-200"
               containerClassNames="min-h-[700px]"
               id={id}
               image={image}

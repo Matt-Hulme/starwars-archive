@@ -33,7 +33,7 @@ export const VehiclesList = () => {
 
           return (
             <ListCard
-              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-500"
+              classNames="rounded-[12px] absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-200"
               containerClassNames="relative min-h-[130px] lg:min-h-[260px]"
               id={id}
               image={image}

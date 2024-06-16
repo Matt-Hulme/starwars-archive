@@ -1,10 +1,11 @@
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useGetFilmDetailsQuery } from './hooks'
 import { DetailsHeader, DetailsHeaderPanel, ErrorPage, HorizontalScroller, ListCard, LoadingPage } from '../common'
 import { useEffect, useState } from 'react'
 import { getFilmPanelAContent, getFormattedId, getNameForUrl } from '../../utils'
 
 export const FilmDetails = () => {
+  const navigate = useNavigate()
   const { name: urlTitle } = useParams()
   const [searchParams] = useSearchParams()
   const [nameError, setNameError] = useState(false)
@@ -56,13 +57,13 @@ export const FilmDetails = () => {
                   return (
                     <ListCard                    
                       classNames="absolute inset-0 z--1"
-                      containerClassNames="min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500"
+                      containerClassNames="min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200"
                       id={id}
                       image={image}
                       key={index}
                       title={title}
                       titlePosition='bottom'
-                      onClick={() => {}}
+                      onClick={() => {navigate(`/characters/${getNameForUrl(title)}?id=${id}`)}}
                     />
                   )
                 },
@@ -84,13 +85,13 @@ export const FilmDetails = () => {
                   return (
                     <ListCard
                       classNames="absolute inset-0"
-                      containerClassNames="min-h-[280px] min-w-[280px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500"
+                      containerClassNames="min-h-[280px] min-w-[280px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200"
                       id={id}
                       image={image}
                       key={index}
                       title={title}
                       titlePosition='bottom'
-                      onClick={() => {}}
+                      onClick={() => {navigate(`/planets/${getNameForUrl(title)}?id=${id}`)}}
                     />
                   )
                 },
@@ -112,13 +113,13 @@ export const FilmDetails = () => {
                   return (
                     <ListCard
                       classNames="absolute inset-0"
-                      containerClassNames="min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500"
+                      containerClassNames="min-h-[280px] min-w-[200px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200"
                       id={id}
                       image={image}
                       key={index}
                       title={title}
                       titlePosition='bottom'
-                      onClick={() => {}}
+                      onClick={() => {navigate(`/species/${getNameForUrl(title)}?id=${id}`)}}
                     />
                   )
                 },
@@ -140,13 +141,13 @@ export const FilmDetails = () => {
                   return (
                     <ListCard
                       classNames="absolute inset-0"
-                      containerClassNames="min-h-[200px] min-w-[280px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500"
+                      containerClassNames="min-h-[200px] min-w-[280px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200"
                       id={id}
                       image={image}
                       key={index}
                       title={title}
                       titlePosition='bottom'
-                      onClick={() => {}}
+                      onClick={() => {navigate(`/vehicles/${getNameForUrl(title)}?id=${id}`)}}
                     />
                   )
                 },
@@ -168,13 +169,13 @@ export const FilmDetails = () => {
                   return (
                     <ListCard
                       classNames="absolute inset-0"
-                      containerClassNames="min-h-[200px] min-w-[280px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-500"
+                      containerClassNames="min-h-[200px] min-w-[280px] rounded-lg overflow-hidden relative group-hover/horizontalScroller:brightness-50 hover/horizontalScroller:!brightness-100 transition duration-200"
                       id={id}
                       image={image}
                       key={index}
                       title={title}
                       titlePosition='bottom'
-                      onClick={() => {}}
+                      onClick={() => {navigate(`/starships/${getNameForUrl(title)}?id=${id}`)}}
                     />
                   )
                 },
