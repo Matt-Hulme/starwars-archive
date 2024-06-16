@@ -30,6 +30,9 @@ export const SpeciesDetails = () => {
 
   if (nameError || hasError) return <ErrorPage type="Species" />
 
+  console.log('panelBContent:', getSpeciesPanelBContent(speciesDetailsData))
+
+
   return (
     <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
       <div className="overflow-x-hidden space-y-10 w-full">
@@ -39,8 +42,12 @@ export const SpeciesDetails = () => {
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel panelContent={getSpeciesPanelAContent(speciesDetailsData)} variant="light" />
-            <DetailsHeaderPanel panelContent={getSpeciesPanelBContent(speciesDetailsData)} variant="dark" />
+            {getSpeciesPanelAContent(speciesDetailsData) && (
+              <DetailsHeaderPanel panelContent={getSpeciesPanelAContent(speciesDetailsData)} variant="light" />
+            )}
+            {getSpeciesPanelBContent(speciesDetailsData) && (
+              <DetailsHeaderPanel panelContent={getSpeciesPanelBContent(speciesDetailsData)} variant="dark" />
+            )}
           </div>
         </DetailsHeader>
         {(speciesDetailsData?.personConnection?.people?.length ?? 0 > 0) && (
