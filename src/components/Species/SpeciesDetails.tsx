@@ -39,8 +39,8 @@ export const SpeciesDetails = () => {
           name={name ?? ''}
         >
           <div className="flex flex-col gap-2 w-full">
-            <DetailsHeaderPanel panelContent={getSpeciesPanelAContent(speciesDetailsData)} variant="light" />
-            <DetailsHeaderPanel panelContent={getSpeciesPanelBContent(speciesDetailsData)} variant="dark" />
+            {<DetailsHeaderPanel panelContent={getSpeciesPanelAContent(speciesDetailsData)} variant="light" />}
+            {<DetailsHeaderPanel panelContent={getSpeciesPanelBContent(speciesDetailsData)} variant="dark" />}
           </div>
         </DetailsHeader>
         {(speciesDetailsData?.personConnection?.people?.length ?? 0 > 0) && (
