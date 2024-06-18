@@ -1,4 +1,4 @@
-import { Button, Typography } from '@mui/material'
+import { Button, IconButton, Typography } from '@mui/material'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { NavbarMobileMenu } from './NavbarMobileMenu'
 import { ArrowBack } from '@mui/icons-material'
@@ -13,7 +13,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black fixed px-20 w-full z-50">
+    <nav className="fixed pl-20 pr-[10px] first-letter:lg:px-20 w-[100vw] lg:w-full z-50">
       {location.pathname !== '/' && (
         <div className="absolute left-2 top-[18px]">
           <Button
