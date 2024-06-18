@@ -1,4 +1,4 @@
-import { Button, IconButton, Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { NavbarMobileMenu } from './NavbarMobileMenu'
 import { ArrowBack } from '@mui/icons-material'
@@ -30,7 +30,7 @@ export const Navbar = () => {
           className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
           to="/characters"
         >
-          <Typography className="hidden lg:block" variant="h6">
+        <Typography className="hidden lg:block" variant="h6">
             Characters
           </Typography>
           <Typography className="block lg:hidden">Characters</Typography>
