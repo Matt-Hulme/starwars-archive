@@ -21,12 +21,12 @@
   "plugins": ["import", "react", "react-refresh", "@typescript-eslint"],
   "rules": {
     "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     "react/jsx-sort-props": ["error", { "callbacksLast": true, "ignoreCase": true, "noSortAlphabetically": false }],
     "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
     "no-multi-spaces": ["error"],
     "quotes": ["error", "single"],
     "indent": ["error", 2],
-    "react/react-in-jsx-scope": "off",
     "semi": ["error", "never"],
     "@typescript-eslint/no-unused-vars": "off"
   }
