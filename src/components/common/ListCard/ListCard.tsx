@@ -47,6 +47,6 @@ export const ListCard = ({
       </div>
       }
     </div>
-    <img alt={title} className={classNames} src={image} />
+    <img alt={title} draggable={false} className={classNames} src={image} />
   </ImageListItem>
 )
