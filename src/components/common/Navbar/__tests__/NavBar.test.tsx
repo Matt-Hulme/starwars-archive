@@ -1,7 +1,7 @@
-import { render } from "@testing-library/react";
-import '@testing-library/jest-dom';
-import { Navbar } from "../Navbar";
-import { BrowserRouter as Router } from 'react-router-dom';
+import { render } from "@testing-library/react"
+import '@testing-library/jest-dom'
+import { Navbar } from "../Navbar"
+import { BrowserRouter as Router } from 'react-router-dom'
 
 describe('NavBar', () => {
   it('should render the component', () => {
