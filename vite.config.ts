@@ -1,7 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
+import { visualizer } from 'rollup-plugin-visualizer';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [react(), viteCommonjs(), visualizer(), VitePWA()],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+  },
+});

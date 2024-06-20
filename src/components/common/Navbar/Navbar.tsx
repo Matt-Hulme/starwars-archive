@@ -59,6 +59,7 @@ export const Navbar = () => {
             to="/"
           >
             <img
+              alt='StarWars logo'
               className="h-14 object-contain"
               src="/assets/images/SW_Logo.png"
             />
