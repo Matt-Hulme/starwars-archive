@@ -23,8 +23,8 @@ export const FilmsList = () => {
   if (hasError) return <ErrorPage type="Characters data not found" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
-      <div className="gap-1 grid group max-w-[1500px] pt-[104px] w-full md:grid-cols-2 lg:grid-cols-3">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
+      <div className="gap-1 grid group max-w-[1500px] pb-10 pt-[104px] w-full md:grid-cols-2 lg:grid-cols-3">
         {(filmsData?.films ?? []).map((film, index) => {
           const title = film?.title ?? ''
           const id = getFormattedId(film?.id ?? '')
