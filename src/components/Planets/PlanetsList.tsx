@@ -23,8 +23,8 @@ export const PlanetsList = () => {
   if (hasError) return <ErrorPage type="Planets data" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-screen px-10">
-      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pt-[104px] w-full">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
+      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pb-10 pt-[104px] w-full">
         {(planetsData?.planets ?? []).map((planet, index) => {
           const name = planet?.name ?? ''
           const id = getFormattedId(planet?.id ?? '')

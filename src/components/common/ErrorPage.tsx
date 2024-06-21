@@ -5,7 +5,7 @@ interface ErrorPageProps {
 }
 
 export const ErrorPage = ({ type }: ErrorPageProps) => (
-  <div className="bg-fit bg-fixed bg-star-background min-h-screen pt-[104px] px-10">
+  <div className="bg-fit bg-fixed bg-star-background min-h-[100dvh] pt-[104px] px-10">
     <div className="pt-[30vh] text-center md:hidden">
       <Typography className="text-[#ffbe00]" variant="h4">
         {type} not found

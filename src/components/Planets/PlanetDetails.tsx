@@ -31,7 +31,7 @@ export const PlanetDetails = () => {
   if (nameError || hasError) return <ErrorPage type="Planet" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-[100dvh] pb-10 pt-[104px] px-10">
       <div className="overflow-x-hidden space-y-10 w-full">
         <DetailsHeader
           classNames="h-[300px] lg:min-h-[275px] lg:min-w-[275px]"

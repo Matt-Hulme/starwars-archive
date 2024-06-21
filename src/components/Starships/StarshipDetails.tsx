@@ -31,7 +31,7 @@ export const StarshipDetails = () => {
   if (nameError || hasError) return <ErrorPage type="Starship" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-screen pt-[104px] px-10">
+    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-[100dvh] pb-10 pt-[104px] px-10">
       <div className="overflow-x-hidden space-y-10 w-full">
         <DetailsHeader
           classNames="h-[225px] lg:min-h-[280px] lg:min-w-[400px]"
