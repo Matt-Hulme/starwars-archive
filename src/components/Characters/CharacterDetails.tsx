@@ -37,7 +37,7 @@ export const CharacterDetails = () => {
   if (nameError || hasError) return <ErrorPage type="Character" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col min-h-[100dvh] overflow-y-auto pb-10 pt-[104px] px-10">
+    <div className="bg-cover bg-fixed bg-star-background flex flex-col min-h-[100dvh] overflow-y-auto pb-10 pt-[104px] px-10">
       <div className="overflow-hidden space-y-10">
         <DetailsHeader
           classNames="h-[300px] lg:min-h-[400px] lg:min-w-[280px]"
