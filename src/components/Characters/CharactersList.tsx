@@ -23,7 +23,7 @@ export const CharactersList = () => {
   if (hasError) return <ErrorPage type="Characters data" />
 
   return (
-    <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
+    <div className="bg-cover bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
       <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pb-10 pt-[104px] w-full">
         {(charactersData?.people ?? []).map((character, index) => {
           const name = character?.name ?? ''

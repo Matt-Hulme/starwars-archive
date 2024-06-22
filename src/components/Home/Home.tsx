@@ -1,7 +1,7 @@
 import { HomeCard } from './HomeCard'
 
 export const Home = () => (
-  <div className="bg-fit bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
+  <div className="bg-cover bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
     <div className="flex flex-col gap-1 group max-w-[400px] min-h-[500px] mx-auto pb-10 pt-[104px] w-full md:grid md:grid-cols-2 md:grid-rows-3 md:max-w-[750px] lg:flex lg:flex-row lg:max-w-[2000px] lg:min-h-[100dvh]">
       <div className="duration-200 h-[400px] transition lg:flex-1 lg:h-auto lg:min-h-full group-hover:brightness-50 hover:!brightness-100">
         <HomeCard title="Characters">
