@@ -30,7 +30,7 @@ export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps)
   }, []);
 
   const handleScroll = (direction: string) => {
-    const scrollAmount = direction === 'left' ? -50 : 50;
+    const scrollAmount = direction === 'left' ? -280 : 280;
     if (ref.current) {
       ref.current.scrollLeft += scrollAmount;
     }
