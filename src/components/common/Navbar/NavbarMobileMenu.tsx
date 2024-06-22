@@ -16,15 +16,15 @@ export const NavbarMobileMenu = () => {
   }
 
   return (
-    <div className="flex flex-row h-18 items-center justify-between px-4 py-2 md:hidden">
-      <img className="h-14 object-cover cursor-pointer"
+    <div className="flex flex-row h-18 items-center justify-end px-4 py-2 md:hidden">
+      <img className="h-14 object-cover md:block hidden cursor-pointer"
         src="/assets/images/SW_Logo.png"
         onClick={() => navigate('/')}
       />
-      <IconButton onClick={(event) => handleClick(event)}>
-        <MenuIcon style={{color: '#ffbe00'}}
-        />
-      </IconButton>
+        <IconButton onClick={(event) => handleClick(event)}>
+          <MenuIcon style={{color: '#ffbe00'}}
+          />
+        </IconButton>
       <Menu anchorEl={anchorEl} anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }} open={open} onClose={handleClose}>
         <Link to="/">
           <MenuItem onClick={handleClose}>Home</MenuItem>
