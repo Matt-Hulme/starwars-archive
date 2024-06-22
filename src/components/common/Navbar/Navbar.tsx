@@ -1,11 +1,9 @@
 import { Button, Typography } from '@mui/material'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { NavbarMobileMenu } from './NavbarMobileMenu'
 import { ArrowBack } from '@mui/icons-material'
 
 export const Navbar = () => {
-  const location = useLocation()
-
   const navigate = useNavigate()
 
   const onClick = () => {
@@ -14,7 +12,6 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed pl-20 pr-[10px] first-letter:lg:px-20 w-[100vw] lg:w-full z-50 bg-black">
-      {location.pathname !== '/' && (
         <div className="absolute left-2 top-[18px]">
           <Button
             className="brightness-50 duration-800 ease-linear transition-all hover:!brightness-100"
@@ -24,7 +21,6 @@ export const Navbar = () => {
             onClick={onClick}
           ></Button>
         </div>
-      )}
       <div className="grid-cols-7 hidden md:grid">
         <Link
           className="brightness-50 col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100"
