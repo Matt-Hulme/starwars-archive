@@ -3,6 +3,7 @@ import { ListCard } from '../common/ListCard'
 import { useGetAllPlanetsQuery } from './hooks'
 import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage, LoadingPage } from '../common'
+import { Typography } from '@mui/material'
 
 export const PlanetsList = () => {
   const {
@@ -20,11 +21,21 @@ export const PlanetsList = () => {
 
   if (isLoading) return <LoadingPage />
 
-  if (hasError) return <ErrorPage type="Planets data" />
+  if (hasError) return <ErrorPage type="Planets" />
 
   return (
-    <div className="bg-cover bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
-      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] pb-10 pt-[104px] w-full">
+    <div className="bg-cover bg-fixed bg-star-background flex flex-col gap-8 items-center min-h-[100dvh] pb-10 pt-[88px] px-10">
+      <div className="bg-[#ffbe00] px-1 rounded-md text-[#39302e] md:hidden">
+        <Typography variant='h4'>
+          Planets
+        </Typography>
+      </div>
+      <div className="bg-[#ffbe00] hidden px-1 rounded-md text-[#39302e] md:block">
+        <Typography variant='h4'>
+          Planets
+        </Typography>
+      </div>
+      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] group max-w-[2000px] w-full">
         {(planetsData?.planets ?? []).map((planet, index) => {
           const name = planet?.name ?? ''
           const id = getFormattedId(planet?.id ?? '')

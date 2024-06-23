@@ -3,6 +3,7 @@ import { useGetAllVehiclesQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage, LoadingPage } from '../common'
+import { Typography } from '@mui/material'
 
 export const VehiclesList = () => {
   const {
@@ -20,11 +21,22 @@ export const VehiclesList = () => {
 
   if (isLoading) return <LoadingPage />
 
-  if (hasError) return <ErrorPage type="Vehicles data" />
+  if (hasError) return <ErrorPage type="Vehicles" />
 
   return (
-    <div className="bg-cover bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
-      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] group max-w-[2000px] pb-10 pt-[104px] w-full lg:grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
+    <div className="bg-cover bg-fixed bg-star-background flex flex-col gap-8 items-center min-h-[100dvh] pb-10 pt-[88px] px-10">
+      <div className="bg-[#ffbe00] px-1 rounded-md text-[#39302e] md:hidden">
+        <Typography variant='h4'>
+          Vehicles
+        </Typography>
+      </div>
+      <div className="bg-[#ffbe00] hidden px-1 rounded-md text-[#39302e] md:block">
+        <Typography variant='h4'>
+          Vehicles
+        </Typography>
+      </div>
+      
+      <div className="gap-1 grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] group max-w-[2000px] w-full lg:grid-cols-[repeat(auto-fill,minmax(400px,1fr))]">
         {(vehiclesData?.vehicles ?? []).map((vehicle, index) => {
           const name = vehicle?.name ?? ''
           const id = getFormattedId(vehicle?.id ?? '')

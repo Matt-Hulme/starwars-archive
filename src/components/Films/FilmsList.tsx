@@ -3,6 +3,7 @@ import { useGetAllFilmsQuery } from './hooks'
 import { ListCard } from '../common/ListCard'
 import { getFormattedId, getNameForUrl } from '../../utils'
 import { ErrorPage, LoadingPage } from '../common'
+import { Typography } from '@mui/material'
 
 export const FilmsList = () => {
   const {
@@ -20,11 +21,21 @@ export const FilmsList = () => {
 
   if (isLoading) return <LoadingPage />
 
-  if (hasError) return <ErrorPage type="Characters data not found" />
+  if (hasError) return <ErrorPage type="Film" />
 
   return (
-    <div className="bg-cover bg-fixed bg-star-background flex flex-col items-center min-h-[100dvh] px-10">
-      <div className="gap-1 grid group max-w-[1500px] pb-10 pt-[104px] w-full md:grid-cols-2 lg:grid-cols-3">
+    <div className="bg-cover bg-fixed bg-star-background flex flex-col gap-8 items-center min-h-[100dvh] pb-10 pt-[88px] px-10">
+      <div className="bg-[#ffbe00] px-1 rounded-md text-[#39302e] md:hidden">
+        <Typography variant='h4'>
+          Films
+        </Typography>
+      </div>
+      <div className="bg-[#ffbe00] hidden px-1 rounded-md text-[#39302e] md:block">
+        <Typography variant='h4'>
+        Films
+        </Typography>
+      </div>
+      <div className="gap-1 grid group max-w-[1500px] w-full md:grid-cols-2 lg:grid-cols-3">
         {(filmsData?.films ?? []).map((film, index) => {
           const title = film?.title ?? ''
           const id = getFormattedId(film?.id ?? '')
