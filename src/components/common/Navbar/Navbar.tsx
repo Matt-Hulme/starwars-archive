@@ -19,6 +19,7 @@ export const Navbar = () => {
   const isVehicles = location.pathname.includes('/vehicles')
   const isHome = location.pathname === '/'
 
+
   return (
     <nav className="bg-black fixed pl-20 pr-[10px] w-[100vw] z-50 lg:w-full first-letter:lg:px-20">
         <div className="absolute left-2 top-[18px]">
@@ -28,7 +29,7 @@ export const Navbar = () => {
             startIcon={<ArrowBack />}
             sx={{ color: '#FFBE00B3' }}
             onClick={onClick}
-          ></Button>
+          />
         </div>
       <div className="grid-cols-7 hidden md:grid">
         <Link
