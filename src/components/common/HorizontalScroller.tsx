@@ -51,7 +51,7 @@ export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps)
   };
 
   return (
-    <div className="flex flex-row items-center max-w-full py-2 relative">
+    <div className="flex flex-row items-center max-w-[2000px] py-2 relative">
       <IconButton
         aria-label="Scroll Left"
         className={`absolute left-0 ${isAtLeftEnd ? 'opacity-0' : 'opacity-100'}`}
@@ -65,7 +65,12 @@ export const HorizontalScroller = ({ children, title }: HorizontalScrollerProps)
         className="flex flex-row gap-2 group/horizontalScroller items-center no-scrollbar overflow-auto px-1 py-1 scroll-smooth w-full"
         ref={ref}
       >
-        <div className="-top-4 absolute bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] z-20">
+        <div className="-top-4 absolute md:hidden bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] z-20">
+          <Typography variant='h6'>
+            {title}
+          </Typography>
+        </div>
+        <div className="-top-4 hidden md:block absolute bg-[#ffbe00] left-5 px-1 rounded-md text-[#39302e] z-20">
           <Typography variant='h4'>
             {title}
           </Typography>
