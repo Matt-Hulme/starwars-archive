@@ -3,11 +3,11 @@ import classNames from 'classnames'
 
 interface DetailsHeaderPanelProps {
   panelContent?: {
-    heading: string;
-    content: string;
-    href?: string;
-  }[];
-  variant: string;
+    heading: string
+    content: string
+    href?: string
+  }[]
+  variant: string
 }
 
 export const DetailsHeaderPanel = ({

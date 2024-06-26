@@ -33,7 +33,7 @@ export const Navbar = () => {
         </div>
       <div className="grid-cols-7 hidden md:grid">
         <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isCharacters ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isCharacters ? '!brightness-100' : 'brightness-50'}`}
           to="/characters"
         >
         <Typography className="hidden lg:block" variant="h6">
@@ -42,7 +42,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Characters</Typography>
         </Link>
         <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isFilms ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isFilms ? '!brightness-100' : 'brightness-50'}`}
           to="/films"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -51,7 +51,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Films</Typography>
         </Link>
         <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isPlanets ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isPlanets ? '!brightness-100' : 'brightness-50'}`}
           to="/planets"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -61,7 +61,7 @@ export const Navbar = () => {
         </Link>
         <div className="py-2">
           <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isHome ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isHome ? '!brightness-100' : 'brightness-50'}`}
             to="/"
           >
             <img
@@ -72,7 +72,7 @@ export const Navbar = () => {
           </Link>
         </div>
         <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isSpecies ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isSpecies ? '!brightness-100' : 'brightness-50'}`}
           to="/species"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -81,7 +81,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Species</Typography>
         </Link>
         <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isStarships ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isStarships ? '!brightness-100' : 'brightness-50'}`}
           to="/starships"
         >
           <Typography className="hidden lg:block" variant="h6">
@@ -90,7 +90,7 @@ export const Navbar = () => {
           <Typography className="block lg:hidden">Starships</Typography>
         </Link>
         <Link
-          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all ${isVehicles ? '!brightness-100' : 'brightness-50'}`}
+          className={`col-span-1 duration-800 ease-linear flex items-center justify-center text-[#ffbe00] transition-all hover:!brightness-100 ${isVehicles ? '!brightness-100' : 'brightness-50'}`}
           to="/vehicles"
         >
           <Typography className="hidden lg:block" variant="h6">
