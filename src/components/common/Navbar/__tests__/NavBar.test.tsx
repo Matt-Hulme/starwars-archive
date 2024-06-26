@@ -9,25 +9,25 @@ describe('NavBar', () => {
       <Router>
         <Navbar />
       </Router>
-    );
+    )
     getAllByText('Characters').forEach(link => {
-      expect(link).toBeInTheDocument();
-    });
-    getAllByText('Films').forEach(link => {
-      expect(link).toBeInTheDocument();
-    });
-    getAllByText('Planets').forEach(link => {
-      expect(link).toBeInTheDocument();
-    });
-    getAllByText('Species').forEach(link => {
-      expect(link).toBeInTheDocument();
-    });
-    getAllByText('Starships').forEach(link => {
-      expect(link).toBeInTheDocument();
-    });
-    getAllByText('Vehicles').forEach(link => {
-      expect(link).toBeInTheDocument();
+      expect(link).toBeInTheDocument()
     })
-    expect(getByRole('img', { name: 'StarWars logo' })).toHaveAttribute('src', '/assets/images/SW_Logo.png');
-  });
+    getAllByText('Films').forEach(link => {
+      expect(link).toBeInTheDocument()
+    })
+    getAllByText('Planets').forEach(link => {
+      expect(link).toBeInTheDocument()
+    })
+    getAllByText('Species').forEach(link => {
+      expect(link).toBeInTheDocument()
+    })
+    getAllByText('Starships').forEach(link => {
+      expect(link).toBeInTheDocument()
+    })
+    getAllByText('Vehicles').forEach(link => {
+      expect(link).toBeInTheDocument()
+    })
+    expect(getByRole('img', { name: 'StarWars logo' })).toHaveAttribute('src', '/assets/images/SW_Logo.png')
+  })
 })
