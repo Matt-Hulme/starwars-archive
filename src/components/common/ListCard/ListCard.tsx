@@ -1,4 +1,5 @@
 import { ImageListItem, Typography } from '@mui/material'
+import { Image } from '../Image'
 
 interface ListCardProps {
   classNames?: string
@@ -47,6 +48,11 @@ export const ListCard = ({
       </div>
       }
     </div>
-    <img alt={title} draggable={false} className={classNames} src={image} />
+    <Image
+      alt={title}
+      draggable={false}
+      className={classNames}
+      src={image}
+    />
   </ImageListItem>
 )

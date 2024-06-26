@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material'
+import { Image } from '../Image'
 
 interface DetailsHeaderProps {
   classNames?: string
@@ -18,11 +19,11 @@ export const DetailsHeader = ({
       <div
         className={`max-h-full overflow-hidden relative flex justify-center items-center ${classNames}`}
       >
-        <img
+        <Image 
           alt={name ?? ''}
           className="lg:absolute h-full object-cover inset-0 rounded-lg"
           src={image}
-        />
+          />
       </div>
       <div className="space-y-3">
         <div>
