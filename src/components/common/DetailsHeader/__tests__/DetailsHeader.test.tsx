@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import { DetailsHeader } from "../DetailsHeader"
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom'
 
 describe ('DetailsHeader', () => {
   it ('should render the component', () => {

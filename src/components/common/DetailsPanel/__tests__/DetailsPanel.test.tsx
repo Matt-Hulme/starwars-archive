@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 import { DetailsPanel } from "../DetailsPanel"
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom'
 
 describe ('DetailsPanel', () => {
   it('should render the component', () => {
