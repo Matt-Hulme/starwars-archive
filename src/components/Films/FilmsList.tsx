@@ -28,7 +28,7 @@ export const FilmsList = () => {
       <div className="max-w-[2000px] space-y-8 w-full">
         <div className="bg-[#ffbe00] px-1 rounded-md text-[#39302e] w-fit">
           <Typography variant='h4'>
-          Films
+            Films
           </Typography>
         </div>
         <div className="gap-1 grid group md:grid-cols-2 lg:grid-cols-3">
@@ -40,7 +40,7 @@ export const FilmsList = () => {
             return (
               <ListCard
                 classNames="inset-0 absolute group-hover:brightness-50 hover:!brightness-100 transition duration-200"
-                containerClassNames="min-h-[500px] md:min-h-[900px]"
+                containerClassNames="min-h-[500px] md:min-h-[750px]"
                 id={id}
                 image={image}
                 key={index}
