@@ -24,8 +24,6 @@ export const PlanetDetails = () => {
     }
   }, [name, urlName])
 
-  console.log('planetDetailsData:', planetDetailsData)
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Planet" />

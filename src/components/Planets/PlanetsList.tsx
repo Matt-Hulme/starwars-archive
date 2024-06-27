@@ -17,8 +17,6 @@ export const PlanetsList = () => {
     navigate(`/planets/${getNameForUrl(name)}?id=${id}`)
   }
 
-  console.log('planetsData:', planetsData)
-
   if (isLoading) return <LoadingPage />
 
   if (hasError) return <ErrorPage type="Planets" />

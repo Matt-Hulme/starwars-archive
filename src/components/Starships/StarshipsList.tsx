@@ -17,8 +17,6 @@ export const StarshipsList = () => {
     navigate(`/starships/${getNameForUrl(name)}?id=${id}`)
   }
 
-  console.log('starshipsData:', starshipsData)
-
   if (isLoading) return <LoadingPage />
 
   if (hasError) return <ErrorPage type="Starships" />
