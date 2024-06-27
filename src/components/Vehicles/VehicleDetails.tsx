@@ -24,8 +24,6 @@ export const VehicleDetails = () => {
     }
   }, [name, urlName])
 
-  console.log('vehicleDetailsData:', vehicleDetailsData)
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Vehicle" />

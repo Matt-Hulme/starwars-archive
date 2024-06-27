@@ -17,8 +17,6 @@ export const FilmsList = () => {
     navigate(`/films/${getNameForUrl(title)}?id=${id}`)
   }
 
-  console.log('filmsData:', filmsData)
-
   if (isLoading) return <LoadingPage />
 
   if (hasError) return <ErrorPage type="Film" />

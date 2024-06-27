@@ -24,8 +24,6 @@ export const StarshipDetails = () => {
     }
   }, [name, urlName])
 
-  console.log('starshipDetailsData:', starshipDetailsData)
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Starship" />

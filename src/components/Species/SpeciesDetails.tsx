@@ -24,8 +24,6 @@ export const SpeciesDetails = () => {
     }
   }, [name, urlName])
 
-  console.log('speciesDetailsData:', speciesDetailsData)
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Species" />

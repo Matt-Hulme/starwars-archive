@@ -17,8 +17,6 @@ export const CharactersList = () => {
     navigate(`/characters/${getNameForUrl(name)}?id=${id}`)
   }
 
-  console.log('charactersData:', charactersData)
-
   if (isLoading) return <LoadingPage />
 
   if (hasError) return <ErrorPage type="Character" />

@@ -14,7 +14,6 @@ export const Image = ({ className, alt, src, ...props }: ImageProps) => {
   const imageClassName = `${isLoaded ? 'block' : 'hidden'} h-full inset-0 object-cover w-full ${className || ''}`
 
 
-  console.log('isLoaded', isLoaded)
   return (
     <>
       {!isLoaded && (

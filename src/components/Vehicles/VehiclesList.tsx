@@ -17,8 +17,6 @@ export const VehiclesList = () => {
     navigate(`/vehicles/${getNameForUrl(name)}?id=${id}`)
   }
 
-  console.log('vehiclesData:', vehiclesData)
-
   if (isLoading) return <LoadingPage />
 
   if (hasError) return <ErrorPage type="Vehicles" />
@@ -36,8 +34,7 @@ export const VehiclesList = () => {
             const name = vehicle?.name ?? ''
             const id = getFormattedId(vehicle?.id ?? '')
             const image = `assets/images/vehicles/${id}.jpg`
-            console.log('id:', id)
-
+            
             return (
               <ListCard
                 classNames="absolute inset-0 group-hover:brightness-50 hover:!brightness-100 transition duration-200"

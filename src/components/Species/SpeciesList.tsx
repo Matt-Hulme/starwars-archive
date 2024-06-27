@@ -17,8 +17,6 @@ export const SpeciesList = () => {
     navigate(`/species/${getNameForUrl(name)}?id=${id}`)
   }
 
-  console.log('speciesData:', speciesData)
-
   if (isLoading) return <LoadingPage />
 
   if (hasError) return <ErrorPage type="Species" />

@@ -24,8 +24,6 @@ export const FilmDetails = () => {
     }
   }, [title, urlTitle])
 
-  console.log('filmDetailsData::', filmDetailsData)
-
   if (isLoading) return <LoadingPage />
 
   if (nameError || hasError) return <ErrorPage type="Film" />
