@@ -7,12 +7,10 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string
 }
 
-
 export const Image = ({ className, alt, src, ...props }: ImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const imageClassName = `${isLoaded ? 'block' : 'hidden'} h-full inset-0 object-cover w-full ${className || ''}`
-
 
   return (
     <>
