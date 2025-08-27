@@ -7,7 +7,7 @@ import {
 
 export const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link: new HttpLink({
-    uri: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
+    uri: 'https://swapi-graphql.netlify.app/graphql',
   }),
   cache: new InMemoryCache(),
 })
